@@ -202,101 +202,52 @@ Widget build(BuildContext context) {
                       ),
                     ),
                   ),
-                  Hero(
-                    tag: &quot;heart_rate_sensor_settings&quot;,
-                    child: GestureDetector(
-                      onTap: () =&gt; Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) =&gt;
-                                  HeartRateSensorSettingsPage())),
-                      child: Card(
-                        child: Container(
-                          padding: EdgeInsets.all(10.0),
-                          child: Column(
-                            children: &lt;Widget&gt;[
-                              ListTile(
-                                leading: Icon(Icons.favorite),
-                                title: Text(&#39;Heart Rate Sensor settings&#39;),
-                              ),
-                              &#47;&#47; The heart rate sensor should not be null, this is an extra check.
-                              KeyValueWidget(
-                                  &#39;Brand&#39;,
-                                  heartRateSensor == null
-                                      ? &#39;Unknown&#39;
-                                      : heartRateSensor.brand),
-                              KeyValueWidget(
-                                  &#39;Version&#39;,
-                                  heartRateSensor == null
-                                      ? &#39;Unknown&#39;
-                                      : heartRateSensor.version),
-                            ],
+                  Card(
+                    child: Container(
+                      padding: EdgeInsets.all(10.0),
+                      child: Column(
+                        children: &lt;Widget&gt;[
+                          ListTile(
+                            leading: Icon(Icons.favorite),
+                            title: Text(&#39;Heart rate sensor settings&#39;),
                           ),
-                        ),
+                          &#47;&#47; The heart rate sensor should not be null, this is an extra check.
+                          KeyValueWidget(
+                              &#39;Brand&#39;,
+                              heartRateSensor == null
+                                  ? &#39;Unknown&#39;
+                                  : heartRateSensor.brand),
+                          KeyValueWidget(
+                              &#39;Version&#39;,
+                              heartRateSensor == null
+                                  ? &#39;Unknown&#39;
+                                  : heartRateSensor.version),
+                        ],
                       ),
                     ),
                   ),
-                  &#47;*
-                  Hero(
-                    tag: &quot;accelerometer_settings&quot;,
-                    child: GestureDetector(
-                      onTap: () =&gt; Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) =&gt;
-                                  AccelerometerSettingsPage())),
-                      child: Card(
-                        child: Container(
-                          padding: EdgeInsets.all(10.0),
-                          child: Column(
-                            children: &lt;Widget&gt;[
-                              ListTile(
-                                leading: Icon(Icons.add_circle_outline),
-                                title: Text(&#39;Accelerometer settings&#39;),
-                              ),
-                              &#47;&#47; The accelerometer should not be null, this is an extra check.
-                              KeyValueWidget(&#39;Brand&#39;, accelerometer == null ? &#39;Unknown&#39; : accelerometer.brand),
-                              KeyValueWidget(
-                                  &#39;Version&#39;, accelerometer == null ? &#39;Unknown&#39; : accelerometer.version),
-                              KeyValueWidget(&#39;Type&#39;, accelerometer == null ? &#39;Unknown&#39; : accelerometer.typeString)
-                            ],
+                  Card(
+                    child: Container(
+                      padding: EdgeInsets.all(10.0),
+                      child: Column(
+                        children: &lt;Widget&gt;[
+                          ListTile(
+                            leading: Icon(Icons.settings),
+                            title: Text(&#39;App settings&#39;),
                           ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  *&#47;
-                  Hero(
-                    tag: &quot;app_settings&quot;,
-                    child: GestureDetector(
-                      onTap: () =&gt; Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) =&gt; AppSettingsPage())),
-                      child: Card(
-                        child: Container(
-                          padding: EdgeInsets.all(10.0),
-                          child: Column(
-                            children: &lt;Widget&gt;[
-                              ListTile(
-                                leading: Icon(Icons.settings),
-                                title: Text(&#39;App settings&#39;),
-                              ),
-                              &#47;&#47; The app should not be null, this is an extra check.
-                              KeyValueWidget(
-                                  &#39;Name&#39;, app == null ? &#39;Unknown&#39; : app.name),
-                              KeyValueWidget(&#39;Version&#39;,
-                                  app == null ? &#39;Unknown&#39; : app.version),
-                              KeyValueWidget(&#39;Build number&#39;,
-                                  app == null ? &#39;Unknown&#39; : app.buildNumber),
-                              KeyValueWidget(
-                                  &#39;Platform&#39;,
-                                  app == null
-                                      ? &#39;Unknown&#39;
-                                      : app.platformTypeString)
-                            ],
-                          ),
-                        ),
+                          &#47;&#47; The app should not be null, this is an extra check.
+                          KeyValueWidget(
+                              &#39;Name&#39;, app == null ? &#39;Unknown&#39; : app.name),
+                          KeyValueWidget(&#39;Version&#39;,
+                              app == null ? &#39;Unknown&#39; : app.version),
+                          KeyValueWidget(&#39;Build number&#39;,
+                              app == null ? &#39;Unknown&#39; : app.buildNumber),
+                          KeyValueWidget(
+                              &#39;Platform&#39;,
+                              app == null
+                                  ? &#39;Unknown&#39;
+                                  : app.platformTypeString)
+                        ],
                       ),
                     ),
                   ),
@@ -320,7 +271,7 @@ Widget build(BuildContext context) {
 
 <footer>
   <span class="no-break">
-    pace_your_pulse 0.4+7
+    pace_your_pulse 0.6+13
   </span>
 
   

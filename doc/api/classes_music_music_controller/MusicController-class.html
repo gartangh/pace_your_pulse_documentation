@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the MusicController class from the music_controller library, for the Dart programming language.">
+  <title>MusicController class - music_controller library - Dart API</title>
+  <!-- required because all the links are pseudo-absolute -->
+  <base href="..">
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500,400i,400,300|Source+Sans+Pro:400,300,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="static-assets/github.css">
+  <link rel="stylesheet" href="static-assets/styles.css">
+  <link rel="icon" href="static-assets/favicon.png">
+  
+</head>
+
+<body>
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <button id="sidenav-left-toggle" type="button">&nbsp;</button>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="index.html">pace_your_pulse</a></li>
+    <li><a href="classes_music_music_controller/classes_music_music_controller-library.html">music_controller</a></li>
+    <li class="self-crumb">MusicController class</li>
+  </ol>
+  <div class="self-name">MusicController</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<main>
+
+  <div id="dartdoc-sidebar-left" class="col-xs-6 col-sm-3 col-md-2 sidebar sidebar-offcanvas-left">
+    <header id="header-search-sidebar" class="hidden-l">
+      <form class="search-sidebar" role="search">
+        <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+      </form>
+    </header>
+    
+    <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+      <li><a href="index.html">pace_your_pulse</a></li>
+      <li><a href="classes_music_music_controller/classes_music_music_controller-library.html">music_controller</a></li>
+      <li class="self-crumb">MusicController class</li>
+    </ol>
+    
+    <h5>music_controller library</h5>
+    <ol>
+      <li class="section-title"><a href="classes_music_music_controller/classes_music_music_controller-library.html#classes">Classes</a></li>
+      <li><a href="classes_music_music_controller/MusicController-class.html">MusicController</a></li>
+    
+    
+    
+    
+    
+    
+    
+    </ol>
+  </div>
+
+  <div id="dartdoc-main-content" class="col-xs-12 col-sm-9 col-md-8 main-content">
+      <div><h1>MusicController class </h1></div>
+
+    <section class="desc markdown">
+      <p>The music controller</p>
+<p>This controller should be responsible for creating the music pipeline.</p>
+    </section>
+    
+
+
+    <section class="summary offset-anchor" id="instance-properties">
+      <h2>Properties</h2>
+
+      <dl class="properties">
+        <dt id="isAwake" class="property">
+          <span class="name"><a href="classes_music_music_controller/MusicController/isAwake.html">isAwake</a></span>
+          <span class="signature">&#8594; bool</span>         
+        </dt>
+        <dd>
+          Check if the logic is awake.
+                  <div class="features">read-only</div>
+</dd>
+        <dt id="isListener" class="property">
+          <span class="name"><a href="classes_music_music_controller/MusicController/isListener.html">isListener</a></span>
+          <span class="signature">&#8594; bool</span>         
+        </dt>
+        <dd>
+          Check if the logic is listening.
+                  <div class="features">read-only</div>
+</dd>
+        <dt id="musicPlayer" class="property">
+          <span class="name"><a href="classes_music_music_controller/MusicController/musicPlayer.html">musicPlayer</a></span>
+          <span class="signature">&#8594; <a href="classes_music_music_player/MusicPlayer-class.html">MusicPlayer</a></span>         
+        </dt>
+        <dd>
+          The music player.
+                  <div class="features">read-only</div>
+</dd>
+        <dt id="speedFactor" class="property">
+          <span class="name"><a href="classes_music_music_controller/MusicController/speedFactor.html">speedFactor</a></span>
+          <span class="signature">&#8594; num</span>         
+        </dt>
+        <dd>
+          The speed factor.
+                  <div class="features">read-only</div>
+</dd>
+        <dt id="hashCode" class="property inherited">
+          <span class="name"><a href="classes_music_music_controller/MusicController/hashCode.html">hashCode</a></span>
+          <span class="signature">&#8594; int</span>         
+        </dt>
+        <dd class="inherited">
+          The hash code for this object. <a href="classes_music_music_controller/MusicController/hashCode.html">[...]</a>
+                  <div class="features">read-only, inherited</div>
+</dd>
+        <dt id="runtimeType" class="property inherited">
+          <span class="name"><a href="classes_music_music_controller/MusicController/runtimeType.html">runtimeType</a></span>
+          <span class="signature">&#8594; Type</span>         
+        </dt>
+        <dd class="inherited">
+          A representation of the runtime type of the object.
+                  <div class="features">read-only, inherited</div>
+</dd>
+      </dl>
+    </section>
+
+    <section class="summary offset-anchor" id="instance-methods">
+      <h2>Methods</h2>
+      <dl class="callables">
+        <dt id="processNewBeats" class="callable">
+          <span class="name"><a href="classes_music_music_controller/MusicController/processNewBeats.html">processNewBeats</a></span><span class="signature">(<wbr><span class="parameter" id="processNewBeats-param-beats"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">Duration</span>&gt;</span></span> <span class="parameter-name">beats</span>, </span> <span class="parameter" id="processNewBeats-param-first"><span class="type-annotation">bool</span> <span class="parameter-name">first</span>, </span> <span class="parameter" id="processNewBeats-param-path"><span class="type-annotation">String</span> <span class="parameter-name">path</span></span>)
+            <span class="returntype parameter">&#8594; void</span>
+          </span>
+                  </dt>
+        <dd>
+          Handle new beats. <a href="classes_music_music_controller/MusicController/processNewBeats.html">[...]</a>
+                  
+</dd>
+        <dt id="reset" class="callable">
+          <span class="name"><a href="classes_music_music_controller/MusicController/reset.html">reset</a></span><span class="signature">(<wbr>)
+            <span class="returntype parameter">&#8594; void</span>
+          </span>
+                  </dt>
+        <dd>
+          Reset.
+For testing purposes only.
+                  
+</dd>
+        <dt id="wakeUp" class="callable">
+          <span class="name"><a href="classes_music_music_controller/MusicController/wakeUp.html">wakeUp</a></span><span class="signature">(<wbr>)
+            <span class="returntype parameter">&#8594; void</span>
+          </span>
+                  </dt>
+        <dd>
+          Wake up.
+                  
+</dd>
+        <dt id="noSuchMethod" class="callable inherited">
+          <span class="name"><a href="classes_music_music_controller/MusicController/noSuchMethod.html">noSuchMethod</a></span><span class="signature">(<wbr><span class="parameter" id="noSuchMethod-param-invocation"><span class="type-annotation">Invocation</span> <span class="parameter-name">invocation</span></span>)
+            <span class="returntype parameter">&#8594; dynamic</span>
+          </span>
+                  </dt>
+        <dd class="inherited">
+          Invoked when a non-existent method or property is accessed. <a href="classes_music_music_controller/MusicController/noSuchMethod.html">[...]</a>
+                  <div class="features">inherited</div>
+</dd>
+        <dt id="toString" class="callable inherited">
+          <span class="name"><a href="classes_music_music_controller/MusicController/toString.html">toString</a></span><span class="signature">(<wbr>)
+            <span class="returntype parameter">&#8594; String</span>
+          </span>
+                  </dt>
+        <dd class="inherited">
+          Returns a string representation of this object.
+                  <div class="features">inherited</div>
+</dd>
+      </dl>
+    </section>
+
+    <section class="summary offset-anchor inherited" id="operators">
+      <h2>Operators</h2>
+      <dl class="callables">
+        <dt id="operator ==" class="callable inherited">
+          <span class="name"><a href="classes_music_music_controller/MusicController/operator_equals.html">operator ==</a></span><span class="signature">(<wbr><span class="parameter" id="==-param-other"><span class="type-annotation">dynamic</span> <span class="parameter-name">other</span></span>)
+            <span class="returntype parameter">&#8594; bool</span>
+          </span>
+                  </dt>
+        <dd class="inherited">
+          The equality operator. <a href="classes_music_music_controller/MusicController/operator_equals.html">[...]</a>
+                  <div class="features">inherited</div>
+</dd>
+      </dl>
+    </section>
+
+    <section class="summary offset-anchor" id="static-properties">
+      <h2>Static Properties</h2>
+
+      <dl class="properties">
+        <dt id="musicController" class="property">
+          <span class="name"><a href="classes_music_music_controller/MusicController/musicController.html">musicController</a></span>
+          <span class="signature">&#8594; <a href="classes_music_music_controller/MusicController-class.html">MusicController</a></span>         
+        </dt>
+        <dd>
+          The singleton music controller.
+                  <div class="features">read-only</div>
+</dd>
+      </dl>
+    </section>
+
+
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-right" class="col-xs-6 col-sm-6 col-md-2 sidebar sidebar-offcanvas-right">
+    <ol>
+    
+      <li class="section-title">
+        <a href="classes_music_music_controller/MusicController-class.html#instance-properties">Properties</a>
+      </li>
+      <li><a href="classes_music_music_controller/MusicController/isAwake.html">isAwake</a></li>
+      <li><a href="classes_music_music_controller/MusicController/isListener.html">isListener</a></li>
+      <li><a href="classes_music_music_controller/MusicController/musicPlayer.html">musicPlayer</a></li>
+      <li><a href="classes_music_music_controller/MusicController/speedFactor.html">speedFactor</a></li>
+      <li class="inherited"><a href="classes_music_music_controller/MusicController/hashCode.html">hashCode</a></li>
+      <li class="inherited"><a href="classes_music_music_controller/MusicController/runtimeType.html">runtimeType</a></li>
+    
+      <li class="section-title"><a href="classes_music_music_controller/MusicController-class.html#instance-methods">Methods</a></li>
+      <li><a href="classes_music_music_controller/MusicController/processNewBeats.html">processNewBeats</a></li>
+      <li><a href="classes_music_music_controller/MusicController/reset.html">reset</a></li>
+      <li><a href="classes_music_music_controller/MusicController/wakeUp.html">wakeUp</a></li>
+      <li class="inherited"><a href="classes_music_music_controller/MusicController/noSuchMethod.html">noSuchMethod</a></li>
+      <li class="inherited"><a href="classes_music_music_controller/MusicController/toString.html">toString</a></li>
+    
+      <li class="section-title inherited"><a href="classes_music_music_controller/MusicController-class.html#operators">Operators</a></li>
+      <li class="inherited"><a href="classes_music_music_controller/MusicController/operator_equals.html">operator ==</a></li>
+    
+      <li class="section-title"><a href="classes_music_music_controller/MusicController-class.html#static-properties">Static properties</a></li>
+      <li><a href="classes_music_music_controller/MusicController/musicController.html">musicController</a></li>
+    
+    
+    </ol>
+  </div><!--/.sidebar-offcanvas-->
+
+</main>
+
+<footer>
+  <span class="no-break">
+    pace_your_pulse 0.6+13
+  </span>
+
+  
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="static-assets/typeahead.bundle.min.js"></script>
+<script src="static-assets/highlight.pack.js"></script>
+<script src="static-assets/URI.js"></script>
+<script src="static-assets/script.js"></script>
+
+
+</body>
+
+</html>

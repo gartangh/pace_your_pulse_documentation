@@ -77,7 +77,7 @@
     <section class="summary source-code" id="source">
       <h2><span>Implementation</span></h2>
       <pre class="language-dart"><code class="language-dart">void main() {
-  &#47;&#47; Pass all uncaught errors to Crashlytics.
+  &#47;&#47; Pass all uncaught errors to Firebase Crashlytics.
   FlutterError.onError = (FlutterErrorDetails details) {
     Crashlytics.instance.onError(details);
   };
@@ -96,7 +96,7 @@
 
 <footer>
   <span class="no-break">
-    pace_your_pulse 0.4+7
+    pace_your_pulse 0.6+13
   </span>
 
   

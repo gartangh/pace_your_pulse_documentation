@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the Logic class from the logic library, for the Dart programming language.">
+  <title>Logic class - logic library - Dart API</title>
+  <!-- required because all the links are pseudo-absolute -->
+  <base href="..">
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500,400i,400,300|Source+Sans+Pro:400,300,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="static-assets/github.css">
+  <link rel="stylesheet" href="static-assets/styles.css">
+  <link rel="icon" href="static-assets/favicon.png">
+  
+</head>
+
+<body>
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <button id="sidenav-left-toggle" type="button">&nbsp;</button>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="index.html">pace_your_pulse</a></li>
+    <li><a href="classes_utils_logic/classes_utils_logic-library.html">logic</a></li>
+    <li class="self-crumb">Logic class</li>
+  </ol>
+  <div class="self-name">Logic</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<main>
+
+  <div id="dartdoc-sidebar-left" class="col-xs-6 col-sm-3 col-md-2 sidebar sidebar-offcanvas-left">
+    <header id="header-search-sidebar" class="hidden-l">
+      <form class="search-sidebar" role="search">
+        <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+      </form>
+    </header>
+    
+    <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+      <li><a href="index.html">pace_your_pulse</a></li>
+      <li><a href="classes_utils_logic/classes_utils_logic-library.html">logic</a></li>
+      <li class="self-crumb">Logic class</li>
+    </ol>
+    
+    <h5>logic library</h5>
+    <ol>
+      <li class="section-title"><a href="classes_utils_logic/classes_utils_logic-library.html#classes">Classes</a></li>
+      <li><a href="classes_utils_logic/Logic-class.html">Logic</a></li>
+    
+    
+    
+    
+    
+    
+    
+    </ol>
+  </div>
+
+  <div id="dartdoc-main-content" class="col-xs-12 col-sm-9 col-md-8 main-content">
+      <div><h1>Logic class </h1></div>
+
+    
+
+
+    <section class="summary offset-anchor" id="instance-properties">
+      <h2>Properties</h2>
+
+      <dl class="properties">
+        <dt id="awake" class="property">
+          <span class="name"><a href="classes_utils_logic/Logic/awake.html">awake</a></span>
+          <span class="signature">&#8594; bool</span>         
+        </dt>
+        <dd>
+          Check if the logic is awake.
+                  <div class="features">read-only</div>
+</dd>
+        <dt id="beats" class="property">
+          <span class="name"><a href="classes_utils_logic/Logic/beats.html">beats</a></span>
+          <span class="signature">&#8596; List<span class="signature">&lt;<wbr><span class="type-parameter">DateTime</span>&gt;</span></span>         
+        </dt>
+        <dd>
+          The buffer for the music beats.
+                  <div class="features">read / write</div>
+</dd>
+        <dt id="isListener" class="property">
+          <span class="name"><a href="classes_utils_logic/Logic/isListener.html">isListener</a></span>
+          <span class="signature">&#8594; bool</span>         
+        </dt>
+        <dd>
+          Check if the logic is listening.
+                  <div class="features">read-only</div>
+</dd>
+        <dt id="lastBeat" class="property">
+          <span class="name"><a href="classes_utils_logic/Logic/lastBeat.html">lastBeat</a></span>
+          <span class="signature">&#8596; DateTime</span>         
+        </dt>
+        <dd>
+          The time of the last music beat.
+                  <div class="features">read / write</div>
+</dd>
+        <dt id="lastHeartRate" class="property">
+          <span class="name"><a href="classes_utils_logic/Logic/lastHeartRate.html">lastHeartRate</a></span>
+          <span class="signature">&#8596; num</span>         
+        </dt>
+        <dd>
+          The buffer for the last heart rate.
+                  <div class="features">read / write</div>
+</dd>
+        <dt id="lastTempoChange" class="property">
+          <span class="name"><a href="classes_utils_logic/Logic/lastTempoChange.html">lastTempoChange</a></span>
+          <span class="signature">&#8596; DateTime</span>         
+        </dt>
+        <dd>
+          The time of the last tempo change.
+                  <div class="features">read / write</div>
+</dd>
+        <dt id="maxHeartRate" class="property">
+          <span class="name"><a href="classes_utils_logic/Logic/maxHeartRate.html">maxHeartRate</a></span>
+          <span class="signature">&#8596; num</span>         
+        </dt>
+        <dd>
+          Maximum heart rate.
+                  <div class="features">read / write</div>
+</dd>
+        <dt id="minHeartRate" class="property">
+          <span class="name"><a href="classes_utils_logic/Logic/minHeartRate.html">minHeartRate</a></span>
+          <span class="signature">&#8596; num</span>         
+        </dt>
+        <dd>
+          Minimum heart rate.
+                  <div class="features">read / write</div>
+</dd>
+        <dt id="startMusic" class="property">
+          <span class="name"><a href="classes_utils_logic/Logic/startMusic.html">startMusic</a></span>
+          <span class="signature">&#8596; DateTime</span>         
+        </dt>
+        <dd>
+          Date and time at which te music started.
+                  <div class="features">read / write</div>
+</dd>
+        <dt id="steps" class="property">
+          <span class="name"><a href="classes_utils_logic/Logic/steps.html">steps</a></span>
+          <span class="signature">&#8596; List<span class="signature">&lt;<wbr><span class="type-parameter">DateTime</span>&gt;</span></span>         
+        </dt>
+        <dd>
+          The Buffer for the steps.
+                  <div class="features">read / write</div>
+</dd>
+        <dt id="targetHeartRate" class="property">
+          <span class="name"><a href="classes_utils_logic/Logic/targetHeartRate.html">targetHeartRate</a></span>
+          <span class="signature">&#8596; num</span>         
+        </dt>
+        <dd>
+          Target heart rate.
+                  <div class="features">read / write</div>
+</dd>
+        <dt id="test" class="property">
+          <span class="name"><a href="classes_utils_logic/Logic/test.html">test</a></span>
+          <span class="signature">&#8596; bool</span>         
+        </dt>
+        <dd>
+          
+                  <div class="features">read / write</div>
+</dd>
+        <dt id="testBeat" class="property">
+          <span class="name"><a href="classes_utils_logic/Logic/testBeat.html">testBeat</a></span>
+          <span class="signature">&#8596; num</span>         
+        </dt>
+        <dd>
+          
+                  <div class="features">read / write</div>
+</dd>
+        <dt id="totalMusicSpeedFactorChange" class="property">
+          <span class="name"><a href="classes_utils_logic/Logic/totalMusicSpeedFactorChange.html">totalMusicSpeedFactorChange</a></span>
+          <span class="signature">&#8596; num</span>         
+        </dt>
+        <dd>
+          The total factor of change in the music speed.
+                  <div class="features">read / write</div>
+</dd>
+        <dt id="hashCode" class="property inherited">
+          <span class="name"><a href="classes_utils_logic/Logic/hashCode.html">hashCode</a></span>
+          <span class="signature">&#8594; int</span>         
+        </dt>
+        <dd class="inherited">
+          The hash code for this object. <a href="classes_utils_logic/Logic/hashCode.html">[...]</a>
+                  <div class="features">read-only, inherited</div>
+</dd>
+        <dt id="runtimeType" class="property inherited">
+          <span class="name"><a href="classes_utils_logic/Logic/runtimeType.html">runtimeType</a></span>
+          <span class="signature">&#8594; Type</span>         
+        </dt>
+        <dd class="inherited">
+          A representation of the runtime type of the object.
+                  <div class="features">read-only, inherited</div>
+</dd>
+      </dl>
+    </section>
+
+    <section class="summary offset-anchor" id="instance-methods">
+      <h2>Methods</h2>
+      <dl class="callables">
+        <dt id="changeMusicTempo" class="callable">
+          <span class="name"><a href="classes_utils_logic/Logic/changeMusicTempo.html">changeMusicTempo</a></span><span class="signature">(<wbr><span class="parameter" id="changeMusicTempo-param-newFactor"><span class="type-annotation">num</span> <span class="parameter-name">newFactor</span></span>)
+            <span class="returntype parameter">&#8594; void</span>
+          </span>
+                  </dt>
+        <dd>
+          Change music tempo.
+Will adapt all future beats to the new speed factor.
+                  
+</dd>
+        <dt id="processBeats" class="callable">
+          <span class="name"><a href="classes_utils_logic/Logic/processBeats.html">processBeats</a></span><span class="signature">(<wbr><span class="parameter" id="processBeats-param-newBeats"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">Duration</span>&gt;</span></span> <span class="parameter-name">newBeats</span></span>)
+            <span class="returntype parameter">&#8594; void</span>
+          </span>
+                  </dt>
+        <dd>
+          Process beats.
+This will take a list of durations between each beat and will process them according to when the last beat occurred or the last tempo change.
+For testing purposes only.
+                  
+</dd>
+        <dt id="reset" class="callable">
+          <span class="name"><a href="classes_utils_logic/Logic/reset.html">reset</a></span><span class="signature">(<wbr>)
+            <span class="returntype parameter">&#8594; void</span>
+          </span>
+                  </dt>
+        <dd>
+          Reset.
+For testing purposes only.
+                  
+</dd>
+        <dt id="wakeUp" class="callable">
+          <span class="name"><a href="classes_utils_logic/Logic/wakeUp.html">wakeUp</a></span><span class="signature">(<wbr>)
+            <span class="returntype parameter">&#8594; void</span>
+          </span>
+                  </dt>
+        <dd>
+          Wake up.
+Function to literally wake the Logic singleton object up.
+                  
+</dd>
+        <dt id="noSuchMethod" class="callable inherited">
+          <span class="name"><a href="classes_utils_logic/Logic/noSuchMethod.html">noSuchMethod</a></span><span class="signature">(<wbr><span class="parameter" id="noSuchMethod-param-invocation"><span class="type-annotation">Invocation</span> <span class="parameter-name">invocation</span></span>)
+            <span class="returntype parameter">&#8594; dynamic</span>
+          </span>
+                  </dt>
+        <dd class="inherited">
+          Invoked when a non-existent method or property is accessed. <a href="classes_utils_logic/Logic/noSuchMethod.html">[...]</a>
+                  <div class="features">inherited</div>
+</dd>
+        <dt id="toString" class="callable inherited">
+          <span class="name"><a href="classes_utils_logic/Logic/toString.html">toString</a></span><span class="signature">(<wbr>)
+            <span class="returntype parameter">&#8594; String</span>
+          </span>
+                  </dt>
+        <dd class="inherited">
+          Returns a string representation of this object.
+                  <div class="features">inherited</div>
+</dd>
+      </dl>
+    </section>
+
+    <section class="summary offset-anchor inherited" id="operators">
+      <h2>Operators</h2>
+      <dl class="callables">
+        <dt id="operator ==" class="callable inherited">
+          <span class="name"><a href="classes_utils_logic/Logic/operator_equals.html">operator ==</a></span><span class="signature">(<wbr><span class="parameter" id="==-param-other"><span class="type-annotation">dynamic</span> <span class="parameter-name">other</span></span>)
+            <span class="returntype parameter">&#8594; bool</span>
+          </span>
+                  </dt>
+        <dd class="inherited">
+          The equality operator. <a href="classes_utils_logic/Logic/operator_equals.html">[...]</a>
+                  <div class="features">inherited</div>
+</dd>
+      </dl>
+    </section>
+
+    <section class="summary offset-anchor" id="static-properties">
+      <h2>Static Properties</h2>
+
+      <dl class="properties">
+        <dt id="logic" class="property">
+          <span class="name"><a href="classes_utils_logic/Logic/logic.html">logic</a></span>
+          <span class="signature">&#8594; <a href="classes_utils_logic/Logic-class.html">Logic</a></span>         
+        </dt>
+        <dd>
+          The singleton logic.
+                  <div class="features">read-only</div>
+</dd>
+      </dl>
+    </section>
+
+
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-right" class="col-xs-6 col-sm-6 col-md-2 sidebar sidebar-offcanvas-right">
+    <ol>
+    
+      <li class="section-title">
+        <a href="classes_utils_logic/Logic-class.html#instance-properties">Properties</a>
+      </li>
+      <li><a href="classes_utils_logic/Logic/awake.html">awake</a></li>
+      <li><a href="classes_utils_logic/Logic/beats.html">beats</a></li>
+      <li><a href="classes_utils_logic/Logic/isListener.html">isListener</a></li>
+      <li><a href="classes_utils_logic/Logic/lastBeat.html">lastBeat</a></li>
+      <li><a href="classes_utils_logic/Logic/lastHeartRate.html">lastHeartRate</a></li>
+      <li><a href="classes_utils_logic/Logic/lastTempoChange.html">lastTempoChange</a></li>
+      <li><a href="classes_utils_logic/Logic/maxHeartRate.html">maxHeartRate</a></li>
+      <li><a href="classes_utils_logic/Logic/minHeartRate.html">minHeartRate</a></li>
+      <li><a href="classes_utils_logic/Logic/startMusic.html">startMusic</a></li>
+      <li><a href="classes_utils_logic/Logic/steps.html">steps</a></li>
+      <li><a href="classes_utils_logic/Logic/targetHeartRate.html">targetHeartRate</a></li>
+      <li><a href="classes_utils_logic/Logic/test.html">test</a></li>
+      <li><a href="classes_utils_logic/Logic/testBeat.html">testBeat</a></li>
+      <li><a href="classes_utils_logic/Logic/totalMusicSpeedFactorChange.html">totalMusicSpeedFactorChange</a></li>
+      <li class="inherited"><a href="classes_utils_logic/Logic/hashCode.html">hashCode</a></li>
+      <li class="inherited"><a href="classes_utils_logic/Logic/runtimeType.html">runtimeType</a></li>
+    
+      <li class="section-title"><a href="classes_utils_logic/Logic-class.html#instance-methods">Methods</a></li>
+      <li><a href="classes_utils_logic/Logic/changeMusicTempo.html">changeMusicTempo</a></li>
+      <li><a href="classes_utils_logic/Logic/processBeats.html">processBeats</a></li>
+      <li><a href="classes_utils_logic/Logic/reset.html">reset</a></li>
+      <li><a href="classes_utils_logic/Logic/wakeUp.html">wakeUp</a></li>
+      <li class="inherited"><a href="classes_utils_logic/Logic/noSuchMethod.html">noSuchMethod</a></li>
+      <li class="inherited"><a href="classes_utils_logic/Logic/toString.html">toString</a></li>
+    
+      <li class="section-title inherited"><a href="classes_utils_logic/Logic-class.html#operators">Operators</a></li>
+      <li class="inherited"><a href="classes_utils_logic/Logic/operator_equals.html">operator ==</a></li>
+    
+      <li class="section-title"><a href="classes_utils_logic/Logic-class.html#static-properties">Static properties</a></li>
+      <li><a href="classes_utils_logic/Logic/logic.html">logic</a></li>
+    
+    
+    </ol>
+  </div><!--/.sidebar-offcanvas-->
+
+</main>
+
+<footer>
+  <span class="no-break">
+    pace_your_pulse 0.6+13
+  </span>
+
+  
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="static-assets/typeahead.bundle.min.js"></script>
+<script src="static-assets/highlight.pack.js"></script>
+<script src="static-assets/URI.js"></script>
+<script src="static-assets/script.js"></script>
+
+
+</body>
+
+</html>
