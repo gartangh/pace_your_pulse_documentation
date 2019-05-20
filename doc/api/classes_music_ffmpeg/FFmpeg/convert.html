@@ -80,31 +80,31 @@
       <div><h1>convert method</h1></div>
 
     <section class="multi-line-signature">
-      <span class="returntype">Future</span>
+      <span class="returntype">Future<span class="signature">&lt;<wbr><span class="type-parameter">int</span>&gt;</span></span>
             <span class="name ">convert</span>
 (<wbr><span class="parameter" id="convert-param-inputFile"><span class="type-annotation">String</span> <span class="parameter-name">inputFile</span>, </span> <span class="parameter" id="convert-param-startTime"><span class="type-annotation">double</span> <span class="parameter-name">startTime</span>, </span> <span class="parameter" id="convert-param-duration"><span class="type-annotation">double</span> <span class="parameter-name">duration</span>, </span> <span class="parameter" id="convert-param-speedFactor"><span class="type-annotation">double</span> <span class="parameter-name">speedFactor</span>, </span> <span class="parameter" id="convert-param-outputFile"><span class="type-annotation">String</span> <span class="parameter-name">outputFile</span></span>)
       
     </section>
     <section class="desc markdown">
-      <p>Convert the inputFile to an outputFile
-inputFile: the path where the input is saved
-startTime: the time where the output fragment should start
-duration: the duration of the input file that has to be converted,
- when -1 the whole audio file is converted
-speedFactor: the acceleration factor of the song,
- when 1.0 there is no change in speed
-outputFile: the path where the output is savsed</p>
+      <p>Converts the inputFile to an outputFile
+<code>inputFile</code> : the path where the input is saved
+<code>startTime</code> : the time where the output fragment should start
+<code>duration</code> : the duration of the input file that has to be converted, where a value of -1 indicates the whole file has to be converted.
+<code>speedFactor</code> : the acceleration factor of the song
+<code>outputFile</code> : the path where the output is saved</p>
     </section>
     
     <section class="summary source-code" id="source">
       <h2><span>Implementation</span></h2>
-      <pre class="language-dart"><code class="language-dart">Future convert(String inputFile, double startTime, double duration,
-    double speedFactor, String outputFile) {
+      <pre class="language-dart"><code class="language-dart">Future&lt;int&gt; convert(String inputFile, double startTime, double duration,
+    double speedFactor, String outputFile) async {
   var arguments = [&quot;-ss&quot;, startTime.toString()];
   if (duration &gt; 0) {
     arguments.addAll([&quot;-t&quot;, duration.toString()]);
   }
   arguments.addAll([
+    &quot;-loglevel&quot;,
+    &quot;panic&quot;,
     &quot;-i&quot;,
     inputFile,
     &quot;-filter:a&quot;,
@@ -124,7 +124,7 @@ outputFile: the path where the output is savsed</p>
 
 <footer>
   <span class="no-break">
-    pace_your_pulse 0.6+13
+    pace_your_pulse 0.7+17
   </span>
 
   

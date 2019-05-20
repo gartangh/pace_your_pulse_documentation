@@ -102,10 +102,8 @@
       <pre class="language-dart"><code class="language-dart">@override
 init(Sensor sensor) {
   super.init(sensor);
-
   &#47;&#47; Listen to events from the event broker.
-  eventBroker?.listenTo&lt;HeartRateSensorActionEvent&gt;(
-      _processHeartRateSensorActionEvent);
+  _listen();
 }</code></pre>
     </section>
 
@@ -118,7 +116,7 @@ init(Sensor sensor) {
 
 <footer>
   <span class="no-break">
-    pace_your_pulse 0.6+13
+    pace_your_pulse 0.7+17
   </span>
 
   

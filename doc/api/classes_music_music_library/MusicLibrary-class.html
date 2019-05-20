@@ -72,10 +72,34 @@
     
 
 
-    <section class="summary offset-anchor inherited" id="instance-properties">
+    <section class="summary offset-anchor" id="instance-properties">
       <h2>Properties</h2>
 
       <dl class="properties">
+        <dt id="a" class="property">
+          <span class="name"><a href="classes_music_music_library/MusicLibrary/a.html">a</a></span>
+          <span class="signature">&#8596; int</span>         
+        </dt>
+        <dd>
+          Variable for acquiring mutual exclusive access
+                  <div class="features">read / write</div>
+</dd>
+        <dt id="isolate" class="property">
+          <span class="name"><a href="classes_music_music_library/MusicLibrary/isolate.html">isolate</a></span>
+          <span class="signature">&#8596; Isolate</span>         
+        </dt>
+        <dd>
+          The Isolator
+                  <div class="features">read / write</div>
+</dd>
+        <dt id="sendPrt" class="property">
+          <span class="name"><a href="classes_music_music_library/MusicLibrary/sendPrt.html">sendPrt</a></span>
+          <span class="signature">&#8596; SendPort</span>         
+        </dt>
+        <dd>
+          The sendPort
+                  <div class="features">read / write</div>
+</dd>
         <dt id="hashCode" class="property inherited">
           <span class="name"><a href="classes_music_music_library/MusicLibrary/hashCode.html">hashCode</a></span>
           <span class="signature">&#8594; int</span>         
@@ -99,12 +123,21 @@
       <h2>Methods</h2>
       <dl class="callables">
         <dt id="cacheSong" class="callable">
-          <span class="name"><a href="classes_music_music_library/MusicLibrary/cacheSong.html">cacheSong</a></span><span class="signature">(<wbr><span class="parameter" id="cacheSong-param-path"><span class="type-annotation">String</span> <span class="parameter-name">path</span>, </span> <span class="parameter" id="cacheSong-param-resId"><span class="type-annotation">int</span> <span class="parameter-name">resId</span></span>)
-            <span class="returntype parameter">&#8594; Future<span class="signature">&lt;<wbr><span class="type-parameter">String</span>&gt;</span></span>
+          <span class="name"><a href="classes_music_music_library/MusicLibrary/cacheSong.html">cacheSong</a></span><span class="signature">(<wbr><span class="parameter" id="cacheSong-param-f"><span class="type-annotation">Function</span> <span class="parameter-name">f</span>, </span> <span class="parameter" id="cacheSong-param-type"><span class="type-annotation"><a href="enums_event_action/EventAction-class.html">EventAction</a></span> <span class="parameter-name">type</span>, </span> <span class="parameter" id="cacheSong-param-title"><span class="type-annotation">String</span> <span class="parameter-name">title</span>, </span> <span class="parameter" id="cacheSong-param-path"><span class="type-annotation">String</span> <span class="parameter-name">path</span>, </span> <span class="parameter" id="cacheSong-param-resId"><span class="type-annotation">int</span> <span class="parameter-name">resId</span>, </span> <span class="parameter" id="cacheSong-param-length"><span class="type-annotation">Duration</span> <span class="parameter-name">length</span></span>)
+            <span class="returntype parameter">&#8594; void</span>
           </span>
                   </dt>
         <dd>
           Cache song.
+                  
+</dd>
+        <dt id="cacheSongAfterEvent" class="callable">
+          <span class="name"><a href="classes_music_music_library/MusicLibrary/cacheSongAfterEvent.html">cacheSongAfterEvent</a></span><span class="signature">(<wbr><span class="parameter" id="cacheSongAfterEvent-param-msg"><span class="type-annotation">dynamic</span> <span class="parameter-name">msg</span>, </span> <span class="parameter" id="cacheSongAfterEvent-param-path"><span class="type-annotation">String</span> <span class="parameter-name">path</span>, </span> <span class="parameter" id="cacheSongAfterEvent-param-f"><span class="type-annotation">dynamic</span> <span class="parameter-name">f</span>, </span> <span class="parameter" id="cacheSongAfterEvent-param-title"><span class="type-annotation">String</span> <span class="parameter-name">title</span>, </span> <span class="parameter" id="cacheSongAfterEvent-param-resId"><span class="type-annotation">int</span> <span class="parameter-name">resId</span>, </span> <span class="parameter" id="cacheSongAfterEvent-param-length"><span class="type-annotation">Duration</span> <span class="parameter-name">length</span>, </span> <span class="parameter" id="cacheSongAfterEvent-param-type"><span class="type-annotation"><a href="enums_event_action/EventAction-class.html">EventAction</a></span> <span class="parameter-name">type</span></span>)
+            <span class="returntype parameter">&#8594; Future</span>
+          </span>
+                  </dt>
+        <dd>
+          Caches a song when an event is received
                   
 </dd>
         <dt id="getMusic" class="callable">
@@ -113,7 +146,16 @@
           </span>
                   </dt>
         <dd>
-          Get music.
+          Public getter for the music library.
+                  
+</dd>
+        <dt id="getPlaylists" class="callable">
+          <span class="name"><a href="classes_music_music_library/MusicLibrary/getPlaylists.html">getPlaylists</a></span><span class="signature">(<wbr>)
+            <span class="returntype parameter">&#8594; Future<span class="signature">&lt;<wbr><span class="type-parameter">List<span class="signature">&lt;<wbr><span class="type-parameter">String</span>&gt;</span></span>&gt;</span></span>
+          </span>
+                  </dt>
+        <dd>
+          Returns a list containing the names of the playlists on the device
                   
 </dd>
         <dt id="getSongBytes" class="callable">
@@ -123,6 +165,24 @@
                   </dt>
         <dd>
           Get song bytes.
+                  
+</dd>
+        <dt id="init" class="callable">
+          <span class="name"><a href="classes_music_music_library/MusicLibrary/init.html">init</a></span><span class="signature">(<wbr>)
+            <span class="returntype parameter">&#8594; void</span>
+          </span>
+                  </dt>
+        <dd>
+          Init
+                  
+</dd>
+        <dt id="setPlaylist" class="callable">
+          <span class="name"><a href="classes_music_music_library/MusicLibrary/setPlaylist.html">setPlaylist</a></span><span class="signature">(<wbr><span class="parameter" id="setPlaylist-param-playlistName"><span class="type-annotation">String</span> <span class="parameter-name">playlistName</span></span>)
+            <span class="returntype parameter">&#8594; void</span>
+          </span>
+                  </dt>
+        <dd>
+          Sets the current playlist
                   
 </dd>
         <dt id="noSuchMethod" class="callable inherited">
@@ -176,6 +236,20 @@
       </dl>
     </section>
 
+    <section class="summary offset-anchor" id="static-methods">
+      <h2>Static Methods</h2>
+      <dl class="callables">
+        <dt id="proceedCheck" class="callable">
+          <span class="name"><a href="classes_music_music_library/MusicLibrary/proceedCheck.html">proceedCheck</a></span><span class="signature">(<wbr><span class="parameter" id="proceedCheck-param-sendPort"><span class="type-annotation">SendPort</span> <span class="parameter-name">sendPort</span></span>)
+            <span class="returntype parameter">&#8594; void</span>
+          </span>
+                  </dt>
+        <dd>
+          Proceeds the check
+                  
+</dd>
+      </dl>
+    </section>
 
 
   </div> <!-- /.main-content -->
@@ -183,16 +257,23 @@
   <div id="dartdoc-sidebar-right" class="col-xs-6 col-sm-6 col-md-2 sidebar sidebar-offcanvas-right">
     <ol>
     
-      <li class="section-title inherited">
+      <li class="section-title">
         <a href="classes_music_music_library/MusicLibrary-class.html#instance-properties">Properties</a>
       </li>
+      <li><a href="classes_music_music_library/MusicLibrary/a.html">a</a></li>
+      <li><a href="classes_music_music_library/MusicLibrary/isolate.html">isolate</a></li>
+      <li><a href="classes_music_music_library/MusicLibrary/sendPrt.html">sendPrt</a></li>
       <li class="inherited"><a href="classes_music_music_library/MusicLibrary/hashCode.html">hashCode</a></li>
       <li class="inherited"><a href="classes_music_music_library/MusicLibrary/runtimeType.html">runtimeType</a></li>
     
       <li class="section-title"><a href="classes_music_music_library/MusicLibrary-class.html#instance-methods">Methods</a></li>
       <li><a href="classes_music_music_library/MusicLibrary/cacheSong.html">cacheSong</a></li>
+      <li><a href="classes_music_music_library/MusicLibrary/cacheSongAfterEvent.html">cacheSongAfterEvent</a></li>
       <li><a href="classes_music_music_library/MusicLibrary/getMusic.html">getMusic</a></li>
+      <li><a href="classes_music_music_library/MusicLibrary/getPlaylists.html">getPlaylists</a></li>
       <li><a href="classes_music_music_library/MusicLibrary/getSongBytes.html">getSongBytes</a></li>
+      <li><a href="classes_music_music_library/MusicLibrary/init.html">init</a></li>
+      <li><a href="classes_music_music_library/MusicLibrary/setPlaylist.html">setPlaylist</a></li>
       <li class="inherited"><a href="classes_music_music_library/MusicLibrary/noSuchMethod.html">noSuchMethod</a></li>
       <li class="inherited"><a href="classes_music_music_library/MusicLibrary/toString.html">toString</a></li>
     
@@ -202,6 +283,8 @@
       <li class="section-title"><a href="classes_music_music_library/MusicLibrary-class.html#static-properties">Static properties</a></li>
       <li><a href="classes_music_music_library/MusicLibrary/musicLibrary.html">musicLibrary</a></li>
     
+      <li class="section-title"><a href="classes_music_music_library/MusicLibrary-class.html#static-methods">Static methods</a></li>
+      <li><a href="classes_music_music_library/MusicLibrary/proceedCheck.html">proceedCheck</a></li>
     
     </ol>
   </div><!--/.sidebar-offcanvas-->
@@ -210,7 +293,7 @@
 
 <footer>
   <span class="no-break">
-    pace_your_pulse 0.6+13
+    pace_your_pulse 0.7+17
   </span>
 
   

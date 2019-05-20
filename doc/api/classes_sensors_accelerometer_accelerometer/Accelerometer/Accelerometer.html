@@ -67,6 +67,7 @@
       <li class="inherited"><a href="classes_sensors_sensor/Sensor/hashCode.html">hashCode</a></li>
       <li class="inherited"><a href="classes_sensors_sensor/Sensor/processor.html">processor</a></li>
       <li class="inherited"><a href="classes_sensors_sensor/Sensor/runtimeType.html">runtimeType</a></li>
+      <li class="inherited"><a href="classes_sensors_sensor/Sensor/state.html">state</a></li>
       <li class="inherited"><a href="classes_sensors_sensor/Sensor/version.html">version</a></li>
     
       <li class="section-title inherited"><a href="classes_sensors_accelerometer_accelerometer/Accelerometer-class.html#instance-methods">Methods</a></li>
@@ -87,7 +88,7 @@
 
     <section class="multi-line-signature">
       
-      <span class="name ">Accelerometer</span>(<wbr><span class="parameter" id="-param-communication"><span class="type-annotation"><a href="classes_sensors_accelerometer_accelerometer_communication/AccelerometerCommunication-class.html">AccelerometerCommunication</a></span> <span class="parameter-name">communication</span>, </span> <span class="parameter" id="-param-processor"><span class="type-annotation"><a href="classes_sensors_accelerometer_accelerometer_processor/AccelerometerProcessor-class.html">AccelerometerProcessor</a></span> <span class="parameter-name">processor</span>, {</span> <span class="parameter" id="-param-brand"><span class="type-annotation">dynamic</span> <span class="parameter-name">brand</span>: <span class="default-value">'Unknown'</span>, </span> <span class="parameter" id="-param-version"><span class="type-annotation">dynamic</span> <span class="parameter-name">version</span>: <span class="default-value">'Unknown'</span></span> })
+      <span class="name ">Accelerometer</span>(<wbr><span class="parameter" id="-param-communication"><span class="type-annotation"><a href="classes_sensors_accelerometer_accelerometer_communication/AccelerometerCommunication-class.html">AccelerometerCommunication</a></span> <span class="parameter-name">communication</span>, {</span> <span class="parameter" id="-param-brand"><span class="type-annotation">dynamic</span> <span class="parameter-name">brand</span>: <span class="default-value">'Unknown'</span>, </span> <span class="parameter" id="-param-version"><span class="type-annotation">dynamic</span> <span class="parameter-name">version</span>: <span class="default-value">'Unknown'</span></span> })
     </section>
 
     <section class="desc markdown">
@@ -97,13 +98,12 @@
     <section class="summary source-code" id="source">
       <h2><span>Implementation</span></h2>
       <pre class="language-dart"><code class="language-dart">Accelerometer(
-  AccelerometerCommunication communication,
-  AccelerometerProcessor processor, {
+  AccelerometerCommunication communication, {
   brand: &#39;Unknown&#39;,
   version: &#39;Unknown&#39;,
 }) : super(
         communication,
-        processor,
+        AccelerometerProcessor.accelerometerProcessor,
         brand,
         version,
       );</code></pre>
@@ -118,7 +118,7 @@
 
 <footer>
   <span class="no-break">
-    pace_your_pulse 0.6+13
+    pace_your_pulse 0.7+17
   </span>
 
   

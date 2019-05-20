@@ -55,12 +55,15 @@
     <ol>
       <li class="section-title"><a href="classes_utils_user/User-class.html#constructors">Constructors</a></li>
       <li><a href="classes_utils_user/User/User.html">User</a></li>
+      <li><a href="classes_utils_user/User/User.fromSnapshot.html">fromSnapshot</a></li>
     
       <li class="section-title">
         <a href="classes_utils_user/User-class.html#instance-properties">Properties</a>
       </li>
       <li><a href="classes_utils_user/User/ageString.html">ageString</a></li>
       <li><a href="classes_utils_user/User/birthday.html">birthday</a></li>
+      <li><a href="classes_utils_user/User/cadences.html">cadences</a></li>
+      <li><a href="classes_utils_user/User/condition.html">condition</a></li>
       <li><a href="classes_utils_user/User/email.html">email</a></li>
       <li><a href="classes_utils_user/User/id.html">id</a></li>
       <li><a href="classes_utils_user/User/isFemale.html">isFemale</a></li>
@@ -68,15 +71,17 @@
       <li><a href="classes_utils_user/User/isOther.html">isOther</a></li>
       <li><a href="classes_utils_user/User/maxHeartRate.html">maxHeartRate</a></li>
       <li><a href="classes_utils_user/User/maxHeartRateString.html">maxHeartRateString</a></li>
-      <li><a href="classes_utils_user/User/meanHeartRate.html">meanHeartRate</a></li>
-      <li><a href="classes_utils_user/User/meanHeartRateString.html">meanHeartRateString</a></li>
+      <li><a href="classes_utils_user/User/minHeartRate.html">minHeartRate</a></li>
+      <li><a href="classes_utils_user/User/minHeartRateString.html">minHeartRateString</a></li>
       <li><a href="classes_utils_user/User/sex.html">sex</a></li>
       <li><a href="classes_utils_user/User/sexString.html">sexString</a></li>
       <li><a href="classes_utils_user/User/username.html">username</a></li>
       <li class="inherited"><a href="classes_utils_user/User/hashCode.html">hashCode</a></li>
       <li class="inherited"><a href="classes_utils_user/User/runtimeType.html">runtimeType</a></li>
     
-      <li class="section-title inherited"><a href="classes_utils_user/User-class.html#instance-methods">Methods</a></li>
+      <li class="section-title"><a href="classes_utils_user/User-class.html#instance-methods">Methods</a></li>
+      <li><a href="classes_utils_user/User/updateCadences.html">updateCadences</a></li>
+      <li><a href="classes_utils_user/User/writeToDatabase.html">writeToDatabase</a></li>
       <li class="inherited"><a href="classes_utils_user/User/noSuchMethod.html">noSuchMethod</a></li>
       <li class="inherited"><a href="classes_utils_user/User/toString.html">toString</a></li>
     
@@ -102,16 +107,35 @@
         
                 <section class="desc markdown">
           <p>Get a formatted string of the name of the user.
-Get a formatted string of the age of the user.</p>
+Get a formatted string of the age of the user.
+Returns a string indicating the users age.</p>
         </section>
                 <section class="summary source-code" id="source">
           <h2><span>Implementation</span></h2>
           <pre class="language-dart"><code class="language-dart">&#47;&#47;String get nameSting =&gt; firstName + &#39; &#39; + lastName;
 
 &#47;&#47;&#47; Get a formatted string of the age of the user.
-String get ageString =&gt; birthday == null
+&#47;*String get ageString =&gt; birthday == null
     ? &#39;Unkwnown&#39;
-    : &#39;${DateTime.now().difference(birthday).inDays}d&#39;;</code></pre>
+    : &#39;${DateTime(DateTime.now().year, birthday.month, birthday.day).isBefore(DateTime(DateTime.now().year, DateTime.now().month, DateTime.now().day))
+    ? DateTime.now().year - birthday.year - 1
+    :DateTime.now().year - birthday.year} years&#39;;*&#47;
+
+&#47;&#47;&#47; Returns a string indicating the users age.
+String get ageString {
+  DateTime now = DateTime.now();
+  if (birthday == null) {
+    return &#39;Unknown&#39;;
+  }
+  else {
+    if (DateTime(now.year, birthday.month, birthday.day).isBefore(DateTime(now.year, now.month, now.day))) {
+      return &#39;${now.year - birthday.year} years&#39;;
+    }
+    else {
+      return &#39;${now.year - birthday.year - 1} years&#39;;
+    }
+  }
+}</code></pre>
         </section>
 </section>
         
@@ -124,7 +148,7 @@ String get ageString =&gt; birthday == null
 
 <footer>
   <span class="no-break">
-    pace_your_pulse 0.6+13
+    pace_your_pulse 0.7+17
   </span>
 
   

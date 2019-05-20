@@ -65,6 +65,8 @@
       <li class="inherited"><a href="classes_sensors_sensor_communication/SensorCommunication/buffer.html">buffer</a></li>
       <li class="inherited"><a href="classes_sensors_sensor_communication/SensorCommunication/bufferCopy.html">bufferCopy</a></li>
       <li class="inherited"><a href="classes_sensors_sensor_communication/SensorCommunication/hashCode.html">hashCode</a></li>
+      <li class="inherited"><a href="classes_sensors_sensor_communication/SensorCommunication/isConnected.html">isConnected</a></li>
+      <li class="inherited"><a href="classes_sensors_sensor_communication/SensorCommunication/methodChannel.html">methodChannel</a></li>
       <li class="inherited"><a href="classes_sensors_sensor_communication/SensorCommunication/runtimeType.html">runtimeType</a></li>
       <li class="inherited"><a href="classes_sensors_sensor_communication/SensorCommunication/sensor.html">sensor</a></li>
       <li class="inherited"><a href="classes_sensors_sensor_communication/SensorCommunication/timeStamps.html">timeStamps</a></li>
@@ -79,6 +81,7 @@
       <li><a href="classes_sensors_accelerometer_internal_accelerometer_communication/InternalAccelerometerCommunication/resume.html">resume</a></li>
       <li><a href="classes_sensors_accelerometer_internal_accelerometer_communication/InternalAccelerometerCommunication/start.html">start</a></li>
       <li><a href="classes_sensors_accelerometer_internal_accelerometer_communication/InternalAccelerometerCommunication/stop.html">stop</a></li>
+      <li><a href="classes_sensors_accelerometer_internal_accelerometer_communication/InternalAccelerometerCommunication/updateGui.html">updateGui</a></li>
       <li class="inherited"><a href="classes_sensors_sensor_communication/SensorCommunication/noSuchMethod.html">noSuchMethod</a></li>
       <li class="inherited"><a href="classes_sensors_sensor_communication/SensorCommunication/toString.html">toString</a></li>
     
@@ -94,26 +97,22 @@
       <div><h1>stop method</h1></div>
 
     <section class="multi-line-signature">
-      <span class="returntype">bool</span>
+      <span class="returntype">void</span>
             <span class="name ">stop</span>
 (<wbr>)
       <div class="features">override</div>
     </section>
     <section class="desc markdown">
       <p>Stop.</p>
-<p>The subscription to the accelerometer events are cancelled
-The local buffers (accelerometer data and timestamps are cleared.</p>
+<p>The local buffers (accelerometer data and timestamps are cleared.</p>
     </section>
     
     <section class="summary source-code" id="source">
       <h2><span>Implementation</span></h2>
-      <pre class="language-dart"><code class="language-dart">bool stop() {
-  _dispose();
+      <pre class="language-dart"><code class="language-dart">void stop() {
   buffer.clear();
-  timeStamps.clear();
   bufferCopy.clear();
-  _streamSubscriptions.clear();
-  return true;
+  timeStamps.clear();
 }</code></pre>
     </section>
 
@@ -126,7 +125,7 @@ The local buffers (accelerometer data and timestamps are cleared.</p>
 
 <footer>
   <span class="no-break">
-    pace_your_pulse 0.6+13
+    pace_your_pulse 0.7+17
   </span>
 
   

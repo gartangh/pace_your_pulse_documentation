@@ -57,17 +57,20 @@
       <li class="section-title">
         <a href="classes_music_music_controller/MusicController-class.html#instance-properties">Properties</a>
       </li>
-      <li><a href="classes_music_music_controller/MusicController/isAwake.html">isAwake</a></li>
-      <li><a href="classes_music_music_controller/MusicController/isListener.html">isListener</a></li>
       <li><a href="classes_music_music_controller/MusicController/musicPlayer.html">musicPlayer</a></li>
       <li><a href="classes_music_music_controller/MusicController/speedFactor.html">speedFactor</a></li>
       <li class="inherited"><a href="classes_music_music_controller/MusicController/hashCode.html">hashCode</a></li>
       <li class="inherited"><a href="classes_music_music_controller/MusicController/runtimeType.html">runtimeType</a></li>
     
       <li class="section-title"><a href="classes_music_music_controller/MusicController-class.html#instance-methods">Methods</a></li>
+      <li><a href="classes_music_music_controller/MusicController/init.html">init</a></li>
+      <li><a href="classes_music_music_controller/MusicController/next.html">next</a></li>
+      <li><a href="classes_music_music_controller/MusicController/pause.html">pause</a></li>
+      <li><a href="classes_music_music_controller/MusicController/processChangeCadenceEvent.html">processChangeCadenceEvent</a></li>
       <li><a href="classes_music_music_controller/MusicController/processNewBeats.html">processNewBeats</a></li>
-      <li><a href="classes_music_music_controller/MusicController/reset.html">reset</a></li>
-      <li><a href="classes_music_music_controller/MusicController/wakeUp.html">wakeUp</a></li>
+      <li><a href="classes_music_music_controller/MusicController/resume.html">resume</a></li>
+      <li><a href="classes_music_music_controller/MusicController/start.html">start</a></li>
+      <li><a href="classes_music_music_controller/MusicController/stop.html">stop</a></li>
       <li class="inherited"><a href="classes_music_music_controller/MusicController/noSuchMethod.html">noSuchMethod</a></li>
       <li class="inherited"><a href="classes_music_music_controller/MusicController/toString.html">toString</a></li>
     
@@ -87,7 +90,7 @@
     <section class="multi-line-signature">
       <span class="returntype">void</span>
             <span class="name ">processNewBeats</span>
-(<wbr><span class="parameter" id="processNewBeats-param-beats"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">Duration</span>&gt;</span></span> <span class="parameter-name">beats</span>, </span> <span class="parameter" id="processNewBeats-param-first"><span class="type-annotation">bool</span> <span class="parameter-name">first</span>, </span> <span class="parameter" id="processNewBeats-param-path"><span class="type-annotation">String</span> <span class="parameter-name">path</span></span>)
+(<wbr><span class="parameter" id="processNewBeats-param-beats"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">Duration</span>&gt;</span></span> <span class="parameter-name">beats</span>, </span> <span class="parameter" id="processNewBeats-param-first"><span class="type-annotation">bool</span> <span class="parameter-name">first</span></span>)
       
     </section>
     <section class="desc markdown">
@@ -97,18 +100,12 @@
     
     <section class="summary source-code" id="source">
       <h2><span>Implementation</span></h2>
-      <pre class="language-dart"><code class="language-dart">void processNewBeats(List&lt;Duration&gt; beats, bool first, String path) {
+      <pre class="language-dart"><code class="language-dart">void processNewBeats(List&lt;Duration&gt; beats, bool first) {
   &#47;&#47; If first process, send the beats directly, else add to the buffer
   if (first) {
-    eventBroker.publish(MusicStartedEvent(beats, DateTime.now()));
-    if (Platform.isIOS || Platform.isAndroid) {
-      if (_musicPlayer.isPlaying)
-        _musicPlayer.next(path);
-      else
-        _musicPlayer.play(path);
-    }
+    Globals.eventBroker?.publish(MusicStartedEvent(beats, DateTime.now()));
   } else
-    eventBroker.publish(MusicBeatEvent(beats));
+    Globals.eventBroker?.publish(MusicBeatsEvent(beats));
 }</code></pre>
     </section>
 
@@ -121,7 +118,7 @@
 
 <footer>
   <span class="no-break">
-    pace_your_pulse 0.6+13
+    pace_your_pulse 0.7+17
   </span>
 
   

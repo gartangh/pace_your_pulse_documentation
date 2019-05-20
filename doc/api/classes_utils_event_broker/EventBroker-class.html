@@ -100,7 +100,7 @@
       <dl class="callables">
         <dt id="listenTo" class="callable">
           <span class="name"><a href="classes_utils_event_broker/EventBroker/listenTo.html">listenTo</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="listenTo-param-callback"><span class="type-annotation">dynamic</span> <span class="parameter-name">callback</span></span>)
-            <span class="returntype parameter">&#8594; void</span>
+            <span class="returntype parameter">&#8594; StreamSubscription<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>
           </span>
                   </dt>
         <dd>
@@ -114,6 +114,15 @@
                   </dt>
         <dd>
           Publish events.
+                  
+</dd>
+        <dt id="stopListening" class="callable">
+          <span class="name"><a href="classes_utils_event_broker/EventBroker/stopListening.html">stopListening</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="stopListening-param-subscription"><span class="type-annotation">StreamSubscription<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> <span class="parameter-name">subscription</span></span>)
+            <span class="returntype parameter">&#8594; void</span>
+          </span>
+                  </dt>
+        <dd>
+          Stop listening to events
                   
 </dd>
         <dt id="noSuchMethod" class="callable inherited">
@@ -183,6 +192,7 @@
       <li class="section-title"><a href="classes_utils_event_broker/EventBroker-class.html#instance-methods">Methods</a></li>
       <li><a href="classes_utils_event_broker/EventBroker/listenTo.html">listenTo</a></li>
       <li><a href="classes_utils_event_broker/EventBroker/publish.html">publish</a></li>
+      <li><a href="classes_utils_event_broker/EventBroker/stopListening.html">stopListening</a></li>
       <li class="inherited"><a href="classes_utils_event_broker/EventBroker/noSuchMethod.html">noSuchMethod</a></li>
       <li class="inherited"><a href="classes_utils_event_broker/EventBroker/toString.html">toString</a></li>
     
@@ -200,7 +210,7 @@
 
 <footer>
   <span class="no-break">
-    pace_your_pulse 0.6+13
+    pace_your_pulse 0.7+17
   </span>
 
   

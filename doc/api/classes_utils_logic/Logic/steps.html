@@ -57,28 +57,24 @@
       <li class="section-title">
         <a href="classes_utils_logic/Logic-class.html#instance-properties">Properties</a>
       </li>
-      <li><a href="classes_utils_logic/Logic/awake.html">awake</a></li>
       <li><a href="classes_utils_logic/Logic/beats.html">beats</a></li>
-      <li><a href="classes_utils_logic/Logic/isListener.html">isListener</a></li>
+      <li><a href="classes_utils_logic/Logic/heartStepChanged.html">heartStepChanged</a></li>
       <li><a href="classes_utils_logic/Logic/lastBeat.html">lastBeat</a></li>
       <li><a href="classes_utils_logic/Logic/lastHeartRate.html">lastHeartRate</a></li>
       <li><a href="classes_utils_logic/Logic/lastTempoChange.html">lastTempoChange</a></li>
       <li><a href="classes_utils_logic/Logic/maxHeartRate.html">maxHeartRate</a></li>
       <li><a href="classes_utils_logic/Logic/minHeartRate.html">minHeartRate</a></li>
+      <li><a href="classes_utils_logic/Logic/model.html">model</a></li>
+      <li><a href="classes_utils_logic/Logic/periodicCalculateSpeed.html">periodicCalculateSpeed</a></li>
       <li><a href="classes_utils_logic/Logic/startMusic.html">startMusic</a></li>
       <li><a href="classes_utils_logic/Logic/steps.html">steps</a></li>
-      <li><a href="classes_utils_logic/Logic/targetHeartRate.html">targetHeartRate</a></li>
-      <li><a href="classes_utils_logic/Logic/test.html">test</a></li>
-      <li><a href="classes_utils_logic/Logic/testBeat.html">testBeat</a></li>
       <li><a href="classes_utils_logic/Logic/totalMusicSpeedFactorChange.html">totalMusicSpeedFactorChange</a></li>
       <li class="inherited"><a href="classes_utils_logic/Logic/hashCode.html">hashCode</a></li>
       <li class="inherited"><a href="classes_utils_logic/Logic/runtimeType.html">runtimeType</a></li>
     
       <li class="section-title"><a href="classes_utils_logic/Logic-class.html#instance-methods">Methods</a></li>
       <li><a href="classes_utils_logic/Logic/changeMusicTempo.html">changeMusicTempo</a></li>
-      <li><a href="classes_utils_logic/Logic/processBeats.html">processBeats</a></li>
-      <li><a href="classes_utils_logic/Logic/reset.html">reset</a></li>
-      <li><a href="classes_utils_logic/Logic/wakeUp.html">wakeUp</a></li>
+      <li><a href="classes_utils_logic/Logic/init.html">init</a></li>
       <li class="inherited"><a href="classes_utils_logic/Logic/noSuchMethod.html">noSuchMethod</a></li>
       <li class="inherited"><a href="classes_utils_logic/Logic/toString.html">toString</a></li>
     
@@ -95,21 +91,24 @@
   <div id="dartdoc-main-content" class="col-xs-12 col-sm-9 col-md-8 main-content">
       <div><h1>steps property</h1></div>
 
+
+        <section id="getter">
+        
         <section class="multi-line-signature">
           <span class="returntype">List<span class="signature">&lt;<wbr><span class="type-parameter">DateTime</span>&gt;</span></span>
-          <span class="name ">steps</span>
-          <div class="features">read / write</div>
-        </section>
-        <section class="desc markdown">
-          <p>The Buffer for the steps.</p>
+                  <span class="name ">steps</span>
+          
+</section>
+        
+                <section class="desc markdown">
+          <p>The steps.</p>
         </section>
                 <section class="summary source-code" id="source">
           <h2><span>Implementation</span></h2>
-          <pre class="language-dart"><code class="language-dart">List&lt;DateTime&gt; steps = List()
-
-</code></pre>
+          <pre class="language-dart"><code class="language-dart">List&lt;DateTime&gt; get steps =&gt; _steps;</code></pre>
         </section>
-
+</section>
+        
   </div> <!-- /.main-content -->
 
   <div id="dartdoc-sidebar-right" class="col-xs-6 col-sm-6 col-md-2 sidebar sidebar-offcanvas-right">
@@ -119,7 +118,7 @@
 
 <footer>
   <span class="no-break">
-    pace_your_pulse 0.6+13
+    pace_your_pulse 0.7+17
   </span>
 
   

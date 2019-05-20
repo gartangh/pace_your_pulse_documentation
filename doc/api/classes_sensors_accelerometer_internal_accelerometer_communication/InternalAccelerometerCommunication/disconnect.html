@@ -65,6 +65,8 @@
       <li class="inherited"><a href="classes_sensors_sensor_communication/SensorCommunication/buffer.html">buffer</a></li>
       <li class="inherited"><a href="classes_sensors_sensor_communication/SensorCommunication/bufferCopy.html">bufferCopy</a></li>
       <li class="inherited"><a href="classes_sensors_sensor_communication/SensorCommunication/hashCode.html">hashCode</a></li>
+      <li class="inherited"><a href="classes_sensors_sensor_communication/SensorCommunication/isConnected.html">isConnected</a></li>
+      <li class="inherited"><a href="classes_sensors_sensor_communication/SensorCommunication/methodChannel.html">methodChannel</a></li>
       <li class="inherited"><a href="classes_sensors_sensor_communication/SensorCommunication/runtimeType.html">runtimeType</a></li>
       <li class="inherited"><a href="classes_sensors_sensor_communication/SensorCommunication/sensor.html">sensor</a></li>
       <li class="inherited"><a href="classes_sensors_sensor_communication/SensorCommunication/timeStamps.html">timeStamps</a></li>
@@ -79,6 +81,7 @@
       <li><a href="classes_sensors_accelerometer_internal_accelerometer_communication/InternalAccelerometerCommunication/resume.html">resume</a></li>
       <li><a href="classes_sensors_accelerometer_internal_accelerometer_communication/InternalAccelerometerCommunication/start.html">start</a></li>
       <li><a href="classes_sensors_accelerometer_internal_accelerometer_communication/InternalAccelerometerCommunication/stop.html">stop</a></li>
+      <li><a href="classes_sensors_accelerometer_internal_accelerometer_communication/InternalAccelerometerCommunication/updateGui.html">updateGui</a></li>
       <li class="inherited"><a href="classes_sensors_sensor_communication/SensorCommunication/noSuchMethod.html">noSuchMethod</a></li>
       <li class="inherited"><a href="classes_sensors_sensor_communication/SensorCommunication/toString.html">toString</a></li>
     
@@ -99,21 +102,25 @@
           <li>@override</li>
         </ol>
       </div>
-      <span class="returntype">bool</span>
+      <span class="returntype">void</span>
             <span class="name ">disconnect</span>
 (<wbr>)
       <div class="features">override</div>
     </section>
     <section class="desc markdown">
       <p>Disconnect.</p>
+<p>Cancels the subscriptions to all events.
+In this case, only accelerometer events were subscribed to, so they are
+the only ones cancelled.</p>
     </section>
     
     <section class="summary source-code" id="source">
       <h2><span>Implementation</span></h2>
       <pre class="language-dart"><code class="language-dart">@override
-bool disconnect() {
-  &#47;&#47; TODO: implement connect
-  return null;
+void disconnect() {
+  for (StreamSubscription&lt;dynamic&gt; subscription in _streamSubscriptions)
+    subscription.cancel();
+  _streamSubscriptions.clear();
 }</code></pre>
     </section>
 
@@ -126,7 +133,7 @@ bool disconnect() {
 
 <footer>
   <span class="no-break">
-    pace_your_pulse 0.6+13
+    pace_your_pulse 0.7+17
   </span>
 
   

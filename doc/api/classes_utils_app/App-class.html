@@ -68,18 +68,6 @@
 
     
 
-    <section class="summary offset-anchor" id="constructors">
-      <h2>Constructors</h2>
-
-      <dl class="constructor-summary-list">
-        <dt id="App" class="callable">
-          <span class="name"><a href="classes_utils_app/App/App.html">App</a></span><span class="signature">({<span class="parameter" id="-param-name"><span class="type-annotation">String</span> <span class="parameter-name">name</span>: <span class="default-value">'Unknown'</span>, </span> <span class="parameter" id="-param-version"><span class="type-annotation">String</span> <span class="parameter-name">version</span>: <span class="default-value">'Unknown'</span>, </span> <span class="parameter" id="-param-buildNumber"><span class="type-annotation">String</span> <span class="parameter-name">buildNumber</span>: <span class="default-value">'Unknown'</span>, </span> <span class="parameter" id="-param-platformType"><span class="type-annotation"><a href="enums_platform_type/PlatformType-class.html">PlatformType</a></span> <span class="parameter-name">platformType</span></span> })</span>
-        </dt>
-        <dd>
-          
-        </dd>
-      </dl>
-    </section>
 
     <section class="summary offset-anchor" id="instance-properties">
       <h2>Properties</h2>
@@ -87,18 +75,18 @@
       <dl class="properties">
         <dt id="buildNumber" class="property">
           <span class="name"><a href="classes_utils_app/App/buildNumber.html">buildNumber</a></span>
-          <span class="signature">&#8596; String</span>         
+          <span class="signature">&#8594; String</span>         
         </dt>
         <dd>
-          The build number of the app.
-                  <div class="features">read / write</div>
+          The build number.
+                  <div class="features">read-only</div>
 </dd>
         <dt id="isPlatformAndroid" class="property">
           <span class="name"><a href="classes_utils_app/App/isPlatformAndroid.html">isPlatformAndroid</a></span>
           <span class="signature">&#8594; bool</span>         
         </dt>
         <dd>
-          Check if the platform of the app is Android
+          Check if the platform is Android.
                   <div class="features">read-only</div>
 </dd>
         <dt id="isPlatformIOS" class="property">
@@ -106,41 +94,40 @@
           <span class="signature">&#8594; bool</span>         
         </dt>
         <dd>
-          Check if the platform of the app is Fuchsia
-Check if the platform of the app is iOS
+          Check if the platform is iOS
                   <div class="features">read-only</div>
 </dd>
         <dt id="name" class="property">
           <span class="name"><a href="classes_utils_app/App/name.html">name</a></span>
-          <span class="signature">&#8596; String</span>         
+          <span class="signature">&#8594; String</span>         
         </dt>
         <dd>
-          The name of the app.
-                  <div class="features">read / write</div>
-</dd>
-        <dt id="platformType" class="property">
-          <span class="name"><a href="classes_utils_app/App/platformType.html">platformType</a></span>
-          <span class="signature">&#8596; <a href="enums_platform_type/PlatformType-class.html">PlatformType</a></span>         
-        </dt>
-        <dd>
-          The type of the platform of the app.
-                  <div class="features">read / write</div>
+          The name.
+                  <div class="features">read-only</div>
 </dd>
         <dt id="platformTypeString" class="property">
           <span class="name"><a href="classes_utils_app/App/platformTypeString.html">platformTypeString</a></span>
           <span class="signature">&#8594; String</span>         
         </dt>
         <dd>
-          Get a formatted string of the type of the platform of the app.
+          Get a formatted string of the type of the platform.
                   <div class="features">read-only</div>
 </dd>
         <dt id="version" class="property">
           <span class="name"><a href="classes_utils_app/App/version.html">version</a></span>
-          <span class="signature">&#8596; String</span>         
+          <span class="signature">&#8594; String</span>         
         </dt>
         <dd>
-          The version of the app.
-                  <div class="features">read / write</div>
+          The version.
+                  <div class="features">read-only</div>
+</dd>
+        <dt id="versionBuildNumberString" class="property">
+          <span class="name"><a href="classes_utils_app/App/versionBuildNumberString.html">versionBuildNumberString</a></span>
+          <span class="signature">&#8594; String</span>         
+        </dt>
+        <dd>
+          Get a formatted string of the version and build number.
+                  <div class="features">read-only</div>
 </dd>
         <dt id="hashCode" class="property inherited">
           <span class="name"><a href="classes_utils_app/App/hashCode.html">hashCode</a></span>
@@ -161,9 +148,18 @@ Check if the platform of the app is iOS
       </dl>
     </section>
 
-    <section class="summary offset-anchor inherited" id="instance-methods">
+    <section class="summary offset-anchor" id="instance-methods">
       <h2>Methods</h2>
       <dl class="callables">
+        <dt id="init" class="callable">
+          <span class="name"><a href="classes_utils_app/App/init.html">init</a></span><span class="signature">(<wbr>)
+            <span class="returntype parameter">&#8594; void</span>
+          </span>
+                  </dt>
+        <dd>
+          Initialize.
+                  
+</dd>
         <dt id="noSuchMethod" class="callable inherited">
           <span class="name"><a href="classes_utils_app/App/noSuchMethod.html">noSuchMethod</a></span><span class="signature">(<wbr><span class="parameter" id="noSuchMethod-param-invocation"><span class="type-annotation">Invocation</span> <span class="parameter-name">invocation</span></span>)
             <span class="returntype parameter">&#8594; dynamic</span>
@@ -200,6 +196,20 @@ Check if the platform of the app is iOS
       </dl>
     </section>
 
+    <section class="summary offset-anchor" id="static-properties">
+      <h2>Static Properties</h2>
+
+      <dl class="properties">
+        <dt id="app" class="property">
+          <span class="name"><a href="classes_utils_app/App/app.html">app</a></span>
+          <span class="signature">&#8594; <a href="classes_utils_app/App-class.html">App</a></span>         
+        </dt>
+        <dd>
+          The singleton app.
+                  <div class="features">read-only</div>
+</dd>
+      </dl>
+    </section>
 
 
 
@@ -207,8 +217,6 @@ Check if the platform of the app is iOS
 
   <div id="dartdoc-sidebar-right" class="col-xs-6 col-sm-6 col-md-2 sidebar sidebar-offcanvas-right">
     <ol>
-      <li class="section-title"><a href="classes_utils_app/App-class.html#constructors">Constructors</a></li>
-      <li><a href="classes_utils_app/App/App.html">App</a></li>
     
       <li class="section-title">
         <a href="classes_utils_app/App-class.html#instance-properties">Properties</a>
@@ -217,19 +225,22 @@ Check if the platform of the app is iOS
       <li><a href="classes_utils_app/App/isPlatformAndroid.html">isPlatformAndroid</a></li>
       <li><a href="classes_utils_app/App/isPlatformIOS.html">isPlatformIOS</a></li>
       <li><a href="classes_utils_app/App/name.html">name</a></li>
-      <li><a href="classes_utils_app/App/platformType.html">platformType</a></li>
       <li><a href="classes_utils_app/App/platformTypeString.html">platformTypeString</a></li>
       <li><a href="classes_utils_app/App/version.html">version</a></li>
+      <li><a href="classes_utils_app/App/versionBuildNumberString.html">versionBuildNumberString</a></li>
       <li class="inherited"><a href="classes_utils_app/App/hashCode.html">hashCode</a></li>
       <li class="inherited"><a href="classes_utils_app/App/runtimeType.html">runtimeType</a></li>
     
-      <li class="section-title inherited"><a href="classes_utils_app/App-class.html#instance-methods">Methods</a></li>
+      <li class="section-title"><a href="classes_utils_app/App-class.html#instance-methods">Methods</a></li>
+      <li><a href="classes_utils_app/App/init.html">init</a></li>
       <li class="inherited"><a href="classes_utils_app/App/noSuchMethod.html">noSuchMethod</a></li>
       <li class="inherited"><a href="classes_utils_app/App/toString.html">toString</a></li>
     
       <li class="section-title inherited"><a href="classes_utils_app/App-class.html#operators">Operators</a></li>
       <li class="inherited"><a href="classes_utils_app/App/operator_equals.html">operator ==</a></li>
     
+      <li class="section-title"><a href="classes_utils_app/App-class.html#static-properties">Static properties</a></li>
+      <li><a href="classes_utils_app/App/app.html">app</a></li>
     
     
     </ol>
@@ -239,7 +250,7 @@ Check if the platform of the app is iOS
 
 <footer>
   <span class="no-break">
-    pace_your_pulse 0.6+13
+    pace_your_pulse 0.7+17
   </span>
 
   

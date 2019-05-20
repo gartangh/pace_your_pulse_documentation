@@ -61,7 +61,6 @@
       </li>
       <li><a href="classes_music_music_fetcher/MusicFetcher/currentSongName.html">currentSongName</a></li>
       <li><a href="classes_music_music_fetcher/MusicFetcher/currentSongPath.html">currentSongPath</a></li>
-      <li><a href="classes_music_music_fetcher/MusicFetcher/mMDC.html">mMDC</a></li>
       <li><a href="classes_music_music_fetcher/MusicFetcher/musicDecoder.html">musicDecoder</a></li>
       <li class="inherited"><a href="classes_music_music_fetcher/MusicFetcher/hashCode.html">hashCode</a></li>
       <li class="inherited"><a href="classes_music_music_fetcher/MusicFetcher/runtimeType.html">runtimeType</a></li>
@@ -86,7 +85,7 @@
     <section class="multi-line-signature">
       <span class="returntype">Future</span>
             <span class="name ">fetchLocalMusic</span>
-(<wbr><span class="parameter" id="fetchLocalMusic-param-songName"><span class="type-annotation">String</span> <span class="parameter-name">songName</span>, </span> <span class="parameter" id="fetchLocalMusic-param-songPath"><span class="type-annotation">String</span> <span class="parameter-name">songPath</span>, </span> <span class="parameter" id="fetchLocalMusic-param-resId"><span class="type-annotation">int</span> <span class="parameter-name">resId</span>, </span> <span class="parameter" id="fetchLocalMusic-param-length"><span class="type-annotation">Duration</span> <span class="parameter-name">length</span>, </span> <span class="parameter" id="fetchLocalMusic-param-cachedPath"><span class="type-annotation">String</span> <span class="parameter-name">cachedPath</span>, </span> <span class="parameter" id="fetchLocalMusic-param-start"><span class="type-annotation">Duration</span> <span class="parameter-name">start</span></span>)
+(<wbr><span class="parameter" id="fetchLocalMusic-param-songName"><span class="type-annotation">String</span> <span class="parameter-name">songName</span>, </span> <span class="parameter" id="fetchLocalMusic-param-songPath"><span class="type-annotation">String</span> <span class="parameter-name">songPath</span>, </span> <span class="parameter" id="fetchLocalMusic-param-resId"><span class="type-annotation">int</span> <span class="parameter-name">resId</span>, </span> <span class="parameter" id="fetchLocalMusic-param-length"><span class="type-annotation">Duration</span> <span class="parameter-name">length</span>, </span> <span class="parameter" id="fetchLocalMusic-param-cachedPath"><span class="type-annotation">String</span> <span class="parameter-name">cachedPath</span></span>)
       
     </section>
     <section class="desc markdown">
@@ -98,17 +97,14 @@
     <section class="summary source-code" id="source">
       <h2><span>Implementation</span></h2>
       <pre class="language-dart"><code class="language-dart">fetchLocalMusic(String songName, String songPath, int resId, Duration length,
-    String cachedPath, Duration start) async {
-  &#47;&#47; TODO: check MMD using MMDC
-  bool inDatabase = false;
-
+    String cachedPath) async {
   &#47;&#47; Set local variables (mainly for testing)
   _currentSongName = songName;
   _currentSongPath = songPath;
 
   &#47;&#47; Start KuramotoLoop in Decoder
   _musicDecoder.getDecodedMusic(
-      cachedPath, inDatabase, start, songPath, length);
+        cachedPath, resId, length);
 }</code></pre>
     </section>
 
@@ -121,7 +117,7 @@
 
 <footer>
   <span class="no-break">
-    pace_your_pulse 0.6+13
+    pace_your_pulse 0.7+17
   </span>
 
   

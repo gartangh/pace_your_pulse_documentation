@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the init method from the FitnessModel class, for the Dart programming language.">
+  <title>init method - FitnessModel class - fitness_model library - Dart API</title>
+  <!-- required because all the links are pseudo-absolute -->
+  <base href="../..">
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500,400i,400,300|Source+Sans+Pro:400,300,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="static-assets/github.css">
+  <link rel="stylesheet" href="static-assets/styles.css">
+  <link rel="icon" href="static-assets/favicon.png">
+  
+</head>
+
+<body>
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <button id="sidenav-left-toggle" type="button">&nbsp;</button>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="index.html">pace_your_pulse</a></li>
+    <li><a href="classes_utils_fitness_model/classes_utils_fitness_model-library.html">fitness_model</a></li>
+    <li><a href="classes_utils_fitness_model/FitnessModel-class.html">FitnessModel</a></li>
+    <li class="self-crumb">init method</li>
+  </ol>
+  <div class="self-name">init</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<main>
+
+  <div id="dartdoc-sidebar-left" class="col-xs-6 col-sm-3 col-md-2 sidebar sidebar-offcanvas-left">
+    <header id="header-search-sidebar" class="hidden-l">
+      <form class="search-sidebar" role="search">
+        <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+      </form>
+    </header>
+    
+    <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+      <li><a href="index.html">pace_your_pulse</a></li>
+      <li><a href="classes_utils_fitness_model/classes_utils_fitness_model-library.html">fitness_model</a></li>
+      <li><a href="classes_utils_fitness_model/FitnessModel-class.html">FitnessModel</a></li>
+      <li class="self-crumb">init method</li>
+    </ol>
+    
+    <h5>FitnessModel class</h5>
+    <ol>
+      <li class="section-title"><a href="classes_utils_fitness_model/FitnessModel-class.html#constructors">Constructors</a></li>
+      <li><a href="classes_utils_fitness_model/FitnessModel/FitnessModel.html">FitnessModel</a></li>
+    
+      <li class="section-title">
+        <a href="classes_utils_fitness_model/FitnessModel-class.html#instance-properties">Properties</a>
+      </li>
+      <li><a href="classes_utils_fitness_model/FitnessModel/cyclingZones.html">cyclingZones</a></li>
+      <li><a href="classes_utils_fitness_model/FitnessModel/runningZones.html">runningZones</a></li>
+      <li><a href="classes_utils_fitness_model/FitnessModel/selectedZone.html">selectedZone</a></li>
+      <li class="inherited"><a href="classes_utils_fitness_model/FitnessModel/hashCode.html">hashCode</a></li>
+      <li class="inherited"><a href="classes_utils_fitness_model/FitnessModel/runtimeType.html">runtimeType</a></li>
+    
+      <li class="section-title"><a href="classes_utils_fitness_model/FitnessModel-class.html#instance-methods">Methods</a></li>
+      <li><a href="classes_utils_fitness_model/FitnessModel/init.html">init</a></li>
+      <li><a href="classes_utils_fitness_model/FitnessModel/setTargetHR.html">setTargetHR</a></li>
+      <li><a href="classes_utils_fitness_model/FitnessModel/zonesToString.html">zonesToString</a></li>
+      <li class="inherited"><a href="classes_utils_fitness_model/FitnessModel/noSuchMethod.html">noSuchMethod</a></li>
+      <li class="inherited"><a href="classes_utils_fitness_model/FitnessModel/toString.html">toString</a></li>
+    
+      <li class="section-title inherited"><a href="classes_utils_fitness_model/FitnessModel-class.html#operators">Operators</a></li>
+      <li class="inherited"><a href="classes_utils_fitness_model/FitnessModel/operator_equals.html">operator ==</a></li>
+    
+    
+    
+    </ol>
+  </div><!--/.sidebar-offcanvas-->
+
+  <div id="dartdoc-main-content" class="col-xs-12 col-sm-9 col-md-8 main-content">
+      <div><h1>init method</h1></div>
+
+    <section class="multi-line-signature">
+      <span class="returntype">void</span>
+            <span class="name ">init</span>
+(<wbr>)
+      
+    </section>
+    <section class="desc markdown">
+      <p>Init</p>
+    </section>
+    
+    <section class="summary source-code" id="source">
+      <h2><span>Implementation</span></h2>
+      <pre class="language-dart"><code class="language-dart">void init(){
+  if (Globals.user.minHeartRate != null &amp;&amp;
+      !Globals.user.minHeartRate.isNaN) {
+          runningZones[0] =
+          (Globals.user.minHeartRate + 0.5 *
+                  (Globals.user.maxHeartRate -
+                      Globals.user.minHeartRate))*Globals.user.condition;
+          runningZones[1] =
+              (Globals.user.minHeartRate + 0.6 *
+                  (Globals.user.maxHeartRate -
+                      Globals.user.minHeartRate))*Globals.user.condition;
+          runningZones[2] =
+              (Globals.user.minHeartRate + 0.7 *
+                  (Globals.user.maxHeartRate -
+                      Globals.user.minHeartRate))*Globals.user.condition;
+          runningZones[3] =
+              Globals.user.minHeartRate + 0.8 *
+                  ((Globals.user.maxHeartRate -
+                      Globals.user.minHeartRate))*Globals.user.condition;
+          runningZones[4] =
+              Globals.user.minHeartRate + 0.9 *
+                  ((Globals.user.maxHeartRate -
+                      Globals.user.minHeartRate))*Globals.user.condition;
+          runningZones[5] = Globals.user.maxHeartRate;
+    }
+  cyclingZones[0] = 0.6 * Globals.user.maxHeartRate*Globals.user.condition;
+  cyclingZones[1] = 0.65 * Globals.user.maxHeartRate*Globals.user.condition;
+  cyclingZones[2] = 0.75 * Globals.user.maxHeartRate*Globals.user.condition;
+  cyclingZones[3] = 0.82 * Globals.user.maxHeartRate*Globals.user.condition;
+  cyclingZones[4] = 0.89 * Globals.user.maxHeartRate*Globals.user.condition;
+  cyclingZones[5] = 0.94 * Globals.user.maxHeartRate*Globals.user.condition;
+
+  setTargetHR(selectedZone, Sport.RUNNING);
+}</code></pre>
+    </section>
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-right" class="col-xs-6 col-sm-6 col-md-2 sidebar sidebar-offcanvas-right">
+  </div><!--/.sidebar-offcanvas-->
+
+</main>
+
+<footer>
+  <span class="no-break">
+    pace_your_pulse 0.7+17
+  </span>
+
+  
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="static-assets/typeahead.bundle.min.js"></script>
+<script src="static-assets/highlight.pack.js"></script>
+<script src="static-assets/URI.js"></script>
+<script src="static-assets/script.js"></script>
+
+
+</body>
+
+</html>

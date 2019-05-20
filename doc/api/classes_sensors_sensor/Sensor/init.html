@@ -62,6 +62,7 @@
       <li><a href="classes_sensors_sensor/Sensor/brand.html">brand</a></li>
       <li><a href="classes_sensors_sensor/Sensor/communication.html">communication</a></li>
       <li><a href="classes_sensors_sensor/Sensor/processor.html">processor</a></li>
+      <li><a href="classes_sensors_sensor/Sensor/state.html">state</a></li>
       <li><a href="classes_sensors_sensor/Sensor/version.html">version</a></li>
       <li class="inherited"><a href="classes_sensors_sensor/Sensor/hashCode.html">hashCode</a></li>
       <li class="inherited"><a href="classes_sensors_sensor/Sensor/runtimeType.html">runtimeType</a></li>
@@ -97,8 +98,12 @@ Will initialize the communication and processor.</p>
     <section class="summary source-code" id="source">
       <h2><span>Implementation</span></h2>
       <pre class="language-dart"><code class="language-dart">void init() {
-  communication.init(this);
-  processor.init(this);
+  &#47;&#47; Initialize communication and processor.
+  communication?.init(this);
+  processor?.init(this);
+
+  &#47;&#47; Reset fields.
+  state = ComponentState.STOPPED;
 }</code></pre>
     </section>
 
@@ -111,7 +116,7 @@ Will initialize the communication and processor.</p>
 
 <footer>
   <span class="no-break">
-    pace_your_pulse 0.6+13
+    pace_your_pulse 0.7+17
   </span>
 
   

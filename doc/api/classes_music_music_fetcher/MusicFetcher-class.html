@@ -101,14 +101,6 @@
           The path of the current song.
                   <div class="features">read-only</div>
 </dd>
-        <dt id="mMDC" class="property">
-          <span class="name"><a href="classes_music_music_fetcher/MusicFetcher/mMDC.html">mMDC</a></span>
-          <span class="signature">&#8594; <a href="classes_music_music_metadata_database_controller/MusicMetadataDatabaseController-class.html">MusicMetadataDatabaseController</a></span>         
-        </dt>
-        <dd>
-          The music meta data database controller.
-                  <div class="features">read-only</div>
-</dd>
         <dt id="musicDecoder" class="property">
           <span class="name"><a href="classes_music_music_fetcher/MusicFetcher/musicDecoder.html">musicDecoder</a></span>
           <span class="signature">&#8594; <a href="classes_music_music_decoder/MusicDecoder-class.html">MusicDecoder</a></span>         
@@ -140,7 +132,7 @@
       <h2>Methods</h2>
       <dl class="callables">
         <dt id="fetchLocalMusic" class="callable">
-          <span class="name"><a href="classes_music_music_fetcher/MusicFetcher/fetchLocalMusic.html">fetchLocalMusic</a></span><span class="signature">(<wbr><span class="parameter" id="fetchLocalMusic-param-songName"><span class="type-annotation">String</span> <span class="parameter-name">songName</span>, </span> <span class="parameter" id="fetchLocalMusic-param-songPath"><span class="type-annotation">String</span> <span class="parameter-name">songPath</span>, </span> <span class="parameter" id="fetchLocalMusic-param-resId"><span class="type-annotation">int</span> <span class="parameter-name">resId</span>, </span> <span class="parameter" id="fetchLocalMusic-param-length"><span class="type-annotation">Duration</span> <span class="parameter-name">length</span>, </span> <span class="parameter" id="fetchLocalMusic-param-cachedPath"><span class="type-annotation">String</span> <span class="parameter-name">cachedPath</span>, </span> <span class="parameter" id="fetchLocalMusic-param-start"><span class="type-annotation">Duration</span> <span class="parameter-name">start</span></span>)
+          <span class="name"><a href="classes_music_music_fetcher/MusicFetcher/fetchLocalMusic.html">fetchLocalMusic</a></span><span class="signature">(<wbr><span class="parameter" id="fetchLocalMusic-param-songName"><span class="type-annotation">String</span> <span class="parameter-name">songName</span>, </span> <span class="parameter" id="fetchLocalMusic-param-songPath"><span class="type-annotation">String</span> <span class="parameter-name">songPath</span>, </span> <span class="parameter" id="fetchLocalMusic-param-resId"><span class="type-annotation">int</span> <span class="parameter-name">resId</span>, </span> <span class="parameter" id="fetchLocalMusic-param-length"><span class="type-annotation">Duration</span> <span class="parameter-name">length</span>, </span> <span class="parameter" id="fetchLocalMusic-param-cachedPath"><span class="type-annotation">String</span> <span class="parameter-name">cachedPath</span></span>)
             <span class="returntype parameter">&#8594; Future</span>
           </span>
                   </dt>
@@ -152,11 +144,11 @@
 </dd>
         <dt id="stop" class="callable">
           <span class="name"><a href="classes_music_music_fetcher/MusicFetcher/stop.html">stop</a></span><span class="signature">(<wbr>)
-            <span class="returntype parameter">&#8594; void</span>
+            <span class="returntype parameter">&#8594; dynamic</span>
           </span>
                   </dt>
         <dd>
-          
+          Stops <code>_musicDecoder</code>
                   
 </dd>
         <dt id="noSuchMethod" class="callable inherited">
@@ -210,7 +202,6 @@
       </li>
       <li><a href="classes_music_music_fetcher/MusicFetcher/currentSongName.html">currentSongName</a></li>
       <li><a href="classes_music_music_fetcher/MusicFetcher/currentSongPath.html">currentSongPath</a></li>
-      <li><a href="classes_music_music_fetcher/MusicFetcher/mMDC.html">mMDC</a></li>
       <li><a href="classes_music_music_fetcher/MusicFetcher/musicDecoder.html">musicDecoder</a></li>
       <li class="inherited"><a href="classes_music_music_fetcher/MusicFetcher/hashCode.html">hashCode</a></li>
       <li class="inherited"><a href="classes_music_music_fetcher/MusicFetcher/runtimeType.html">runtimeType</a></li>
@@ -233,7 +224,7 @@
 
 <footer>
   <span class="no-break">
-    pace_your_pulse 0.6+13
+    pace_your_pulse 0.7+17
   </span>
 
   

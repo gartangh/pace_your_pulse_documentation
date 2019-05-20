@@ -66,6 +66,9 @@
   <div id="dartdoc-main-content" class="col-xs-12 col-sm-9 col-md-8 main-content">
       <div><h1>User class </h1></div>
 
+    <section class="desc markdown">
+      <p>Class to store user info.</p>
+    </section>
     
 
     <section class="summary offset-anchor" id="constructors">
@@ -73,10 +76,16 @@
 
       <dl class="constructor-summary-list">
         <dt id="User" class="callable">
-          <span class="name"><a href="classes_utils_user/User/User.html">User</a></span><span class="signature">(<span class="parameter" id="-param-_email"><span class="type-annotation">String</span> <span class="parameter-name">_email</span>, </span> <span class="parameter" id="-param-_id"><span class="type-annotation">String</span> <span class="parameter-name">_id</span>, {</span> <span class="parameter" id="-param-username"><span class="type-annotation">String</span> <span class="parameter-name">username</span>: <span class="default-value">'Unknown'</span>, </span> <span class="parameter" id="-param-birthday"><span class="type-annotation">DateTime</span> <span class="parameter-name">birthday</span>, </span> <span class="parameter" id="-param-sex"><span class="type-annotation"><a href="enums_sex/Sex-class.html">Sex</a></span> <span class="parameter-name">sex</span>, </span> <span class="parameter" id="-param-meanHeartRate"><span class="type-annotation">num</span> <span class="parameter-name">meanHeartRate</span>, </span> <span class="parameter" id="-param-maxHeartRate"><span class="type-annotation">num</span> <span class="parameter-name">maxHeartRate</span></span> })</span>
+          <span class="name"><a href="classes_utils_user/User/User.html">User</a></span><span class="signature">(<span class="parameter" id="-param-_email"><span class="type-annotation">String</span> <span class="parameter-name">_email</span>, </span> <span class="parameter" id="-param-_id"><span class="type-annotation">String</span> <span class="parameter-name">_id</span>, {</span> <span class="parameter" id="-param-username"><span class="type-annotation">String</span> <span class="parameter-name">username</span>: <span class="default-value">'Unknown'</span>, </span> <span class="parameter" id="-param-birthday"><span class="type-annotation">DateTime</span> <span class="parameter-name">birthday</span>, </span> <span class="parameter" id="-param-sex"><span class="type-annotation"><a href="enums_sex/Sex-class.html">Sex</a></span> <span class="parameter-name">sex</span>, </span> <span class="parameter" id="-param-minHeartRate"><span class="type-annotation">num</span> <span class="parameter-name">minHeartRate</span>, </span> <span class="parameter" id="-param-maxHeartRate"><span class="type-annotation">num</span> <span class="parameter-name">maxHeartRate</span>, </span> <span class="parameter" id="-param-condition"><span class="type-annotation">num</span> <span class="parameter-name">condition</span>, </span> <span class="parameter" id="-param-cadences"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">num</span>&gt;</span></span> <span class="parameter-name">cadences</span></span> })</span>
         </dt>
         <dd>
-          
+          Constructor
+        </dd>
+        <dt id="User.fromSnapshot" class="callable">
+          <span class="name"><a href="classes_utils_user/User/User.fromSnapshot.html">User.fromSnapshot</a></span><span class="signature">(<span class="parameter" id="fromSnapshot-param-documentSnapshot"><span class="type-annotation">DocumentSnapshot</span> <span class="parameter-name">documentSnapshot</span></span>)</span>
+        </dt>
+        <dd>
+          The named constructor. <a href="classes_utils_user/User/User.fromSnapshot.html">[...]</a>
         </dd>
       </dl>
     </section>
@@ -92,6 +101,7 @@
         <dd>
           Get a formatted string of the name of the user.
 Get a formatted string of the age of the user.
+Returns a string indicating the users age.
                   <div class="features">read-only</div>
 </dd>
         <dt id="birthday" class="property">
@@ -100,6 +110,24 @@ Get a formatted string of the age of the user.
         </dt>
         <dd>
           The birthday of the user.
+                  <div class="features">read / write</div>
+</dd>
+        <dt id="cadences" class="property">
+          <span class="name"><a href="classes_utils_user/User/cadences.html">cadences</a></span>
+          <span class="signature">&#8596; List<span class="signature">&lt;<wbr><span class="type-parameter">num</span>&gt;</span></span>         
+        </dt>
+        <dd>
+          List (length 10) of cadences per HR zone, per sport (first five are running zones, second five are cycling zones)
+                  <div class="features">read / write</div>
+</dd>
+        <dt id="condition" class="property">
+          <span class="name"><a href="classes_utils_user/User/condition.html">condition</a></span>
+          <span class="signature">&#8596; num</span>         
+        </dt>
+        <dd>
+          The weight of the user in kg.
+The length of the user in m.
+The condition of the user.
                   <div class="features">read / write</div>
 </dd>
         <dt id="email" class="property">
@@ -158,27 +186,22 @@ Get a formatted string of the age of the user.
           Get a formatted string of the maximum heart rate of the user.
                   <div class="features">read-only</div>
 </dd>
-        <dt id="meanHeartRate" class="property">
-          <span class="name"><a href="classes_utils_user/User/meanHeartRate.html">meanHeartRate</a></span>
+        <dt id="minHeartRate" class="property">
+          <span class="name"><a href="classes_utils_user/User/minHeartRate.html">minHeartRate</a></span>
           <span class="signature">&#8596; num</span>         
         </dt>
         <dd>
-          The weight of the user in kg.
-The length of the user in m.
-The condition of the user.
-The minimum heart rate of the user.
-The mean heart rate of the user.
+          The min heart rate of the user.
                   <div class="features">read / write</div>
 </dd>
-        <dt id="meanHeartRateString" class="property">
-          <span class="name"><a href="classes_utils_user/User/meanHeartRateString.html">meanHeartRateString</a></span>
+        <dt id="minHeartRateString" class="property">
+          <span class="name"><a href="classes_utils_user/User/minHeartRateString.html">minHeartRateString</a></span>
           <span class="signature">&#8594; String</span>         
         </dt>
         <dd>
           Get a formatted string of the weight of the user.
 Get a formatted string of the condition of the user.
-Get a formatted string of the minimum heart rate of the user.
-Get a formatted string of the mean heart rate of the user.
+Get a formatted string of the min heart rate of the user.
                   <div class="features">read-only</div>
 </dd>
         <dt id="sex" class="property">
@@ -226,9 +249,27 @@ The username of the user.
       </dl>
     </section>
 
-    <section class="summary offset-anchor inherited" id="instance-methods">
+    <section class="summary offset-anchor" id="instance-methods">
       <h2>Methods</h2>
       <dl class="callables">
+        <dt id="updateCadences" class="callable">
+          <span class="name"><a href="classes_utils_user/User/updateCadences.html">updateCadences</a></span><span class="signature">(<wbr><span class="parameter" id="updateCadences-param-cadence"><span class="type-annotation">num</span> <span class="parameter-name">cadence</span>, </span> <span class="parameter" id="updateCadences-param-sport"><span class="type-annotation"><a href="enums_sport/Sport-class.html">Sport</a></span> <span class="parameter-name">sport</span></span>)
+            <span class="returntype parameter">&#8594; void</span>
+          </span>
+                  </dt>
+        <dd>
+          Updates cadences with <code>cadence</code> for a specific <code>sport</code>
+                  
+</dd>
+        <dt id="writeToDatabase" class="callable">
+          <span class="name"><a href="classes_utils_user/User/writeToDatabase.html">writeToDatabase</a></span><span class="signature">(<wbr>)
+            <span class="returntype parameter">&#8594; void</span>
+          </span>
+                  </dt>
+        <dd>
+          Writes to database
+                  
+</dd>
         <dt id="noSuchMethod" class="callable inherited">
           <span class="name"><a href="classes_utils_user/User/noSuchMethod.html">noSuchMethod</a></span><span class="signature">(<wbr><span class="parameter" id="noSuchMethod-param-invocation"><span class="type-annotation">Invocation</span> <span class="parameter-name">invocation</span></span>)
             <span class="returntype parameter">&#8594; dynamic</span>
@@ -274,12 +315,15 @@ The username of the user.
     <ol>
       <li class="section-title"><a href="classes_utils_user/User-class.html#constructors">Constructors</a></li>
       <li><a href="classes_utils_user/User/User.html">User</a></li>
+      <li><a href="classes_utils_user/User/User.fromSnapshot.html">fromSnapshot</a></li>
     
       <li class="section-title">
         <a href="classes_utils_user/User-class.html#instance-properties">Properties</a>
       </li>
       <li><a href="classes_utils_user/User/ageString.html">ageString</a></li>
       <li><a href="classes_utils_user/User/birthday.html">birthday</a></li>
+      <li><a href="classes_utils_user/User/cadences.html">cadences</a></li>
+      <li><a href="classes_utils_user/User/condition.html">condition</a></li>
       <li><a href="classes_utils_user/User/email.html">email</a></li>
       <li><a href="classes_utils_user/User/id.html">id</a></li>
       <li><a href="classes_utils_user/User/isFemale.html">isFemale</a></li>
@@ -287,15 +331,17 @@ The username of the user.
       <li><a href="classes_utils_user/User/isOther.html">isOther</a></li>
       <li><a href="classes_utils_user/User/maxHeartRate.html">maxHeartRate</a></li>
       <li><a href="classes_utils_user/User/maxHeartRateString.html">maxHeartRateString</a></li>
-      <li><a href="classes_utils_user/User/meanHeartRate.html">meanHeartRate</a></li>
-      <li><a href="classes_utils_user/User/meanHeartRateString.html">meanHeartRateString</a></li>
+      <li><a href="classes_utils_user/User/minHeartRate.html">minHeartRate</a></li>
+      <li><a href="classes_utils_user/User/minHeartRateString.html">minHeartRateString</a></li>
       <li><a href="classes_utils_user/User/sex.html">sex</a></li>
       <li><a href="classes_utils_user/User/sexString.html">sexString</a></li>
       <li><a href="classes_utils_user/User/username.html">username</a></li>
       <li class="inherited"><a href="classes_utils_user/User/hashCode.html">hashCode</a></li>
       <li class="inherited"><a href="classes_utils_user/User/runtimeType.html">runtimeType</a></li>
     
-      <li class="section-title inherited"><a href="classes_utils_user/User-class.html#instance-methods">Methods</a></li>
+      <li class="section-title"><a href="classes_utils_user/User-class.html#instance-methods">Methods</a></li>
+      <li><a href="classes_utils_user/User/updateCadences.html">updateCadences</a></li>
+      <li><a href="classes_utils_user/User/writeToDatabase.html">writeToDatabase</a></li>
       <li class="inherited"><a href="classes_utils_user/User/noSuchMethod.html">noSuchMethod</a></li>
       <li class="inherited"><a href="classes_utils_user/User/toString.html">toString</a></li>
     
@@ -311,7 +357,7 @@ The username of the user.
 
 <footer>
   <span class="no-break">
-    pace_your_pulse 0.6+13
+    pace_your_pulse 0.7+17
   </span>
 
   

@@ -86,19 +86,21 @@
       
     </section>
     <section class="desc markdown">
-      <p>This function converts an input file by cutting it into 2 halves around
-startTime. The first part remains the same, but the speed of the second part
-is changes according to speedFactor. The files are concatenated and
-written to outputFile.</p>
+      <p>Converts an input file by cutting it into 2 halves around
+<code>startTime</code> . The first part remains the same, but the speed of the second part
+is changes according to <code>speedFactor</code>. The files are concatenated and
+written to <code>outputFile</code>.</p>
     </section>
     
     <section class="summary source-code" id="source">
       <h2><span>Implementation</span></h2>
       <pre class="language-dart"><code class="language-dart">void cutAndChangeSpeed(String inputFile, Duration startTime,
     double speedFactor, String outputFile) async {
-  Directory tempDir = await getTemporaryDirectory();
-  File tempFile1 = File(&#39;${tempDir.path}&#47;part-1.wav&#39;);
-  File tempFile2 = File(&#39;${tempDir.path}&#47;part-2.wav&#39;);
+  &#47;&#47;Directory tempDir = await getTemporaryDirectory();
+  &#47;&#47;File tempFile1 = File(&#39;${tempDir.path}&#47;part-1.wav&#39;);
+  &#47;&#47;File tempFile2 = File(&#39;${tempDir.path}&#47;part-2.wav&#39;);
+  File tempFile1 = File(&#39;${Globals.tempDir.path}&#47;part-1.wav&#39;);
+  File tempFile2 = File(&#39;${Globals.tempDir.path}&#47;part-2.wav&#39;);
 
   convert(
       inputFile, 0, startTime.inMilliseconds * 0.001, 1.0, tempFile1.path);
@@ -111,7 +113,8 @@ written to outputFile.</p>
     &quot;-safe&quot;,
     &quot;0&quot;,
     &quot;-i&quot;,
-    &quot;&lt;(for f in ${tempDir.path}&#47;part-*.wav; do echo \&quot;file \&#39;\$PWD\&#47;\$f\&#39;\&quot;; done)&quot;,
+    &#47;&#47;&quot;&lt;(for f in ${tempDir.path}&#47;part-*.wav; do echo \&quot;file \&#39;\$PWD\&#47;\$f\&#39;\&quot;; done)&quot;,
+    &quot;&lt;(for f in ${Globals.tempDir.path}&#47;part-*.wav; do echo \&quot;file \&#39;\$PWD\&#47;\$f\&#39;\&quot;; done)&quot;,
     &quot;-c&quot;,
     &quot;copy&quot;,
     outputFile
@@ -129,7 +132,7 @@ written to outputFile.</p>
 
 <footer>
   <span class="no-break">
-    pace_your_pulse 0.6+13
+    pace_your_pulse 0.7+17
   </span>
 
   

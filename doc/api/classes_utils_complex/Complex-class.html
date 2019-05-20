@@ -66,6 +66,9 @@
   <div id="dartdoc-main-content" class="col-xs-12 col-sm-9 col-md-8 main-content">
       <div><h1>Complex class </h1></div>
 
+    <section class="desc markdown">
+      <p>Class for complex number</p>
+    </section>
     
 
     <section class="summary offset-anchor" id="constructors">
@@ -73,10 +76,10 @@
 
       <dl class="constructor-summary-list">
         <dt id="Complex" class="callable">
-          <span class="name"><a href="classes_utils_complex/Complex/Complex.html">Complex</a></span><span class="signature">(<span class="parameter" id="-param-real"><span class="type-annotation">num</span> <span class="parameter-name">real</span>, </span> <span class="parameter" id="-param-complex"><span class="type-annotation">num</span> <span class="parameter-name">complex</span></span>)</span>
+          <span class="name"><a href="classes_utils_complex/Complex/Complex.html">Complex</a></span><span class="signature">(<span class="parameter" id="-param-real"><span class="type-annotation">num</span> <span class="parameter-name">real</span>, [</span> <span class="parameter" id="-param-complex"><span class="type-annotation">num</span> <span class="parameter-name">complex</span> = <span class="default-value">0</span></span> ])</span>
         </dt>
         <dd>
-          
+          Constructor
         </dd>
       </dl>
     </section>
@@ -90,7 +93,7 @@
           <span class="signature">&#8596; num</span>         
         </dt>
         <dd>
-          
+          The complex part
                   <div class="features">read / write</div>
 </dd>
         <dt id="real" class="property">
@@ -98,7 +101,7 @@
           <span class="signature">&#8596; num</span>         
         </dt>
         <dd>
-          
+          The real part
                   <div class="features">read / write</div>
 </dd>
         <dt id="hashCode" class="property inherited">
@@ -123,13 +126,22 @@
     <section class="summary offset-anchor" id="instance-methods">
       <h2>Methods</h2>
       <dl class="callables">
+        <dt id="conjugate" class="callable">
+          <span class="name"><a href="classes_utils_complex/Complex/conjugate.html">conjugate</a></span><span class="signature">(<wbr>)
+            <span class="returntype parameter">&#8594; void</span>
+          </span>
+                  </dt>
+        <dd>
+          Converts complex number to its conjugate
+                  
+</dd>
         <dt id="toString" class="callable">
           <span class="name"><a href="classes_utils_complex/Complex/toString.html">toString</a></span><span class="signature">(<wbr>)
             <span class="returntype parameter">&#8594; String</span>
           </span>
                   </dt>
         <dd>
-          Returns a string representation of this object.
+          Converts complex number to string
                   
 </dd>
         <dt id="noSuchMethod" class="callable inherited">
@@ -147,13 +159,22 @@
     <section class="summary offset-anchor" id="operators">
       <h2>Operators</h2>
       <dl class="callables">
+        <dt id="operator *" class="callable">
+          <span class="name"><a href="classes_utils_complex/Complex/operator_multiply.html">operator *</a></span><span class="signature">(<wbr><span class="parameter" id="*-param-other"><span class="type-annotation"><a href="classes_utils_complex/Complex-class.html">Complex</a></span> <span class="parameter-name">other</span></span>)
+            <span class="returntype parameter">&#8594; dynamic</span>
+          </span>
+                  </dt>
+        <dd>
+          Multiplication operator
+                  
+</dd>
         <dt id="operator +" class="callable">
           <span class="name"><a href="classes_utils_complex/Complex/operator_plus.html">operator +</a></span><span class="signature">(<wbr><span class="parameter" id="+-param-other"><span class="type-annotation"><a href="classes_utils_complex/Complex-class.html">Complex</a></span> <span class="parameter-name">other</span></span>)
             <span class="returntype parameter">&#8594; dynamic</span>
           </span>
                   </dt>
         <dd>
-          
+          Addition operator
                   
 </dd>
         <dt id="operator -" class="callable">
@@ -162,7 +183,7 @@
           </span>
                   </dt>
         <dd>
-          
+          Subtraction operator
                   
 </dd>
         <dt id="operator ==" class="callable inherited">
@@ -196,10 +217,12 @@
       <li class="inherited"><a href="classes_utils_complex/Complex/runtimeType.html">runtimeType</a></li>
     
       <li class="section-title"><a href="classes_utils_complex/Complex-class.html#instance-methods">Methods</a></li>
+      <li><a href="classes_utils_complex/Complex/conjugate.html">conjugate</a></li>
       <li><a href="classes_utils_complex/Complex/toString.html">toString</a></li>
       <li class="inherited"><a href="classes_utils_complex/Complex/noSuchMethod.html">noSuchMethod</a></li>
     
       <li class="section-title"><a href="classes_utils_complex/Complex-class.html#operators">Operators</a></li>
+      <li><a href="classes_utils_complex/Complex/operator_multiply.html">operator *</a></li>
       <li><a href="classes_utils_complex/Complex/operator_plus.html">operator +</a></li>
       <li><a href="classes_utils_complex/Complex/operator_minus.html">operator -</a></li>
       <li class="inherited"><a href="classes_utils_complex/Complex/operator_equals.html">operator ==</a></li>
@@ -213,7 +236,7 @@
 
 <footer>
   <span class="no-break">
-    pace_your_pulse 0.6+13
+    pace_your_pulse 0.7+17
   </span>
 
   

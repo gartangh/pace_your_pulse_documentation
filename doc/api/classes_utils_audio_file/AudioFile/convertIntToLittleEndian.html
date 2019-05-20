@@ -92,9 +92,9 @@
       <div><h1>convertIntToLittleEndian method</h1></div>
 
     <section class="multi-line-signature">
-      <span class="returntype">List<span class="signature">&lt;<wbr><span class="type-parameter">num</span>&gt;</span></span>
+      <span class="returntype">List<span class="signature">&lt;<wbr><span class="type-parameter">int</span>&gt;</span></span>
             <span class="name ">convertIntToLittleEndian</span>
-(<wbr><span class="parameter" id="convertIntToLittleEndian-param-input"><span class="type-annotation">int</span> <span class="parameter-name">input</span>, </span> <span class="parameter" id="convertIntToLittleEndian-param-bytes"><span class="type-annotation">num</span> <span class="parameter-name">bytes</span></span>)
+(<wbr><span class="parameter" id="convertIntToLittleEndian-param-input"><span class="type-annotation">int</span> <span class="parameter-name">input</span>, </span> <span class="parameter" id="convertIntToLittleEndian-param-bytes"><span class="type-annotation">int</span> <span class="parameter-name">bytes</span></span>)
       
     </section>
     <section class="desc markdown">
@@ -104,8 +104,8 @@ output: List of integers in that are stored Little Endian</p>
     
     <section class="summary source-code" id="source">
       <h2><span>Implementation</span></h2>
-      <pre class="language-dart"><code class="language-dart">List&lt;num&gt; convertIntToLittleEndian(int input, num bytes) {
-  List&lt;num&gt; output = List&lt;num&gt;(bytes);
+      <pre class="language-dart"><code class="language-dart">List&lt;int&gt; convertIntToLittleEndian(int input, int bytes) {
+  List&lt;int&gt; output = List&lt;int&gt;(bytes);
 
   for (int i = 0; i &lt; bytes; i++) {
     output[i] = ((input &gt;&gt; 8 * i) &amp; 0xFF).toInt();
@@ -124,7 +124,7 @@ output: List of integers in that are stored Little Endian</p>
 
 <footer>
   <span class="no-break">
-    pace_your_pulse 0.6+13
+    pace_your_pulse 0.7+17
   </span>
 
   

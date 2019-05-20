@@ -55,12 +55,15 @@
     <ol>
       <li class="section-title"><a href="classes_utils_user/User-class.html#constructors">Constructors</a></li>
       <li><a href="classes_utils_user/User/User.html">User</a></li>
+      <li><a href="classes_utils_user/User/User.fromSnapshot.html">fromSnapshot</a></li>
     
       <li class="section-title">
         <a href="classes_utils_user/User-class.html#instance-properties">Properties</a>
       </li>
       <li><a href="classes_utils_user/User/ageString.html">ageString</a></li>
       <li><a href="classes_utils_user/User/birthday.html">birthday</a></li>
+      <li><a href="classes_utils_user/User/cadences.html">cadences</a></li>
+      <li><a href="classes_utils_user/User/condition.html">condition</a></li>
       <li><a href="classes_utils_user/User/email.html">email</a></li>
       <li><a href="classes_utils_user/User/id.html">id</a></li>
       <li><a href="classes_utils_user/User/isFemale.html">isFemale</a></li>
@@ -68,15 +71,17 @@
       <li><a href="classes_utils_user/User/isOther.html">isOther</a></li>
       <li><a href="classes_utils_user/User/maxHeartRate.html">maxHeartRate</a></li>
       <li><a href="classes_utils_user/User/maxHeartRateString.html">maxHeartRateString</a></li>
-      <li><a href="classes_utils_user/User/meanHeartRate.html">meanHeartRate</a></li>
-      <li><a href="classes_utils_user/User/meanHeartRateString.html">meanHeartRateString</a></li>
+      <li><a href="classes_utils_user/User/minHeartRate.html">minHeartRate</a></li>
+      <li><a href="classes_utils_user/User/minHeartRateString.html">minHeartRateString</a></li>
       <li><a href="classes_utils_user/User/sex.html">sex</a></li>
       <li><a href="classes_utils_user/User/sexString.html">sexString</a></li>
       <li><a href="classes_utils_user/User/username.html">username</a></li>
       <li class="inherited"><a href="classes_utils_user/User/hashCode.html">hashCode</a></li>
       <li class="inherited"><a href="classes_utils_user/User/runtimeType.html">runtimeType</a></li>
     
-      <li class="section-title inherited"><a href="classes_utils_user/User-class.html#instance-methods">Methods</a></li>
+      <li class="section-title"><a href="classes_utils_user/User-class.html#instance-methods">Methods</a></li>
+      <li><a href="classes_utils_user/User/updateCadences.html">updateCadences</a></li>
+      <li><a href="classes_utils_user/User/writeToDatabase.html">writeToDatabase</a></li>
       <li class="inherited"><a href="classes_utils_user/User/noSuchMethod.html">noSuchMethod</a></li>
       <li class="inherited"><a href="classes_utils_user/User/toString.html">toString</a></li>
     
@@ -93,21 +98,26 @@
 
     <section class="multi-line-signature">
       
-      <span class="name ">User</span>(<wbr><span class="parameter" id="-param-_email"><span class="type-annotation">String</span> <span class="parameter-name">_email</span>, </span> <span class="parameter" id="-param-_id"><span class="type-annotation">String</span> <span class="parameter-name">_id</span>, {</span> <span class="parameter" id="-param-username"><span class="type-annotation">String</span> <span class="parameter-name">username</span>: <span class="default-value">'Unknown'</span>, </span> <span class="parameter" id="-param-birthday"><span class="type-annotation">DateTime</span> <span class="parameter-name">birthday</span>, </span> <span class="parameter" id="-param-sex"><span class="type-annotation"><a href="enums_sex/Sex-class.html">Sex</a></span> <span class="parameter-name">sex</span>, </span> <span class="parameter" id="-param-meanHeartRate"><span class="type-annotation">num</span> <span class="parameter-name">meanHeartRate</span>, </span> <span class="parameter" id="-param-maxHeartRate"><span class="type-annotation">num</span> <span class="parameter-name">maxHeartRate</span></span> })
+      <span class="name ">User</span>(<wbr><span class="parameter" id="-param-_email"><span class="type-annotation">String</span> <span class="parameter-name">_email</span>, </span> <span class="parameter" id="-param-_id"><span class="type-annotation">String</span> <span class="parameter-name">_id</span>, {</span> <span class="parameter" id="-param-username"><span class="type-annotation">String</span> <span class="parameter-name">username</span>: <span class="default-value">'Unknown'</span>, </span> <span class="parameter" id="-param-birthday"><span class="type-annotation">DateTime</span> <span class="parameter-name">birthday</span>, </span> <span class="parameter" id="-param-sex"><span class="type-annotation"><a href="enums_sex/Sex-class.html">Sex</a></span> <span class="parameter-name">sex</span>, </span> <span class="parameter" id="-param-minHeartRate"><span class="type-annotation">num</span> <span class="parameter-name">minHeartRate</span>, </span> <span class="parameter" id="-param-maxHeartRate"><span class="type-annotation">num</span> <span class="parameter-name">maxHeartRate</span>, </span> <span class="parameter" id="-param-condition"><span class="type-annotation">num</span> <span class="parameter-name">condition</span>, </span> <span class="parameter" id="-param-cadences"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">num</span>&gt;</span></span> <span class="parameter-name">cadences</span></span> })
     </section>
 
+    <section class="desc markdown">
+      <p>Constructor</p>
+    </section>
     
     <section class="summary source-code" id="source">
       <h2><span>Implementation</span></h2>
       <pre class="language-dart"><code class="language-dart">User(
-  this._email,
-  this._id, {
-  this.username: &#39;Unknown&#39;,
-  this.birthday,
-  this.sex,
-  this.meanHeartRate,
-  this.maxHeartRate,
-});</code></pre>
+    this._email,
+    this._id, {
+      this.username: &#39;Unknown&#39;,
+      this.birthday,
+      this.sex,
+      this.minHeartRate,
+      this.maxHeartRate,
+      this.condition,
+      this.cadences,
+    });</code></pre>
     </section>
 
   </div> <!-- /.main-content -->
@@ -119,7 +129,7 @@
 
 <footer>
   <span class="no-break">
-    pace_your_pulse 0.6+13
+    pace_your_pulse 0.7+17
   </span>
 
   

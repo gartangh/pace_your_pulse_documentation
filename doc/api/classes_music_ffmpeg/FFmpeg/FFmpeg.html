@@ -84,6 +84,9 @@
       <span class="name ">FFmpeg</span>(<wbr>)
     </section>
 
+    <section class="desc markdown">
+      <p>The singleton constructor</p>
+    </section>
     
     <section class="summary source-code" id="source">
       <h2><span>Implementation</span></h2>
@@ -91,8 +94,8 @@
   try {
     if(Platform.isAndroid || Platform.isIOS)
       _flutterFFmpeg = new FlutterFFmpeg();
-  } catch (error) {
-    print(error);
+  } catch (e) {
+    print(e);
   }
 }</code></pre>
     </section>
@@ -106,7 +109,7 @@
 
 <footer>
   <span class="no-break">
-    pace_your_pulse 0.6+13
+    pace_your_pulse 0.7+17
   </span>
 
   

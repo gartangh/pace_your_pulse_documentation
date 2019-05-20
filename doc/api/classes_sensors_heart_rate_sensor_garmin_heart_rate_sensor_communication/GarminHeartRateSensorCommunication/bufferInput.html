@@ -64,7 +64,8 @@
       <li class="inherited"><a href="classes_sensors_sensor_communication/SensorCommunication/buffer.html">buffer</a></li>
       <li class="inherited"><a href="classes_sensors_sensor_communication/SensorCommunication/bufferCopy.html">bufferCopy</a></li>
       <li class="inherited"><a href="classes_sensors_sensor_communication/SensorCommunication/hashCode.html">hashCode</a></li>
-      <li class="inherited"><a href="classes_sensors_heart_rate_sensor_heart_rate_sensor_communication/HeartRateSensorCommunication/methodChannel.html">methodChannel</a></li>
+      <li class="inherited"><a href="classes_sensors_sensor_communication/SensorCommunication/isConnected.html">isConnected</a></li>
+      <li class="inherited"><a href="classes_sensors_sensor_communication/SensorCommunication/methodChannel.html">methodChannel</a></li>
       <li class="inherited"><a href="classes_sensors_sensor_communication/SensorCommunication/runtimeType.html">runtimeType</a></li>
       <li class="inherited"><a href="classes_sensors_sensor_communication/SensorCommunication/sensor.html">sensor</a></li>
       <li class="inherited"><a href="classes_sensors_sensor_communication/SensorCommunication/timeStamps.html">timeStamps</a></li>
@@ -73,14 +74,13 @@
       <li><a href="classes_sensors_heart_rate_sensor_garmin_heart_rate_sensor_communication/GarminHeartRateSensorCommunication/bufferInput.html">bufferInput</a></li>
       <li><a href="classes_sensors_heart_rate_sensor_garmin_heart_rate_sensor_communication/GarminHeartRateSensorCommunication/connect.html">connect</a></li>
       <li><a href="classes_sensors_heart_rate_sensor_garmin_heart_rate_sensor_communication/GarminHeartRateSensorCommunication/disconnect.html">disconnect</a></li>
+      <li><a href="classes_sensors_heart_rate_sensor_garmin_heart_rate_sensor_communication/GarminHeartRateSensorCommunication/init.html">init</a></li>
       <li><a href="classes_sensors_heart_rate_sensor_garmin_heart_rate_sensor_communication/GarminHeartRateSensorCommunication/pause.html">pause</a></li>
       <li><a href="classes_sensors_heart_rate_sensor_garmin_heart_rate_sensor_communication/GarminHeartRateSensorCommunication/pullData.html">pullData</a></li>
       <li><a href="classes_sensors_heart_rate_sensor_garmin_heart_rate_sensor_communication/GarminHeartRateSensorCommunication/resume.html">resume</a></li>
       <li><a href="classes_sensors_heart_rate_sensor_garmin_heart_rate_sensor_communication/GarminHeartRateSensorCommunication/start.html">start</a></li>
-      <li><a href="classes_sensors_heart_rate_sensor_garmin_heart_rate_sensor_communication/GarminHeartRateSensorCommunication/startPublishing.html">startPublishing</a></li>
       <li><a href="classes_sensors_heart_rate_sensor_garmin_heart_rate_sensor_communication/GarminHeartRateSensorCommunication/stop.html">stop</a></li>
-      <li><a href="classes_sensors_heart_rate_sensor_garmin_heart_rate_sensor_communication/GarminHeartRateSensorCommunication/stopPublishing.html">stopPublishing</a></li>
-      <li class="inherited"><a href="classes_sensors_sensor_communication/SensorCommunication/init.html">init</a></li>
+      <li><a href="classes_sensors_heart_rate_sensor_garmin_heart_rate_sensor_communication/GarminHeartRateSensorCommunication/updateGui.html">updateGui</a></li>
       <li class="inherited"><a href="classes_sensors_sensor_communication/SensorCommunication/noSuchMethod.html">noSuchMethod</a></li>
       <li class="inherited"><a href="classes_sensors_sensor_communication/SensorCommunication/toString.html">toString</a></li>
     
@@ -108,9 +108,9 @@
     <section class="summary source-code" id="source">
       <h2><span>Implementation</span></h2>
       <pre class="language-dart"><code class="language-dart">List&lt;List&lt;num&gt;&gt; bufferInput(List&lt;List&lt;num&gt;&gt; inp) {
-  List&lt;List&lt;num&gt;&gt; buffered = new List();
+  List&lt;List&lt;num&gt;&gt; buffered = List();
   for (List l in inp) {
-    List&lt;num&gt; filtered = new List();
+    List&lt;num&gt; filtered = List();
     for (int i = 0; i &lt; l.length; i++) {
       int e = l.elementAt(i);
       if (e &gt; 40 &amp;&amp; e &lt; 240) filtered.add(e);
@@ -130,7 +130,7 @@
 
 <footer>
   <span class="no-break">
-    pace_your_pulse 0.6+13
+    pace_your_pulse 0.7+17
   </span>
 
   

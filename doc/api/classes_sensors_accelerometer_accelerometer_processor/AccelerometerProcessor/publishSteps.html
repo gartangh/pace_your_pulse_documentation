@@ -59,9 +59,7 @@
       </li>
       <li><a href="classes_sensors_accelerometer_accelerometer_processor/AccelerometerProcessor/average.html">average</a></li>
       <li><a href="classes_sensors_accelerometer_accelerometer_processor/AccelerometerProcessor/eventSent.html">eventSent</a></li>
-      <li><a href="classes_sensors_accelerometer_accelerometer_processor/AccelerometerProcessor/keepGoing.html">keepGoing</a></li>
       <li><a href="classes_sensors_accelerometer_accelerometer_processor/AccelerometerProcessor/nextStep.html">nextStep</a></li>
-      <li><a href="classes_sensors_accelerometer_accelerometer_processor/AccelerometerProcessor/predicted.html">predicted</a></li>
       <li><a href="classes_sensors_accelerometer_accelerometer_processor/AccelerometerProcessor/previousSteps.html">previousSteps</a></li>
       <li><a href="classes_sensors_accelerometer_accelerometer_processor/AccelerometerProcessor/removedData.html">removedData</a></li>
       <li><a href="classes_sensors_accelerometer_accelerometer_processor/AccelerometerProcessor/updated.html">updated</a></li>
@@ -105,30 +103,33 @@
     <section class="summary source-code" id="source">
       <h2><span>Implementation</span></h2>
       <pre class="language-dart"><code class="language-dart">void publishSteps() async {
-  while (true) {
-    await _lock.acquire();
-    if (_keepGoing) {
+  if (sensor.state == ComponentState.STARTED) {
+    if (previousSteps.isNotEmpty) {
+      if (updated &amp;&amp; previousSteps.length &gt; 1) {
+        &#47;&#47; Average of 20 last timestamps, maybe add weighted average later
+        average = previousSteps.last.difference(previousSteps[0]) ~&#47;
+            previousSteps.length;
+      }
+
+      updated = false;
+
+      &#47;&#47; Publish actual detected steps instead of predicted ones
+      while (previousSteps.isNotEmpty &amp;&amp;
+          (DateTime.now()
+                  .isAfter(previousSteps[0].add(Duration(seconds: 15))) ||
+              previousSteps[0].isAfter(DateTime.now()))) {
+        previousSteps.removeAt(0);
+      }
       if (previousSteps.isNotEmpty) {
-        if (updated &amp;&amp; previousSteps.length &gt; 1)
-          &#47;&#47; Average of 20 last timestamps, maybe add weighted average later
-          average = previousSteps.last.difference(previousSteps[0]) ~&#47;
-              previousSteps.length;
-
-        if (predicted == null || updated)
-          predicted = previousSteps.last.add(average);
-        else
-          predicted = predicted.add(average);
-
-        updated = false;
-
-        if (!DateTime.now().isAfter(predicted))
-          eventBroker.publish(NextStepEvent(predicted));
+        print(&quot;STEP:          &quot; + previousSteps[0].toString());
+        Globals.eventBroker?.publish(NextStepEvent(previousSteps[0]));
+        previousSteps.removeAt(0);
       }
     }
-
-    await _lock.release();
-    await Thread.sleep(average.inMilliseconds);
   }
+  &#47;&#47; If the sensor state is different from the stopped state than we want to keep getting new steps.
+  if (sensor.state != ComponentState.STOPPED)
+    _publishingThread = Timer(average, () =&gt; publishSteps());
 }</code></pre>
     </section>
 
@@ -141,7 +142,7 @@
 
 <footer>
   <span class="no-break">
-    pace_your_pulse 0.6+13
+    pace_your_pulse 0.7+17
   </span>
 
   

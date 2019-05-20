@@ -64,7 +64,8 @@
       <li class="inherited"><a href="classes_sensors_sensor_communication/SensorCommunication/buffer.html">buffer</a></li>
       <li class="inherited"><a href="classes_sensors_sensor_communication/SensorCommunication/bufferCopy.html">bufferCopy</a></li>
       <li class="inherited"><a href="classes_sensors_sensor_communication/SensorCommunication/hashCode.html">hashCode</a></li>
-      <li class="inherited"><a href="classes_sensors_heart_rate_sensor_heart_rate_sensor_communication/HeartRateSensorCommunication/methodChannel.html">methodChannel</a></li>
+      <li class="inherited"><a href="classes_sensors_sensor_communication/SensorCommunication/isConnected.html">isConnected</a></li>
+      <li class="inherited"><a href="classes_sensors_sensor_communication/SensorCommunication/methodChannel.html">methodChannel</a></li>
       <li class="inherited"><a href="classes_sensors_sensor_communication/SensorCommunication/runtimeType.html">runtimeType</a></li>
       <li class="inherited"><a href="classes_sensors_sensor_communication/SensorCommunication/sensor.html">sensor</a></li>
       <li class="inherited"><a href="classes_sensors_sensor_communication/SensorCommunication/timeStamps.html">timeStamps</a></li>
@@ -73,14 +74,13 @@
       <li><a href="classes_sensors_heart_rate_sensor_fitbit_heart_rate_sensor_communication/FitbitHeartRateSensorCommunication/bufferInput.html">bufferInput</a></li>
       <li><a href="classes_sensors_heart_rate_sensor_fitbit_heart_rate_sensor_communication/FitbitHeartRateSensorCommunication/connect.html">connect</a></li>
       <li><a href="classes_sensors_heart_rate_sensor_fitbit_heart_rate_sensor_communication/FitbitHeartRateSensorCommunication/disconnect.html">disconnect</a></li>
+      <li><a href="classes_sensors_heart_rate_sensor_fitbit_heart_rate_sensor_communication/FitbitHeartRateSensorCommunication/init.html">init</a></li>
       <li><a href="classes_sensors_heart_rate_sensor_fitbit_heart_rate_sensor_communication/FitbitHeartRateSensorCommunication/pause.html">pause</a></li>
       <li><a href="classes_sensors_heart_rate_sensor_fitbit_heart_rate_sensor_communication/FitbitHeartRateSensorCommunication/pullData.html">pullData</a></li>
       <li><a href="classes_sensors_heart_rate_sensor_fitbit_heart_rate_sensor_communication/FitbitHeartRateSensorCommunication/resume.html">resume</a></li>
       <li><a href="classes_sensors_heart_rate_sensor_fitbit_heart_rate_sensor_communication/FitbitHeartRateSensorCommunication/start.html">start</a></li>
-      <li><a href="classes_sensors_heart_rate_sensor_fitbit_heart_rate_sensor_communication/FitbitHeartRateSensorCommunication/startPublishing.html">startPublishing</a></li>
       <li><a href="classes_sensors_heart_rate_sensor_fitbit_heart_rate_sensor_communication/FitbitHeartRateSensorCommunication/stop.html">stop</a></li>
-      <li><a href="classes_sensors_heart_rate_sensor_fitbit_heart_rate_sensor_communication/FitbitHeartRateSensorCommunication/stopPublishing.html">stopPublishing</a></li>
-      <li class="inherited"><a href="classes_sensors_sensor_communication/SensorCommunication/init.html">init</a></li>
+      <li><a href="classes_sensors_heart_rate_sensor_fitbit_heart_rate_sensor_communication/FitbitHeartRateSensorCommunication/updateGui.html">updateGui</a></li>
       <li class="inherited"><a href="classes_sensors_sensor_communication/SensorCommunication/noSuchMethod.html">noSuchMethod</a></li>
       <li class="inherited"><a href="classes_sensors_sensor_communication/SensorCommunication/toString.html">toString</a></li>
     
@@ -101,7 +101,7 @@
           <li>@override</li>
         </ol>
       </div>
-      <span class="returntype">List<span class="signature">&lt;<wbr><span class="type-parameter">double</span>&gt;</span></span>
+      <span class="returntype">List<span class="signature">&lt;<wbr><span class="type-parameter">num</span>&gt;</span></span>
             <span class="name ">pullData</span>
 (<wbr>)
       <div class="features">override</div>
@@ -113,8 +113,8 @@
     <section class="summary source-code" id="source">
       <h2><span>Implementation</span></h2>
       <pre class="language-dart"><code class="language-dart">@override
-List&lt;double&gt; pullData() {
-  List&lt;double&gt; data = buffer;
+List&lt;num&gt; pullData() {
+  List&lt;num&gt; data = buffer;
   buffer.clear();
   return data;
 }</code></pre>
@@ -129,7 +129,7 @@ List&lt;double&gt; pullData() {
 
 <footer>
   <span class="no-break">
-    pace_your_pulse 0.6+13
+    pace_your_pulse 0.7+17
   </span>
 
   

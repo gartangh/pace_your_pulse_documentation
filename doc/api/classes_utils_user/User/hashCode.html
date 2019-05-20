@@ -55,12 +55,15 @@
     <ol>
       <li class="section-title"><a href="classes_utils_user/User-class.html#constructors">Constructors</a></li>
       <li><a href="classes_utils_user/User/User.html">User</a></li>
+      <li><a href="classes_utils_user/User/User.fromSnapshot.html">fromSnapshot</a></li>
     
       <li class="section-title">
         <a href="classes_utils_user/User-class.html#instance-properties">Properties</a>
       </li>
       <li><a href="classes_utils_user/User/ageString.html">ageString</a></li>
       <li><a href="classes_utils_user/User/birthday.html">birthday</a></li>
+      <li><a href="classes_utils_user/User/cadences.html">cadences</a></li>
+      <li><a href="classes_utils_user/User/condition.html">condition</a></li>
       <li><a href="classes_utils_user/User/email.html">email</a></li>
       <li><a href="classes_utils_user/User/id.html">id</a></li>
       <li><a href="classes_utils_user/User/isFemale.html">isFemale</a></li>
@@ -68,15 +71,17 @@
       <li><a href="classes_utils_user/User/isOther.html">isOther</a></li>
       <li><a href="classes_utils_user/User/maxHeartRate.html">maxHeartRate</a></li>
       <li><a href="classes_utils_user/User/maxHeartRateString.html">maxHeartRateString</a></li>
-      <li><a href="classes_utils_user/User/meanHeartRate.html">meanHeartRate</a></li>
-      <li><a href="classes_utils_user/User/meanHeartRateString.html">meanHeartRateString</a></li>
+      <li><a href="classes_utils_user/User/minHeartRate.html">minHeartRate</a></li>
+      <li><a href="classes_utils_user/User/minHeartRateString.html">minHeartRateString</a></li>
       <li><a href="classes_utils_user/User/sex.html">sex</a></li>
       <li><a href="classes_utils_user/User/sexString.html">sexString</a></li>
       <li><a href="classes_utils_user/User/username.html">username</a></li>
       <li class="inherited"><a href="classes_utils_user/User/hashCode.html">hashCode</a></li>
       <li class="inherited"><a href="classes_utils_user/User/runtimeType.html">runtimeType</a></li>
     
-      <li class="section-title inherited"><a href="classes_utils_user/User-class.html#instance-methods">Methods</a></li>
+      <li class="section-title"><a href="classes_utils_user/User-class.html#instance-methods">Methods</a></li>
+      <li><a href="classes_utils_user/User/updateCadences.html">updateCadences</a></li>
+      <li><a href="classes_utils_user/User/writeToDatabase.html">writeToDatabase</a></li>
       <li class="inherited"><a href="classes_utils_user/User/noSuchMethod.html">noSuchMethod</a></li>
       <li class="inherited"><a href="classes_utils_user/User/toString.html">toString</a></li>
     
@@ -103,15 +108,15 @@
                 <section class="desc markdown">
           <p>The hash code for this object.</p>
 <p>A hash code is a single integer which represents the state of the object
-that affects <a href="pages_full_workout_heart_rate_graph/WorkoutHeartRateGraphPage/operator_equals.html">operator ==</a> comparisons.</p>
+that affects <a href="pages_workout_heart_rate_graph/WorkoutHeartRateGraphPage/operator_equals.html">operator ==</a> comparisons.</p>
 <p>All objects have hash codes.
 The default hash code represents only the identity of the object,
-the same way as the default <a href="pages_full_workout_heart_rate_graph/WorkoutHeartRateGraphPage/operator_equals.html">operator ==</a> implementation only considers objects
+the same way as the default <a href="pages_workout_heart_rate_graph/WorkoutHeartRateGraphPage/operator_equals.html">operator ==</a> implementation only considers objects
 equal if they are identical (see <code>identityHashCode</code>).</p>
-<p>If <a href="pages_full_workout_heart_rate_graph/WorkoutHeartRateGraphPage/operator_equals.html">operator ==</a> is overridden to use the object state instead,
+<p>If <a href="pages_workout_heart_rate_graph/WorkoutHeartRateGraphPage/operator_equals.html">operator ==</a> is overridden to use the object state instead,
 the hash code must also be changed to represent that state.</p>
 <p>Hash codes must be the same for objects that are equal to each other
-according to <a href="pages_full_workout_heart_rate_graph/WorkoutHeartRateGraphPage/operator_equals.html">operator ==</a>.
+according to <a href="pages_workout_heart_rate_graph/WorkoutHeartRateGraphPage/operator_equals.html">operator ==</a>.
 The hash code of an object should only change if the object changes
 in a way that affects equality.
 There are no further requirements for the hash codes.
@@ -121,8 +126,8 @@ and there are no distribution guarantees.</p>
 it is even technically allowed that all instances have the same hash code,
 but if clashes happen too often, it may reduce the efficiency of hash-based
 data structures like <code>HashSet</code> or <code>HashMap</code>.</p>
-<p>If a subclass overrides <a href="pages_full_workout_heart_rate_graph/WorkoutHeartRateGraphPage/hashCode.html">hashCode</a>, it should override the
-<a href="pages_full_workout_heart_rate_graph/WorkoutHeartRateGraphPage/operator_equals.html">operator ==</a> operator as well to maintain consistency.</p>
+<p>If a subclass overrides <a href="pages_workout_heart_rate_graph/WorkoutHeartRateGraphPage/hashCode.html">hashCode</a>, it should override the
+<a href="pages_workout_heart_rate_graph/WorkoutHeartRateGraphPage/operator_equals.html">operator ==</a> operator as well to maintain consistency.</p>
         </section>
                 <section class="summary source-code" id="source">
           <h2><span>Implementation</span></h2>
@@ -139,7 +144,7 @@ data structures like <code>HashSet</code> or <code>HashMap</code>.</p>
 
 <footer>
   <span class="no-break">
-    pace_your_pulse 0.6+13
+    pace_your_pulse 0.7+17
   </span>
 
   

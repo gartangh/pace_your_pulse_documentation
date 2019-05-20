@@ -54,16 +54,23 @@
     <h5>MusicLibrary class</h5>
     <ol>
     
-      <li class="section-title inherited">
+      <li class="section-title">
         <a href="classes_music_music_library/MusicLibrary-class.html#instance-properties">Properties</a>
       </li>
+      <li><a href="classes_music_music_library/MusicLibrary/a.html">a</a></li>
+      <li><a href="classes_music_music_library/MusicLibrary/isolate.html">isolate</a></li>
+      <li><a href="classes_music_music_library/MusicLibrary/sendPrt.html">sendPrt</a></li>
       <li class="inherited"><a href="classes_music_music_library/MusicLibrary/hashCode.html">hashCode</a></li>
       <li class="inherited"><a href="classes_music_music_library/MusicLibrary/runtimeType.html">runtimeType</a></li>
     
       <li class="section-title"><a href="classes_music_music_library/MusicLibrary-class.html#instance-methods">Methods</a></li>
       <li><a href="classes_music_music_library/MusicLibrary/cacheSong.html">cacheSong</a></li>
+      <li><a href="classes_music_music_library/MusicLibrary/cacheSongAfterEvent.html">cacheSongAfterEvent</a></li>
       <li><a href="classes_music_music_library/MusicLibrary/getMusic.html">getMusic</a></li>
+      <li><a href="classes_music_music_library/MusicLibrary/getPlaylists.html">getPlaylists</a></li>
       <li><a href="classes_music_music_library/MusicLibrary/getSongBytes.html">getSongBytes</a></li>
+      <li><a href="classes_music_music_library/MusicLibrary/init.html">init</a></li>
+      <li><a href="classes_music_music_library/MusicLibrary/setPlaylist.html">setPlaylist</a></li>
       <li class="inherited"><a href="classes_music_music_library/MusicLibrary/noSuchMethod.html">noSuchMethod</a></li>
       <li class="inherited"><a href="classes_music_music_library/MusicLibrary/toString.html">toString</a></li>
     
@@ -73,6 +80,8 @@
       <li class="section-title"><a href="classes_music_music_library/MusicLibrary-class.html#static-properties">Static properties</a></li>
       <li><a href="classes_music_music_library/MusicLibrary/musicLibrary.html">musicLibrary</a></li>
     
+      <li class="section-title"><a href="classes_music_music_library/MusicLibrary-class.html#static-methods">Static methods</a></li>
+      <li><a href="classes_music_music_library/MusicLibrary/proceedCheck.html">proceedCheck</a></li>
     
     </ol>
   </div><!--/.sidebar-offcanvas-->
@@ -81,9 +90,9 @@
       <div><h1>cacheSong method</h1></div>
 
     <section class="multi-line-signature">
-      <span class="returntype">Future<span class="signature">&lt;<wbr><span class="type-parameter">String</span>&gt;</span></span>
+      <span class="returntype">void</span>
             <span class="name ">cacheSong</span>
-(<wbr><span class="parameter" id="cacheSong-param-path"><span class="type-annotation">String</span> <span class="parameter-name">path</span>, </span> <span class="parameter" id="cacheSong-param-resId"><span class="type-annotation">int</span> <span class="parameter-name">resId</span></span>)
+(<wbr><span class="parameter" id="cacheSong-param-f"><span class="type-annotation">Function</span> <span class="parameter-name">f</span>, </span> <span class="parameter" id="cacheSong-param-type"><span class="type-annotation"><a href="enums_event_action/EventAction-class.html">EventAction</a></span> <span class="parameter-name">type</span>, </span> <span class="parameter" id="cacheSong-param-title"><span class="type-annotation">String</span> <span class="parameter-name">title</span>, </span> <span class="parameter" id="cacheSong-param-path"><span class="type-annotation">String</span> <span class="parameter-name">path</span>, </span> <span class="parameter" id="cacheSong-param-resId"><span class="type-annotation">int</span> <span class="parameter-name">resId</span>, </span> <span class="parameter" id="cacheSong-param-length"><span class="type-annotation">Duration</span> <span class="parameter-name">length</span></span>)
       
     </section>
     <section class="desc markdown">
@@ -92,15 +101,28 @@
     
     <section class="summary source-code" id="source">
       <h2><span>Implementation</span></h2>
-      <pre class="language-dart"><code class="language-dart">Future&lt;String&gt; cacheSong(String path, int resId) async {
-  if (Platform.isAndroid) {
-    Directory tempDir = await getTemporaryDirectory();
-    File tempFile = File(&#39;${tempDir.path}&#47;temp.mp3&#39;);
-    List&lt;num&gt; bytes = await getSongBytes(path);
-    await tempFile.writeAsBytes(bytes, flush: true);
-    return tempFile.uri.toString();
-  } else
-    return await _getCacheSong(resId);
+      <pre class="language-dart"><code class="language-dart">void cacheSong(Function f, EventAction type, String title, String path, int resId, Duration length) async {
+  SendPort sendPort;
+  ReceivePort receivePort = ReceivePort();
+  receivePort.listen((msg) async {
+    if (sendPort == null) {
+      print(&quot;Receiving sendPort&quot;);
+      sendPort = msg;
+      sendPrt = msg;
+    }
+    if (Globals.tempFileMutexProceed) cacheSongAfterEvent(msg, path, f, title, resId, length, type);
+    else{
+      print(&quot;LIBRARY SETS PROCEED FALSE&quot;);
+      Globals.tempFileMutexProceed = false;
+    }
+    if(msg.runtimeType == bool) cacheSongAfterEvent(msg, path, f, title, resId, length, type);
+  });
+
+  if (isolate != null) {
+    isolate.kill(priority: Isolate.immediate);
+    sendPrt = null;
+  }
+  isolate = await Isolate.spawn(proceedCheck, receivePort.sendPort);
 }</code></pre>
     </section>
 
@@ -113,7 +135,7 @@
 
 <footer>
   <span class="no-break">
-    pace_your_pulse 0.6+13
+    pace_your_pulse 0.7+17
   </span>
 
   

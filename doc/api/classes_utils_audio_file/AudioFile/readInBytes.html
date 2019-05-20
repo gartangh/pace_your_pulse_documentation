@@ -109,10 +109,12 @@
   &#47;&#47;bytes = await new File(filename).readAsBytes();
   bytes = file.readAsBytesSync();
 
+  &#47;&#47;print(&quot;Filesize = &quot; + bytes.length.toString());
+
   &#47;&#47;print(&quot;4 bytes - The ASCII text string &quot; + String.fromCharCodes(bytes.sublist(0, 4)));
   &#47;&#47;print(&quot;4 bytes - The file size LESS the size of the RIFF description = &quot; + convertLittleEndianToInt(bytes.sublist(4, 8)).toString());
   &#47;&#47;print(&quot;4 bytes - The ascii text string WAVE = &quot; + String.fromCharCodes(bytes.sublist(8, 12)));
-  &#47;&#47;print(&quot;4 bytes - The ascii text string fmt&quot;  + String.fromCharCodes(bytes.sublist(12, 16)));
+  &#47;&#47;print(&quot;4 bytes - The ascii text string fmt = &quot;  + String.fromCharCodes(bytes.sublist(12, 16)));
   &#47;&#47;print(&quot;4 bytes - Size of WAV section chunk = &quot; + convertLittleEndianToInt(bytes.sublist(16, 20)).toString());
 
   &#47;&#47; WAV type format
@@ -141,13 +143,20 @@
   this.bitsPerSample = convertLittleEndianToInt(bytes.sublist(34, 36));
   &#47;&#47;print(&quot;2 bytes - The number of bits per sample = &quot; + this.bitsPerSample.toString());
 
-  &#47;&#47;print(&quot;4 bytes - The ascii text string LIST = &quot; + String.fromCharCodes(bytes.sublist(36, 40)));
+  &#47;&#47; Check where data starts
+  int listSize = 0;
+  int dataStart = 44;
 
-  num listSize = convertLittleEndianToInt(bytes.sublist(40, 44));
-  num dataStart = 44 + listSize;
-  &#47;&#47;print(&quot;data = &quot; + String.fromCharCodes(bytes.sublist(dataStart, dataStart + 4)));
+  if(String.fromCharCodes(bytes.sublist(36, 40)) == &quot;data&quot;){
+    &#47;&#47;print(&quot;4 bytes - The ascii text string data = &quot; + String.fromCharCodes(bytes.sublist(36, 40)));
+  } else if(String.fromCharCodes(bytes.sublist(36, 40)) == &quot;LIST&quot;){
+    &#47;&#47;print(&quot;4 bytes - The ascii text string LIST = &quot; + String.fromCharCodes(bytes.sublist(36, 40)));
+    listSize = convertLittleEndianToInt(bytes.sublist(40, 44));
+    dataStart += listSize;
+  } else {
+    print(&quot;Something went wrong in reading the wav file&quot;);
+  }
 
-  &#47;&#47; the size of the data
   this.dataLength =
       convertLittleEndianToInt(bytes.sublist(dataStart + 4, dataStart + 8));
   &#47;&#47; print(&quot;data size = &quot; + this.dataLength.toString());
@@ -169,7 +178,7 @@
 
 <footer>
   <span class="no-break">
-    pace_your_pulse 0.6+13
+    pace_your_pulse 0.7+17
   </span>
 
   

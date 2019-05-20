@@ -66,6 +66,9 @@
   <div id="dartdoc-main-content" class="col-xs-12 col-sm-9 col-md-8 main-content">
       <div><h1>MusicPlayer class </h1></div>
 
+    <section class="desc markdown">
+      <p>A music player.</p>
+    </section>
     
 
     <section class="summary offset-anchor" id="constructors">
@@ -76,7 +79,7 @@
           <span class="name"><a href="classes_music_music_player/MusicPlayer/MusicPlayer.html">MusicPlayer</a></span><span class="signature">(<span class="parameter" id="-param-controller"><span class="type-annotation"><a href="classes_music_music_controller/MusicController-class.html">MusicController</a></span> <span class="parameter-name">controller</span></span>)</span>
         </dt>
         <dd>
-          
+          The constructor.
         </dd>
       </dl>
     </section>
@@ -85,101 +88,37 @@
       <h2>Properties</h2>
 
       <dl class="properties">
-        <dt id="currentSong" class="property">
-          <span class="name"><a href="classes_music_music_player/MusicPlayer/currentSong.html">currentSong</a></span>
-          <span class="signature">&#8596; <a href="classes_utils_audio_file/AudioFile-class.html">AudioFile</a></span>         
-        </dt>
-        <dd>
-          
-                  <div class="features">read / write</div>
-</dd>
-        <dt id="duration" class="property">
-          <span class="name"><a href="classes_music_music_player/MusicPlayer/duration.html">duration</a></span>
-          <span class="signature">&#8596; Duration</span>         
-        </dt>
-        <dd>
-          Attributes for effective playing
-                  <div class="features">read / write</div>
-</dd>
         <dt id="fetcher" class="property">
           <span class="name"><a href="classes_music_music_player/MusicPlayer/fetcher.html">fetcher</a></span>
           <span class="signature">&#8596; <a href="classes_music_music_fetcher/MusicFetcher-class.html">MusicFetcher</a></span>         
         </dt>
         <dd>
-          
-                  <div class="features">read / write</div>
-</dd>
-        <dt id="isMuted" class="property">
-          <span class="name"><a href="classes_music_music_player/MusicPlayer/isMuted.html">isMuted</a></span>
-          <span class="signature">&#8596; bool</span>         
-        </dt>
-        <dd>
-          
+          The music fetcher.
                   <div class="features">read / write</div>
 </dd>
         <dt id="isPaused" class="property">
           <span class="name"><a href="classes_music_music_player/MusicPlayer/isPaused.html">isPaused</a></span>
-          <span class="signature">&#8594; dynamic</span>         
+          <span class="signature">&#8594; bool</span>         
         </dt>
         <dd>
-          
+          Returns <code>true</code> when this is paused.
                   <div class="features">read-only</div>
 </dd>
         <dt id="isPlaying" class="property">
           <span class="name"><a href="classes_music_music_player/MusicPlayer/isPlaying.html">isPlaying</a></span>
-          <span class="signature">&#8594; dynamic</span>         
+          <span class="signature">&#8594; bool</span>         
         </dt>
         <dd>
-          
+          Returns <code>true</code> when this is started.
                   <div class="features">read-only</div>
 </dd>
-        <dt id="localBeatsPath" class="property">
-          <span class="name"><a href="classes_music_music_player/MusicPlayer/localBeatsPath.html">localBeatsPath</a></span>
-          <span class="signature">&#8596; String</span>         
+        <dt id="isStopped" class="property">
+          <span class="name"><a href="classes_music_music_player/MusicPlayer/isStopped.html">isStopped</a></span>
+          <span class="signature">&#8594; bool</span>         
         </dt>
         <dd>
-          
-                  <div class="features">read / write</div>
-</dd>
-        <dt id="localBytesPath" class="property">
-          <span class="name"><a href="classes_music_music_player/MusicPlayer/localBytesPath.html">localBytesPath</a></span>
-          <span class="signature">&#8596; String</span>         
-        </dt>
-        <dd>
-          
-                  <div class="features">read / write</div>
-</dd>
-        <dt id="oldPath" class="property">
-          <span class="name"><a href="classes_music_music_player/MusicPlayer/oldPath.html">oldPath</a></span>
-          <span class="signature">&#8596; String</span>         
-        </dt>
-        <dd>
-          
-                  <div class="features">read / write</div>
-</dd>
-        <dt id="playerState" class="property">
-          <span class="name"><a href="classes_music_music_player/MusicPlayer/playerState.html">playerState</a></span>
-          <span class="signature">&#8596; <a href="enums_component_state/ComponentState-class.html">ComponentState</a></span>         
-        </dt>
-        <dd>
-          
-                  <div class="features">read / write</div>
-</dd>
-        <dt id="position" class="property">
-          <span class="name"><a href="classes_music_music_player/MusicPlayer/position.html">position</a></span>
-          <span class="signature">&#8596; Duration</span>         
-        </dt>
-        <dd>
-          
-                  <div class="features">read / write</div>
-</dd>
-        <dt id="songBuffer" class="property">
-          <span class="name"><a href="classes_music_music_player/MusicPlayer/songBuffer.html">songBuffer</a></span>
-          <span class="signature">&#8596; Queue</span>         
-        </dt>
-        <dd>
-          
-                  <div class="features">read / write</div>
+          Returns <code>true</code> when this is stopped.
+                  <div class="features">read-only</div>
 </dd>
         <dt id="hashCode" class="property inherited">
           <span class="name"><a href="classes_music_music_player/MusicPlayer/hashCode.html">hashCode</a></span>
@@ -209,142 +148,70 @@
           </span>
                   </dt>
         <dd>
-          
-                  
-</dd>
-        <dt id="getDuration" class="callable">
-          <span class="name"><a href="classes_music_music_player/MusicPlayer/getDuration.html">getDuration</a></span><span class="signature">(<wbr>)
-            <span class="returntype parameter">&#8594; Duration</span>
-          </span>
-                  </dt>
-        <dd>
-          
-                  
-</dd>
-        <dt id="getDurationText" class="callable">
-          <span class="name"><a href="classes_music_music_player/MusicPlayer/getDurationText.html">getDurationText</a></span><span class="signature">(<wbr>)
-            <span class="returntype parameter">&#8594; String</span>
-          </span>
-                  </dt>
-        <dd>
-          
-                  
-</dd>
-        <dt id="getPlayerState" class="callable">
-          <span class="name"><a href="classes_music_music_player/MusicPlayer/getPlayerState.html">getPlayerState</a></span><span class="signature">(<wbr>)
-            <span class="returntype parameter">&#8594; <a href="enums_component_state/ComponentState-class.html">ComponentState</a></span>
-          </span>
-                  </dt>
-        <dd>
-          
-                  
-</dd>
-        <dt id="getPosition" class="callable">
-          <span class="name"><a href="classes_music_music_player/MusicPlayer/getPosition.html">getPosition</a></span><span class="signature">(<wbr>)
-            <span class="returntype parameter">&#8594; Duration</span>
-          </span>
-                  </dt>
-        <dd>
-          
-                  
-</dd>
-        <dt id="getPositionText" class="callable">
-          <span class="name"><a href="classes_music_music_player/MusicPlayer/getPositionText.html">getPositionText</a></span><span class="signature">(<wbr>)
-            <span class="returntype parameter">&#8594; String</span>
-          </span>
-                  </dt>
-        <dd>
-          
-                  
-</dd>
-        <dt id="mute" class="callable">
-          <span class="name"><a href="classes_music_music_player/MusicPlayer/mute.html">mute</a></span><span class="signature">(<wbr><span class="parameter" id="mute-param-muted"><span class="type-annotation">bool</span> <span class="parameter-name">muted</span></span>)
-            <span class="returntype parameter">&#8594; Future</span>
-          </span>
-                  </dt>
-        <dd>
-          
+          Changes the cadence. <a href="classes_music_music_player/MusicPlayer/changeCadence.html">[...]</a>
                   
 </dd>
         <dt id="next" class="callable">
-          <span class="name"><a href="classes_music_music_player/MusicPlayer/next.html">next</a></span><span class="signature">(<wbr><span class="parameter" id="next-param-songPath"><span class="type-annotation">String</span> <span class="parameter-name">songPath</span></span>)
-            <span class="returntype parameter">&#8594; Future</span>
-          </span>
-                  </dt>
-        <dd>
-          
-                  
-</dd>
-        <dt id="onComplete" class="callable">
-          <span class="name"><a href="classes_music_music_player/MusicPlayer/onComplete.html">onComplete</a></span><span class="signature">(<wbr>)
+          <span class="name"><a href="classes_music_music_player/MusicPlayer/next.html">next</a></span><span class="signature">(<wbr><span class="parameter" id="next-param-songName"><span class="type-annotation">String</span> <span class="parameter-name">songName</span>, </span> <span class="parameter" id="next-param-songPath"><span class="type-annotation">String</span> <span class="parameter-name">songPath</span>, </span> <span class="parameter" id="next-param-resId"><span class="type-annotation">num</span> <span class="parameter-name">resId</span>, </span> <span class="parameter" id="next-param-length"><span class="type-annotation">Duration</span> <span class="parameter-name">length</span>, </span> <span class="parameter" id="next-param-cachedPath"><span class="type-annotation">String</span> <span class="parameter-name">cachedPath</span></span>)
             <span class="returntype parameter">&#8594; void</span>
           </span>
                   </dt>
         <dd>
-          
+          Plays the next song. <a href="classes_music_music_player/MusicPlayer/next.html">[...]</a>
                   
 </dd>
         <dt id="pause" class="callable">
           <span class="name"><a href="classes_music_music_player/MusicPlayer/pause.html">pause</a></span><span class="signature">(<wbr>)
-            <span class="returntype parameter">&#8594; Future</span>
-          </span>
-                  </dt>
-        <dd>
-          
-                  
-</dd>
-        <dt id="play" class="callable">
-          <span class="name"><a href="classes_music_music_player/MusicPlayer/play.html">play</a></span><span class="signature">(<wbr><span class="parameter" id="play-param-songPath"><span class="type-annotation">String</span> <span class="parameter-name">songPath</span></span>)
-            <span class="returntype parameter">&#8594; Future</span>
-          </span>
-                  </dt>
-        <dd>
-          
-                  
-</dd>
-        <dt id="previous" class="callable">
-          <span class="name"><a href="classes_music_music_player/MusicPlayer/previous.html">previous</a></span><span class="signature">(<wbr><span class="parameter" id="previous-param-songPath"><span class="type-annotation">String</span> <span class="parameter-name">songPath</span></span>)
-            <span class="returntype parameter">&#8594; Future</span>
-          </span>
-                  </dt>
-        <dd>
-          
-                  
-</dd>
-        <dt id="resume" class="callable">
-          <span class="name"><a href="classes_music_music_player/MusicPlayer/resume.html">resume</a></span><span class="signature">(<wbr>)
-            <span class="returntype parameter">&#8594; Future</span>
-          </span>
-                  </dt>
-        <dd>
-          
-                  
-</dd>
-        <dt id="setAudioFile" class="callable">
-          <span class="name"><a href="classes_music_music_player/MusicPlayer/setAudioFile.html">setAudioFile</a></span><span class="signature">(<wbr><span class="parameter" id="setAudioFile-param-aF"><span class="type-annotation"><a href="classes_utils_audio_file/AudioFile-class.html">AudioFile</a></span> <span class="parameter-name">aF</span></span>)
             <span class="returntype parameter">&#8594; void</span>
           </span>
                   </dt>
         <dd>
-          
+          Pauses this.
+                  
+</dd>
+        <dt id="play" class="callable">
+          <span class="name"><a href="classes_music_music_player/MusicPlayer/play.html">play</a></span><span class="signature">(<wbr><span class="parameter" id="play-param-songPath"><span class="type-annotation">String</span> <span class="parameter-name">songPath</span></span>)
+            <span class="returntype parameter">&#8594; void</span>
+          </span>
+                  </dt>
+        <dd>
+          Plays a song from a specific path <code>_songPath</code>.
+                  
+</dd>
+        <dt id="previous" class="callable">
+          <span class="name"><a href="classes_music_music_player/MusicPlayer/previous.html">previous</a></span><span class="signature">(<wbr><span class="parameter" id="previous-param-songPath"><span class="type-annotation">String</span> <span class="parameter-name">songPath</span></span>)
+            <span class="returntype parameter">&#8594; void</span>
+          </span>
+                  </dt>
+        <dd>
+          Plays the previous song. <a href="classes_music_music_player/MusicPlayer/previous.html">[...]</a>
+                  
+</dd>
+        <dt id="resume" class="callable">
+          <span class="name"><a href="classes_music_music_player/MusicPlayer/resume.html">resume</a></span><span class="signature">(<wbr>)
+            <span class="returntype parameter">&#8594; void</span>
+          </span>
+                  </dt>
+        <dd>
+          Resumes this.
                   
 </dd>
         <dt id="start" class="callable">
           <span class="name"><a href="classes_music_music_player/MusicPlayer/start.html">start</a></span><span class="signature">(<wbr><span class="parameter" id="start-param-songName"><span class="type-annotation">String</span> <span class="parameter-name">songName</span>, </span> <span class="parameter" id="start-param-songPath"><span class="type-annotation">String</span> <span class="parameter-name">songPath</span>, </span> <span class="parameter" id="start-param-resId"><span class="type-annotation">num</span> <span class="parameter-name">resId</span>, </span> <span class="parameter" id="start-param-length"><span class="type-annotation">Duration</span> <span class="parameter-name">length</span>, </span> <span class="parameter" id="start-param-cachedPath"><span class="type-annotation">String</span> <span class="parameter-name">cachedPath</span></span>)
-            <span class="returntype parameter">&#8594; Future</span>
+            <span class="returntype parameter">&#8594; void</span>
           </span>
                   </dt>
         <dd>
-          
+          Starts this. <a href="classes_music_music_player/MusicPlayer/start.html">[...]</a>
                   
 </dd>
         <dt id="stop" class="callable">
           <span class="name"><a href="classes_music_music_player/MusicPlayer/stop.html">stop</a></span><span class="signature">(<wbr>)
-            <span class="returntype parameter">&#8594; Future</span>
+            <span class="returntype parameter">&#8594; void</span>
           </span>
                   </dt>
         <dd>
-          
+          Stops this.
                   
 </dd>
         <dt id="noSuchMethod" class="callable inherited">
@@ -383,25 +250,22 @@
       </dl>
     </section>
 
-
-
-    <section class="summary offset-anchor" id="constants">
-      <h2>Constants</h2>
+    <section class="summary offset-anchor" id="static-properties">
+      <h2>Static Properties</h2>
 
       <dl class="properties">
-        <dt id="methodChannel" class="constant">
-          <span class="name "><a href="classes_music_music_player/MusicPlayer/methodChannel-constant.html">methodChannel</a></span>
-          <span class="signature">&#8594; const MethodChannel</span>
-                  </dt>
+        <dt id="methodChannel" class="property">
+          <span class="name"><a href="classes_music_music_player/MusicPlayer/methodChannel.html">methodChannel</a></span>
+          <span class="signature">&#8594; dynamic</span>         
+        </dt>
         <dd>
-          
-                  
-  <div>
-            <span class="signature"><code>const MethodChannel(&#39;MusicPlayer&#39;)</code></span>
-          </div>
-        </dd>
+          The static method channel MusicPlayer.
+                  <div class="features">read-only</div>
+</dd>
       </dl>
     </section>
+
+
 
   </div> <!-- /.main-content -->
 
@@ -413,36 +277,20 @@
       <li class="section-title">
         <a href="classes_music_music_player/MusicPlayer-class.html#instance-properties">Properties</a>
       </li>
-      <li><a href="classes_music_music_player/MusicPlayer/currentSong.html">currentSong</a></li>
-      <li><a href="classes_music_music_player/MusicPlayer/duration.html">duration</a></li>
       <li><a href="classes_music_music_player/MusicPlayer/fetcher.html">fetcher</a></li>
-      <li><a href="classes_music_music_player/MusicPlayer/isMuted.html">isMuted</a></li>
       <li><a href="classes_music_music_player/MusicPlayer/isPaused.html">isPaused</a></li>
       <li><a href="classes_music_music_player/MusicPlayer/isPlaying.html">isPlaying</a></li>
-      <li><a href="classes_music_music_player/MusicPlayer/localBeatsPath.html">localBeatsPath</a></li>
-      <li><a href="classes_music_music_player/MusicPlayer/localBytesPath.html">localBytesPath</a></li>
-      <li><a href="classes_music_music_player/MusicPlayer/oldPath.html">oldPath</a></li>
-      <li><a href="classes_music_music_player/MusicPlayer/playerState.html">playerState</a></li>
-      <li><a href="classes_music_music_player/MusicPlayer/position.html">position</a></li>
-      <li><a href="classes_music_music_player/MusicPlayer/songBuffer.html">songBuffer</a></li>
+      <li><a href="classes_music_music_player/MusicPlayer/isStopped.html">isStopped</a></li>
       <li class="inherited"><a href="classes_music_music_player/MusicPlayer/hashCode.html">hashCode</a></li>
       <li class="inherited"><a href="classes_music_music_player/MusicPlayer/runtimeType.html">runtimeType</a></li>
     
       <li class="section-title"><a href="classes_music_music_player/MusicPlayer-class.html#instance-methods">Methods</a></li>
       <li><a href="classes_music_music_player/MusicPlayer/changeCadence.html">changeCadence</a></li>
-      <li><a href="classes_music_music_player/MusicPlayer/getDuration.html">getDuration</a></li>
-      <li><a href="classes_music_music_player/MusicPlayer/getDurationText.html">getDurationText</a></li>
-      <li><a href="classes_music_music_player/MusicPlayer/getPlayerState.html">getPlayerState</a></li>
-      <li><a href="classes_music_music_player/MusicPlayer/getPosition.html">getPosition</a></li>
-      <li><a href="classes_music_music_player/MusicPlayer/getPositionText.html">getPositionText</a></li>
-      <li><a href="classes_music_music_player/MusicPlayer/mute.html">mute</a></li>
       <li><a href="classes_music_music_player/MusicPlayer/next.html">next</a></li>
-      <li><a href="classes_music_music_player/MusicPlayer/onComplete.html">onComplete</a></li>
       <li><a href="classes_music_music_player/MusicPlayer/pause.html">pause</a></li>
       <li><a href="classes_music_music_player/MusicPlayer/play.html">play</a></li>
       <li><a href="classes_music_music_player/MusicPlayer/previous.html">previous</a></li>
       <li><a href="classes_music_music_player/MusicPlayer/resume.html">resume</a></li>
-      <li><a href="classes_music_music_player/MusicPlayer/setAudioFile.html">setAudioFile</a></li>
       <li><a href="classes_music_music_player/MusicPlayer/start.html">start</a></li>
       <li><a href="classes_music_music_player/MusicPlayer/stop.html">stop</a></li>
       <li class="inherited"><a href="classes_music_music_player/MusicPlayer/noSuchMethod.html">noSuchMethod</a></li>
@@ -451,10 +299,10 @@
       <li class="section-title inherited"><a href="classes_music_music_player/MusicPlayer-class.html#operators">Operators</a></li>
       <li class="inherited"><a href="classes_music_music_player/MusicPlayer/operator_equals.html">operator ==</a></li>
     
+      <li class="section-title"><a href="classes_music_music_player/MusicPlayer-class.html#static-properties">Static properties</a></li>
+      <li><a href="classes_music_music_player/MusicPlayer/methodChannel.html">methodChannel</a></li>
     
     
-      <li class="section-title"><a href="classes_music_music_player/MusicPlayer-class.html#constants">Constants</a></li>
-      <li><a href="classes_music_music_player/MusicPlayer/methodChannel-constant.html">methodChannel</a></li>
     </ol>
   </div><!--/.sidebar-offcanvas-->
 
@@ -462,7 +310,7 @@
 
 <footer>
   <span class="no-break">
-    pace_your_pulse 0.6+13
+    pace_your_pulse 0.7+17
   </span>
 
   

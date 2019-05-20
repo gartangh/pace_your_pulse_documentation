@@ -73,10 +73,10 @@
 
       <dl class="constructor-summary-list">
         <dt id="MusicProcessor" class="callable">
-          <span class="name"><a href="classes_music_music_processor/MusicProcessor/MusicProcessor.html">MusicProcessor</a></span><span class="signature">(<span class="parameter" id="-param-_musicController"><span class="type-annotation"><a href="classes_music_music_controller/MusicController-class.html">MusicController</a></span> <span class="parameter-name">_musicController</span></span>)</span>
+          <span class="name"><a href="classes_music_music_processor/MusicProcessor/MusicProcessor.html">MusicProcessor</a></span><span class="signature">()</span>
         </dt>
         <dd>
-          
+          Constructor
         </dd>
       </dl>
     </section>
@@ -85,20 +85,20 @@
       <h2>Properties</h2>
 
       <dl class="properties">
-        <dt id="logarithmic" class="property">
-          <span class="name"><a href="classes_music_music_processor/MusicProcessor/logarithmic.html">logarithmic</a></span>
-          <span class="signature">&#8596; bool</span>         
+        <dt id="curBPM" class="property">
+          <span class="name"><a href="classes_music_music_processor/MusicProcessor/curBPM.html">curBPM</a></span>
+          <span class="signature">&#8594; int</span>         
         </dt>
         <dd>
-          
-                  <div class="features">read / write</div>
+          Current BPM getter
+                  <div class="features">read-only</div>
 </dd>
-        <dt id="musicController" class="property">
-          <span class="name"><a href="classes_music_music_processor/MusicProcessor/musicController.html">musicController</a></span>
-          <span class="signature">&#8594; <a href="classes_music_music_controller/MusicController-class.html">MusicController</a></span>         
+        <dt id="metadataDatabaseController" class="property">
+          <span class="name"><a href="classes_music_music_processor/MusicProcessor/metadataDatabaseController.html">metadataDatabaseController</a></span>
+          <span class="signature">&#8594; <a href="classes_music_metadata_database_controller/MetadataDatabaseController-class.html">MetadataDatabaseController</a></span>         
         </dt>
         <dd>
-          The music controller.
+          The MetadataDatabaseController getter.
                   <div class="features">read-only</div>
 </dd>
         <dt id="hashCode" class="property inherited">
@@ -120,288 +120,9 @@
       </dl>
     </section>
 
-    <section class="summary offset-anchor" id="instance-methods">
+    <section class="summary offset-anchor inherited" id="instance-methods">
       <h2>Methods</h2>
       <dl class="callables">
-        <dt id="analyze" class="callable">
-          <span class="name"><a href="classes_music_music_processor/MusicProcessor/analyze.html">analyze</a></span><span class="signature">(<wbr><span class="parameter" id="analyze-param-aF"><span class="type-annotation"><a href="classes_utils_audio_file/AudioFile-class.html">AudioFile</a></span> <span class="parameter-name">aF</span></span>)
-            <span class="returntype parameter">&#8594; List<span class="signature">&lt;<wbr><span class="type-parameter">Duration</span>&gt;</span></span>
-          </span>
-                  </dt>
-        <dd>
-          <a href="http://archive.gamedev.net/archive/reference/programming/features/beatdetection/index.html">http://archive.gamedev.net/archive/reference/programming/features/beatdetection/index.html</a>
-                  
-</dd>
-        <dt id="derive" class="callable">
-          <span class="name"><a href="classes_music_music_processor/MusicProcessor/derive.html">derive</a></span><span class="signature">(<wbr><span class="parameter" id="derive-param-x"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">num</span>&gt;</span></span> <span class="parameter-name">x</span>, </span> <span class="parameter" id="derive-param-frequency"><span class="type-annotation">int</span> <span class="parameter-name">frequency</span></span>)
-            <span class="returntype parameter">&#8594; List<span class="signature">&lt;<wbr><span class="type-parameter">num</span>&gt;</span></span>
-          </span>
-                  </dt>
-        <dd>
-          
-                  
-</dd>
-        <dt id="dft" class="callable">
-          <span class="name"><a href="classes_music_music_processor/MusicProcessor/dft.html">dft</a></span><span class="signature">(<wbr><span class="parameter" id="dft-param-x"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">num</span>&gt;</span></span> <span class="parameter-name">x</span>, </span> <span class="parameter" id="dft-param-N"><span class="type-annotation">int</span> <span class="parameter-name">N</span></span>)
-            <span class="returntype parameter">&#8594; List<span class="signature">&lt;<wbr><span class="type-parameter"><a href="classes_utils_complex/Complex-class.html">Complex</a></span>&gt;</span></span>
-          </span>
-                  </dt>
-        <dd>
-          Brute force calculation of DFT
-                  
-</dd>
-        <dt id="fft" class="callable">
-          <span class="name"><a href="classes_music_music_processor/MusicProcessor/fft.html">fft</a></span><span class="signature">(<wbr><span class="parameter" id="fft-param-x"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">num</span>&gt;</span></span> <span class="parameter-name">x</span>, </span> <span class="parameter" id="fft-param-N"><span class="type-annotation">int</span> <span class="parameter-name">N</span>, </span> <span class="parameter" id="fft-param-s"><span class="type-annotation">int</span> <span class="parameter-name">s</span></span>)
-            <span class="returntype parameter">&#8594; List<span class="signature">&lt;<wbr><span class="type-parameter"><a href="classes_utils_complex/Complex-class.html">Complex</a></span>&gt;</span></span>
-          </span>
-                  </dt>
-        <dd>
-          FFT: <a href="https://en.wikipedia.org/wiki/Cooley%25E2%2580%2593Tukey_FFT_algorithm">https://en.wikipedia.org/wiki/Cooley%E2%80%93Tukey_FFT_algorithm</a>
-                  
-</dd>
-        <dt id="filteringRhythmDetection" class="callable">
-          <span class="name"><a href="classes_music_music_processor/MusicProcessor/filteringRhythmDetection.html">filteringRhythmDetection</a></span><span class="signature">(<wbr><span class="parameter" id="filteringRhythmDetection-param-bufferSize"><span class="type-annotation">int</span> <span class="parameter-name">bufferSize</span>, </span> <span class="parameter" id="filteringRhythmDetection-param-x"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">num</span>&gt;</span></span> <span class="parameter-name">x</span>, </span> <span class="parameter" id="filteringRhythmDetection-param-frequency"><span class="type-annotation">int</span> <span class="parameter-name">frequency</span></span>)
-            <span class="returntype parameter">&#8594; List<span class="signature">&lt;<wbr><span class="type-parameter">Duration</span>&gt;</span></span>
-          </span>
-                  </dt>
-        <dd>
-           <a href="classes_music_music_processor/MusicProcessor/filteringRhythmDetection.html">[...]</a>
-                  
-</dd>
-        <dt id="frequencySelectedSoundAlgorithm" class="callable">
-          <span class="name"><a href="classes_music_music_processor/MusicProcessor/frequencySelectedSoundAlgorithm.html">frequencySelectedSoundAlgorithm</a></span><span class="signature">(<wbr><span class="parameter" id="frequencySelectedSoundAlgorithm-param-bufferSize"><span class="type-annotation">int</span> <span class="parameter-name">bufferSize</span>, </span> <span class="parameter" id="frequencySelectedSoundAlgorithm-param-x"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">num</span>&gt;</span></span> <span class="parameter-name">x</span>, </span> <span class="parameter" id="frequencySelectedSoundAlgorithm-param-frequency"><span class="type-annotation">int</span> <span class="parameter-name">frequency</span></span>)
-            <span class="returntype parameter">&#8594; List<span class="signature">&lt;<wbr><span class="type-parameter">Duration</span>&gt;</span></span>
-          </span>
-                  </dt>
-        <dd>
-           <a href="classes_music_music_processor/MusicProcessor/frequencySelectedSoundAlgorithm.html">[...]</a>
-                  
-</dd>
-        <dt id="frequencySelectedSoundAlgorithmLowestBand" class="callable">
-          <span class="name"><a href="classes_music_music_processor/MusicProcessor/frequencySelectedSoundAlgorithmLowestBand.html">frequencySelectedSoundAlgorithmLowestBand</a></span><span class="signature">(<wbr><span class="parameter" id="frequencySelectedSoundAlgorithmLowestBand-param-bufferSize"><span class="type-annotation">int</span> <span class="parameter-name">bufferSize</span>, </span> <span class="parameter" id="frequencySelectedSoundAlgorithmLowestBand-param-x"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">num</span>&gt;</span></span> <span class="parameter-name">x</span>, </span> <span class="parameter" id="frequencySelectedSoundAlgorithmLowestBand-param-frequency"><span class="type-annotation">int</span> <span class="parameter-name">frequency</span></span>)
-            <span class="returntype parameter">&#8594; List<span class="signature">&lt;<wbr><span class="type-parameter">Duration</span>&gt;</span></span>
-          </span>
-                  </dt>
-        <dd>
-           <a href="classes_music_music_processor/MusicProcessor/frequencySelectedSoundAlgorithmLowestBand.html">[...]</a>
-                  
-</dd>
-        <dt id="getAmplitudesFromFFT" class="callable">
-          <span class="name"><a href="classes_music_music_processor/MusicProcessor/getAmplitudesFromFFT.html">getAmplitudesFromFFT</a></span><span class="signature">(<wbr><span class="parameter" id="getAmplitudesFromFFT-param-X"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter"><a href="classes_utils_complex/Complex-class.html">Complex</a></span>&gt;</span></span> <span class="parameter-name">X</span></span>)
-            <span class="returntype parameter">&#8594; List<span class="signature">&lt;<wbr><span class="type-parameter">num</span>&gt;</span></span>
-          </span>
-                  </dt>
-        <dd>
-          
-                  
-</dd>
-        <dt id="getAvgEnergySubbands" class="callable">
-          <span class="name"><a href="classes_music_music_processor/MusicProcessor/getAvgEnergySubbands.html">getAvgEnergySubbands</a></span><span class="signature">(<wbr><span class="parameter" id="getAvgEnergySubbands-param-history"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">List<span class="signature">&lt;<wbr><span class="type-parameter">num</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">history</span>, </span> <span class="parameter" id="getAvgEnergySubbands-param-counter"><span class="type-annotation">int</span> <span class="parameter-name">counter</span></span>)
-            <span class="returntype parameter">&#8594; List<span class="signature">&lt;<wbr><span class="type-parameter">num</span>&gt;</span></span>
-          </span>
-                  </dt>
-        <dd>
-          
-                  
-</dd>
-        <dt id="getBeats" class="callable">
-          <span class="name"><a href="classes_music_music_processor/MusicProcessor/getBeats.html">getBeats</a></span><span class="signature">(<wbr><span class="parameter" id="getBeats-param-newEnergy"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">num</span>&gt;</span></span> <span class="parameter-name">newEnergy</span>, </span> <span class="parameter" id="getBeats-param-currentAvg"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">num</span>&gt;</span></span> <span class="parameter-name">currentAvg</span>, </span> <span class="parameter" id="getBeats-param-variances"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">num</span>&gt;</span></span> <span class="parameter-name">variances</span></span>)
-            <span class="returntype parameter">&#8594; List<span class="signature">&lt;<wbr><span class="type-parameter">bool</span>&gt;</span></span>
-          </span>
-                  </dt>
-        <dd>
-          
-                  
-</dd>
-        <dt id="getBeatTimeStamps" class="callable">
-          <span class="name"><a href="classes_music_music_processor/MusicProcessor/getBeatTimeStamps.html">getBeatTimeStamps</a></span><span class="signature">(<wbr><span class="parameter" id="getBeatTimeStamps-param-beats"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">List<span class="signature">&lt;<wbr><span class="type-parameter">bool</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">beats</span>, </span> <span class="parameter" id="getBeatTimeStamps-param-frequency"><span class="type-annotation">int</span> <span class="parameter-name">frequency</span>, </span> <span class="parameter" id="getBeatTimeStamps-param-band"><span class="type-annotation">int</span> <span class="parameter-name">band</span></span>)
-            <span class="returntype parameter">&#8594; List<span class="signature">&lt;<wbr><span class="type-parameter">Duration</span>&gt;</span></span>
-          </span>
-                  </dt>
-        <dd>
-          
-                  
-</dd>
-        <dt id="getBPM" class="callable">
-          <span class="name"><a href="classes_music_music_processor/MusicProcessor/getBPM.html">getBPM</a></span><span class="signature">(<wbr><span class="parameter" id="getBPM-param-curBPM"><span class="type-annotation">int</span> <span class="parameter-name">curBPM</span>, </span> <span class="parameter" id="getBPM-param-frequency"><span class="type-annotation">int</span> <span class="parameter-name">frequency</span></span>)
-            <span class="returntype parameter">&#8594; num</span>
-          </span>
-                  </dt>
-        <dd>
-          
-                  
-</dd>
-        <dt id="getChannel" class="callable">
-          <span class="name"><a href="classes_music_music_processor/MusicProcessor/getChannel.html">getChannel</a></span><span class="signature">(<wbr><span class="parameter" id="getChannel-param-bytes"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">num</span>&gt;</span></span> <span class="parameter-name">bytes</span>, </span> <span class="parameter" id="getChannel-param-channel"><span class="type-annotation">int</span> <span class="parameter-name">channel</span></span>)
-            <span class="returntype parameter">&#8594; List<span class="signature">&lt;<wbr><span class="type-parameter">num</span>&gt;</span></span>
-          </span>
-                  </dt>
-        <dd>
-          Default .wav stereo: channel 0 &amp; 1
-                  
-</dd>
-        <dt id="getCorrelationEnergy" class="callable">
-          <span class="name"><a href="classes_music_music_processor/MusicProcessor/getCorrelationEnergy.html">getCorrelationEnergy</a></span><span class="signature">(<wbr><span class="parameter" id="getCorrelationEnergy-param-tas"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">List<span class="signature">&lt;<wbr><span class="type-parameter">num</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">tas</span>, </span> <span class="parameter" id="getCorrelationEnergy-param-tbs"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">List<span class="signature">&lt;<wbr><span class="type-parameter">num</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">tbs</span>, </span> <span class="parameter" id="getCorrelationEnergy-param-trainFFT"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter"><a href="classes_utils_complex/Complex-class.html">Complex</a></span>&gt;</span></span> <span class="parameter-name">trainFFT</span></span>)
-            <span class="returntype parameter">&#8594; List<span class="signature">&lt;<wbr><span class="type-parameter">num</span>&gt;</span></span>
-          </span>
-                  </dt>
-        <dd>
-          
-                  
-</dd>
-        <dt id="getEnergyBands" class="callable">
-          <span class="name"><a href="classes_music_music_processor/MusicProcessor/getEnergyBands.html">getEnergyBands</a></span><span class="signature">(<wbr><span class="parameter" id="getEnergyBands-param-amplitudes"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">num</span>&gt;</span></span> <span class="parameter-name">amplitudes</span></span>)
-            <span class="returntype parameter">&#8594; List<span class="signature">&lt;<wbr><span class="type-parameter">num</span>&gt;</span></span>
-          </span>
-                  </dt>
-        <dd>
-          
-                  
-</dd>
-        <dt id="getLinearBands" class="callable">
-          <span class="name"><a href="classes_music_music_processor/MusicProcessor/getLinearBands.html">getLinearBands</a></span><span class="signature">(<wbr><span class="parameter" id="getLinearBands-param-amplitudes"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">num</span>&gt;</span></span> <span class="parameter-name">amplitudes</span></span>)
-            <span class="returntype parameter">&#8594; List<span class="signature">&lt;<wbr><span class="type-parameter">num</span>&gt;</span></span>
-          </span>
-                  </dt>
-        <dd>
-          
-                  
-</dd>
-        <dt id="getLogarithmicBands" class="callable">
-          <span class="name"><a href="classes_music_music_processor/MusicProcessor/getLogarithmicBands.html">getLogarithmicBands</a></span><span class="signature">(<wbr><span class="parameter" id="getLogarithmicBands-param-amplitudes"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">num</span>&gt;</span></span> <span class="parameter-name">amplitudes</span></span>)
-            <span class="returntype parameter">&#8594; List<span class="signature">&lt;<wbr><span class="type-parameter">num</span>&gt;</span></span>
-          </span>
-                  </dt>
-        <dd>
-          
-                  
-</dd>
-        <dt id="getMax" class="callable">
-          <span class="name"><a href="classes_music_music_processor/MusicProcessor/getMax.html">getMax</a></span><span class="signature">(<wbr><span class="parameter" id="getMax-param-lst"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">num</span>&gt;</span></span> <span class="parameter-name">lst</span></span>)
-            <span class="returntype parameter">&#8594; num</span>
-          </span>
-                  </dt>
-        <dd>
-          
-                  
-</dd>
-        <dt id="getMaxBPM" class="callable">
-          <span class="name"><a href="classes_music_music_processor/MusicProcessor/getMaxBPM.html">getMaxBPM</a></span><span class="signature">(<wbr><span class="parameter" id="getMaxBPM-param-energyBPM"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">List<span class="signature">&lt;<wbr><span class="type-parameter">num</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">energyBPM</span></span>)
-            <span class="returntype parameter">&#8594; List<span class="signature">&lt;<wbr><span class="type-parameter">num</span>&gt;</span></span>
-          </span>
-                  </dt>
-        <dd>
-          
-                  
-</dd>
-        <dt id="getNewEnergy" class="callable">
-          <span class="name"><a href="classes_music_music_processor/MusicProcessor/getNewEnergy.html">getNewEnergy</a></span><span class="signature">(<wbr><span class="parameter" id="getNewEnergy-param-x"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">num</span>&gt;</span></span> <span class="parameter-name">x</span>, </span> <span class="parameter" id="getNewEnergy-param-N"><span class="type-annotation">int</span> <span class="parameter-name">N</span></span>)
-            <span class="returntype parameter">&#8594; List<span class="signature">&lt;<wbr><span class="type-parameter">num</span>&gt;</span></span>
-          </span>
-                  </dt>
-        <dd>
-          
-                  
-</dd>
-        <dt id="getSubbands" class="callable">
-          <span class="name"><a href="classes_music_music_processor/MusicProcessor/getSubbands.html">getSubbands</a></span><span class="signature">(<wbr><span class="parameter" id="getSubbands-param-ta"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">num</span>&gt;</span></span> <span class="parameter-name">ta</span>, </span> <span class="parameter" id="getSubbands-param-tb"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">double</span>&gt;</span></span> <span class="parameter-name">tb</span></span>)
-            <span class="returntype parameter">&#8594; List</span>
-          </span>
-                  </dt>
-        <dd>
-          
-                  
-</dd>
-        <dt id="getTaTb" class="callable">
-          <span class="name"><a href="classes_music_music_processor/MusicProcessor/getTaTb.html">getTaTb</a></span><span class="signature">(<wbr><span class="parameter" id="getTaTb-param-fft"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter"><a href="classes_utils_complex/Complex-class.html">Complex</a></span>&gt;</span></span> <span class="parameter-name">fft</span></span>)
-            <span class="returntype parameter">&#8594; List</span>
-          </span>
-                  </dt>
-        <dd>
-          
-                  
-</dd>
-        <dt id="getTrainOfImpulses" class="callable">
-          <span class="name"><a href="classes_music_music_processor/MusicProcessor/getTrainOfImpulses.html">getTrainOfImpulses</a></span><span class="signature">(<wbr><span class="parameter" id="getTrainOfImpulses-param-tas"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">List<span class="signature">&lt;<wbr><span class="type-parameter">num</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">tas</span>, </span> <span class="parameter" id="getTrainOfImpulses-param-ti"><span class="type-annotation">num</span> <span class="parameter-name">ti</span></span>)
-            <span class="returntype parameter">&#8594; List<span class="signature">&lt;<wbr><span class="type-parameter">num</span>&gt;</span></span>
-          </span>
-                  </dt>
-        <dd>
-          
-                  
-</dd>
-        <dt id="getVariance" class="callable">
-          <span class="name"><a href="classes_music_music_processor/MusicProcessor/getVariance.html">getVariance</a></span><span class="signature">(<wbr><span class="parameter" id="getVariance-param-history"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">List<span class="signature">&lt;<wbr><span class="type-parameter">num</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">history</span>, </span> <span class="parameter" id="getVariance-param-curAvg"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">num</span>&gt;</span></span> <span class="parameter-name">curAvg</span>, </span> <span class="parameter" id="getVariance-param-counter"><span class="type-annotation">int</span> <span class="parameter-name">counter</span></span>)
-            <span class="returntype parameter">&#8594; List<span class="signature">&lt;<wbr><span class="type-parameter">num</span>&gt;</span></span>
-          </span>
-                  </dt>
-        <dd>
-          
-                  
-</dd>
-        <dt id="initHistory" class="callable">
-          <span class="name"><a href="classes_music_music_processor/MusicProcessor/initHistory.html">initHistory</a></span><span class="signature">(<wbr><span class="parameter" id="initHistory-param-bufferSize"><span class="type-annotation">int</span> <span class="parameter-name">bufferSize</span></span>)
-            <span class="returntype parameter">&#8594; List<span class="signature">&lt;<wbr><span class="type-parameter">List<span class="signature">&lt;<wbr><span class="type-parameter">num</span>&gt;</span></span>&gt;</span></span>
-          </span>
-                  </dt>
-        <dd>
-          
-                  
-</dd>
-        <dt id="process" class="callable">
-          <span class="name"><a href="classes_music_music_processor/MusicProcessor/process.html">process</a></span><span class="signature">(<wbr><span class="parameter" id="process-param-aF"><span class="type-annotation"><a href="classes_utils_audio_file/AudioFile-class.html">AudioFile</a></span> <span class="parameter-name">aF</span>, </span> <span class="parameter" id="process-param-first"><span class="type-annotation">bool</span> <span class="parameter-name">first</span>, </span> <span class="parameter" id="process-param-path"><span class="type-annotation">String</span> <span class="parameter-name">path</span></span>)
-            <span class="returntype parameter">&#8594; void</span>
-          </span>
-                  </dt>
-        <dd>
-          Return bytes to be played and list of timestamps of beats
-                  
-</dd>
-        <dt id="rightShift" class="callable">
-          <span class="name"><a href="classes_music_music_processor/MusicProcessor/rightShift.html">rightShift</a></span><span class="signature">(<wbr><span class="parameter" id="rightShift-param-lst"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">num</span>&gt;</span></span> <span class="parameter-name">lst</span></span>)
-            <span class="returntype parameter">&#8594; List<span class="signature">&lt;<wbr><span class="type-parameter">num</span>&gt;</span></span>
-          </span>
-                  </dt>
-        <dd>
-          
-                  
-</dd>
-        <dt id="rightShiftHistory" class="callable">
-          <span class="name"><a href="classes_music_music_processor/MusicProcessor/rightShiftHistory.html">rightShiftHistory</a></span><span class="signature">(<wbr><span class="parameter" id="rightShiftHistory-param-history"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">List<span class="signature">&lt;<wbr><span class="type-parameter">num</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">history</span></span>)
-            <span class="returntype parameter">&#8594; List<span class="signature">&lt;<wbr><span class="type-parameter">List<span class="signature">&lt;<wbr><span class="type-parameter">num</span>&gt;</span></span>&gt;</span></span>
-          </span>
-                  </dt>
-        <dd>
-          
-                  
-</dd>
-        <dt id="updateHistory" class="callable">
-          <span class="name"><a href="classes_music_music_processor/MusicProcessor/updateHistory.html">updateHistory</a></span><span class="signature">(<wbr><span class="parameter" id="updateHistory-param-history"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">List<span class="signature">&lt;<wbr><span class="type-parameter">num</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">history</span>, </span> <span class="parameter" id="updateHistory-param-newEnergy"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">num</span>&gt;</span></span> <span class="parameter-name">newEnergy</span></span>)
-            <span class="returntype parameter">&#8594; List<span class="signature">&lt;<wbr><span class="type-parameter">List<span class="signature">&lt;<wbr><span class="type-parameter">num</span>&gt;</span></span>&gt;</span></span>
-          </span>
-                  </dt>
-        <dd>
-          
-                  
-</dd>
-        <dt id="writeBeats" class="callable">
-          <span class="name"><a href="classes_music_music_processor/MusicProcessor/writeBeats.html">writeBeats</a></span><span class="signature">(<wbr><span class="parameter" id="writeBeats-param-beats"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">List<span class="signature">&lt;<wbr><span class="type-parameter">bool</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">beats</span></span>)
-            <span class="returntype parameter">&#8594; Future</span>
-          </span>
-                  </dt>
-        <dd>
-          
-                  
-</dd>
-        <dt id="writeHistory" class="callable">
-          <span class="name"><a href="classes_music_music_processor/MusicProcessor/writeHistory.html">writeHistory</a></span><span class="signature">(<wbr><span class="parameter" id="writeHistory-param-history"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">List<span class="signature">&lt;<wbr><span class="type-parameter">num</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">history</span></span>)
-            <span class="returntype parameter">&#8594; Future</span>
-          </span>
-                  </dt>
-        <dd>
-          
-                  
-</dd>
         <dt id="noSuchMethod" class="callable inherited">
           <span class="name"><a href="classes_music_music_processor/MusicProcessor/noSuchMethod.html">noSuchMethod</a></span><span class="signature">(<wbr><span class="parameter" id="noSuchMethod-param-invocation"><span class="type-annotation">Invocation</span> <span class="parameter-name">invocation</span></span>)
             <span class="returntype parameter">&#8594; dynamic</span>
@@ -438,7 +159,274 @@
       </dl>
     </section>
 
+    <section class="summary offset-anchor" id="static-properties">
+      <h2>Static Properties</h2>
 
+      <dl class="properties">
+        <dt id="historySeconds" class="property">
+          <span class="name"><a href="classes_music_music_processor/MusicProcessor/historySeconds.html">historySeconds</a></span>
+          <span class="signature">&#8596; int</span>         
+        </dt>
+        <dd>
+          Number of seconds you want to keep in the history buffer. Take this to be around 24 seconds to get the best estimates.
+The higher, the more better, but the more intensive.
+                  <div class="features">read / write</div>
+</dd>
+        <dt id="window" class="property">
+          <span class="name"><a href="classes_music_music_processor/MusicProcessor/window.html">window</a></span>
+          <span class="signature">&#8596; int</span>         
+        </dt>
+        <dd>
+          Window (samesampleFreq)
+                  <div class="features">read / write</div>
+</dd>
+      </dl>
+    </section>
+
+    <section class="summary offset-anchor" id="static-methods">
+      <h2>Static Methods</h2>
+      <dl class="callables">
+        <dt id="analyze" class="callable">
+          <span class="name"><a href="classes_music_music_processor/MusicProcessor/analyze.html">analyze</a></span><span class="signature">(<wbr><span class="parameter" id="analyze-param-x"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">int</span>&gt;</span></span> <span class="parameter-name">x</span>, </span> <span class="parameter" id="analyze-param-frequency"><span class="type-annotation">int</span> <span class="parameter-name">frequency</span>, </span> <span class="parameter" id="analyze-param-bufferSize"><span class="type-annotation">int</span> <span class="parameter-name">bufferSize</span>, </span> <span class="parameter" id="analyze-param-beatOffset"><span class="type-annotation">Duration</span> <span class="parameter-name">beatOffset</span></span>)
+            <span class="returntype parameter">&#8594; List</span>
+          </span>
+                  </dt>
+        <dd>
+          Analyze the current part of the song
+                  
+</dd>
+        <dt id="applyComb" class="callable">
+          <span class="name"><a href="classes_music_music_processor/MusicProcessor/applyComb.html">applyComb</a></span><span class="signature">(<wbr><span class="parameter" id="applyComb-param-x"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">num</span>&gt;</span></span> <span class="parameter-name">x</span>, </span> <span class="parameter" id="applyComb-param-bpm"><span class="type-annotation">num</span> <span class="parameter-name">bpm</span>, </span> <span class="parameter" id="applyComb-param-frequency"><span class="type-annotation">int</span> <span class="parameter-name">frequency</span></span>)
+            <span class="returntype parameter">&#8594; int</span>
+          </span>
+                  </dt>
+        <dd>
+          Apply a comb filter on the List <code>x</code>.
+With the given <code>bpm</code>;
+Using the given sampleFrequency and the sampleSampleFreq in the function
+itself. As this will influence on the distance between each sample in time.
+it returns an <code>int</code>, as best offset of sample that matches the given bpm.
+                  
+</dd>
+        <dt id="conjugateList" class="callable">
+          <span class="name"><a href="classes_music_music_processor/MusicProcessor/conjugateList.html">conjugateList</a></span><span class="signature">(<wbr><span class="parameter" id="conjugateList-param-X"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter"><a href="classes_utils_complex/Complex-class.html">Complex</a></span>&gt;</span></span> <span class="parameter-name">X</span></span>)
+            <span class="returntype parameter">&#8594; List<span class="signature">&lt;<wbr><span class="type-parameter"><a href="classes_utils_complex/Complex-class.html">Complex</a></span>&gt;</span></span>
+          </span>
+                  </dt>
+        <dd>
+          Conjugate every complex number of a list
+                  
+</dd>
+        <dt id="dot" class="callable">
+          <span class="name"><a href="classes_music_music_processor/MusicProcessor/dot.html">dot</a></span><span class="signature">(<wbr><span class="parameter" id="dot-param-a"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter"><a href="classes_utils_complex/Complex-class.html">Complex</a></span>&gt;</span></span> <span class="parameter-name">a</span>, </span> <span class="parameter" id="dot-param-b"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter"><a href="classes_utils_complex/Complex-class.html">Complex</a></span>&gt;</span></span> <span class="parameter-name">b</span></span>)
+            <span class="returntype parameter">&#8594; List<span class="signature">&lt;<wbr><span class="type-parameter"><a href="classes_utils_complex/Complex-class.html">Complex</a></span>&gt;</span></span>
+          </span>
+                  </dt>
+        <dd>
+          Dot product of List<complexsimulation></complexsimulation>
+                  
+</dd>
+        <dt id="fft" class="callable">
+          <span class="name"><a href="classes_music_music_processor/MusicProcessor/fft.html">fft</a></span><span class="signature">(<wbr><span class="parameter" id="fft-param-x"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter"><a href="classes_utils_complex/Complex-class.html">Complex</a></span>&gt;</span></span> <span class="parameter-name">x</span></span>)
+            <span class="returntype parameter">&#8594; List<span class="signature">&lt;<wbr><span class="type-parameter"><a href="classes_utils_complex/Complex-class.html">Complex</a></span>&gt;</span></span>
+          </span>
+                  </dt>
+        <dd>
+          FFT: <a href="https://en.wikipedia.org/wiki/Cooley%25E2%2580%2593Tukey_FFT_algorithm">https://en.wikipedia.org/wiki/Cooley%E2%80%93Tukey_FFT_algorithm</a>
+                  
+</dd>
+        <dt id="fftDouble" class="callable">
+          <span class="name"><a href="classes_music_music_processor/MusicProcessor/fftDouble.html">fftDouble</a></span><span class="signature">(<wbr><span class="parameter" id="fftDouble-param-x"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">double</span>&gt;</span></span> <span class="parameter-name">x</span></span>)
+            <span class="returntype parameter">&#8594; List<span class="signature">&lt;<wbr><span class="type-parameter"><a href="classes_utils_complex/Complex-class.html">Complex</a></span>&gt;</span></span>
+          </span>
+                  </dt>
+        <dd>
+          FFT for a list of doubles
+                  
+</dd>
+        <dt id="fftInt" class="callable">
+          <span class="name"><a href="classes_music_music_processor/MusicProcessor/fftInt.html">fftInt</a></span><span class="signature">(<wbr><span class="parameter" id="fftInt-param-x"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">int</span>&gt;</span></span> <span class="parameter-name">x</span></span>)
+            <span class="returntype parameter">&#8594; List<span class="signature">&lt;<wbr><span class="type-parameter"><a href="classes_utils_complex/Complex-class.html">Complex</a></span>&gt;</span></span>
+          </span>
+                  </dt>
+        <dd>
+          FFT for a list of integers
+                  
+</dd>
+        <dt id="findPeaks" class="callable">
+          <span class="name"><a href="classes_music_music_processor/MusicProcessor/findPeaks.html">findPeaks</a></span><span class="signature">(<wbr><span class="parameter" id="findPeaks-param-autoCor"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">int</span>&gt;</span></span> <span class="parameter-name">autoCor</span></span>)
+            <span class="returntype parameter">&#8594; List<span class="signature">&lt;<wbr><span class="type-parameter">int</span>&gt;</span></span>
+          </span>
+                  </dt>
+        <dd>
+          Find peaks of autocorrelation function: <a href="https://stackoverflow.com/questions/22583391/peak-signal-detection-in-realtime-timeseries-data">https://stackoverflow.com/questions/22583391/peak-signal-detection-in-realtime-timeseries-data</a>
+                  
+</dd>
+        <dt id="findTempo" class="callable">
+          <span class="name"><a href="classes_music_music_processor/MusicProcessor/findTempo.html">findTempo</a></span><span class="signature">(<wbr><span class="parameter" id="findTempo-param-peaks"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">int</span>&gt;</span></span> <span class="parameter-name">peaks</span></span>)
+            <span class="returntype parameter">&#8594; int</span>
+          </span>
+                  </dt>
+        <dd>
+          Find best guess tempo using peaks
+                  
+</dd>
+        <dt id="getAmplitudesFromFFT" class="callable">
+          <span class="name"><a href="classes_music_music_processor/MusicProcessor/getAmplitudesFromFFT.html">getAmplitudesFromFFT</a></span><span class="signature">(<wbr><span class="parameter" id="getAmplitudesFromFFT-param-X"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter"><a href="classes_utils_complex/Complex-class.html">Complex</a></span>&gt;</span></span> <span class="parameter-name">X</span></span>)
+            <span class="returntype parameter">&#8594; List<span class="signature">&lt;<wbr><span class="type-parameter">double</span>&gt;</span></span>
+          </span>
+                  </dt>
+        <dd>
+          Get amplitudes of a frequency spectrum
+                  
+</dd>
+        <dt id="getBeatsInDatabase" class="callable">
+          <span class="name"><a href="classes_music_music_processor/MusicProcessor/getBeatsInDatabase.html">getBeatsInDatabase</a></span><span class="signature">(<wbr><span class="parameter" id="getBeatsInDatabase-param-databaseBeats"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">List<span class="signature">&lt;<wbr><span class="type-parameter">Duration</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">databaseBeats</span>, </span> <span class="parameter" id="getBeatsInDatabase-param-databaseBeatsIndex"><span class="type-annotation">int</span> <span class="parameter-name">databaseBeatsIndex</span>, </span> <span class="parameter" id="getBeatsInDatabase-param-bpm"><span class="type-annotation">int</span> <span class="parameter-name">bpm</span></span>)
+            <span class="returntype parameter">&#8594; List</span>
+          </span>
+                  </dt>
+        <dd>
+          Get beats from List&lt;List<duration>&gt;, received from the database</duration>
+                  
+</dd>
+        <dt id="getBeatsNotInDatabase" class="callable">
+          <span class="name"><a href="classes_music_music_processor/MusicProcessor/getBeatsNotInDatabase.html">getBeatsNotInDatabase</a></span><span class="signature">(<wbr><span class="parameter" id="getBeatsNotInDatabase-param-allData"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">int</span>&gt;</span></span> <span class="parameter-name">allData</span>, </span> <span class="parameter" id="getBeatsNotInDatabase-param-i"><span class="type-annotation">int</span> <span class="parameter-name">i</span>, </span> <span class="parameter" id="getBeatsNotInDatabase-param-frequency"><span class="type-annotation">int</span> <span class="parameter-name">frequency</span>, </span> <span class="parameter" id="getBeatsNotInDatabase-param-bufferSize"><span class="type-annotation">int</span> <span class="parameter-name">bufferSize</span>, </span> <span class="parameter" id="getBeatsNotInDatabase-param-beatOffset"><span class="type-annotation">Duration</span> <span class="parameter-name">beatOffset</span></span>)
+            <span class="returntype parameter">&#8594; List</span>
+          </span>
+                  </dt>
+        <dd>
+          Process next part of song, which is not yet in database
+                  
+</dd>
+        <dt id="getChannel" class="callable">
+          <span class="name"><a href="classes_music_music_processor/MusicProcessor/getChannel.html">getChannel</a></span><span class="signature">(<wbr><span class="parameter" id="getChannel-param-bytes"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">int</span>&gt;</span></span> <span class="parameter-name">bytes</span>, </span> <span class="parameter" id="getChannel-param-channel"><span class="type-annotation">int</span> <span class="parameter-name">channel</span></span>)
+            <span class="returntype parameter">&#8594; List<span class="signature">&lt;<wbr><span class="type-parameter">int</span>&gt;</span></span>
+          </span>
+                  </dt>
+        <dd>
+          Get the Left channel of a Default .wav stereo: channel 0 &amp; 1
+Mono 1. Stereo 2.
+                  
+</dd>
+        <dt id="getNextBeatOffset" class="callable">
+          <span class="name"><a href="classes_music_music_processor/MusicProcessor/getNextBeatOffset.html">getNextBeatOffset</a></span><span class="signature">(<wbr><span class="parameter" id="getNextBeatOffset-param-beats"><span class="type-annotation">List</span> <span class="parameter-name">beats</span>, </span> <span class="parameter" id="getNextBeatOffset-param-beatOffset"><span class="type-annotation">Duration</span> <span class="parameter-name">beatOffset</span></span>)
+            <span class="returntype parameter">&#8594; Duration</span>
+          </span>
+                  </dt>
+        <dd>
+          Return the next beatOffset = time between last beat and batchSeconds
+                  
+</dd>
+        <dt id="getNormalizedAmplitudes" class="callable">
+          <span class="name"><a href="classes_music_music_processor/MusicProcessor/getNormalizedAmplitudes.html">getNormalizedAmplitudes</a></span><span class="signature">(<wbr><span class="parameter" id="getNormalizedAmplitudes-param-x"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">int</span>&gt;</span></span> <span class="parameter-name">x</span></span>)
+            <span class="returntype parameter">&#8594; List<span class="signature">&lt;<wbr><span class="type-parameter">double</span>&gt;</span></span>
+          </span>
+                  </dt>
+        <dd>
+          Get normalized amplitudes of frequency spectrum
+                  
+</dd>
+        <dt id="getReels" class="callable">
+          <span class="name"><a href="classes_music_music_processor/MusicProcessor/getReels.html">getReels</a></span><span class="signature">(<wbr><span class="parameter" id="getReels-param-x"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter"><a href="classes_utils_complex/Complex-class.html">Complex</a></span>&gt;</span></span> <span class="parameter-name">x</span></span>)
+            <span class="returntype parameter">&#8594; List<span class="signature">&lt;<wbr><span class="type-parameter">int</span>&gt;</span></span>
+          </span>
+                  </dt>
+        <dd>
+          Remove complex 10^(-15) stuff
+                  
+</dd>
+        <dt id="ifft" class="callable">
+          <span class="name"><a href="classes_music_music_processor/MusicProcessor/ifft.html">ifft</a></span><span class="signature">(<wbr><span class="parameter" id="ifft-param-X"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter"><a href="classes_utils_complex/Complex-class.html">Complex</a></span>&gt;</span></span> <span class="parameter-name">X</span></span>)
+            <span class="returntype parameter">&#8594; List<span class="signature">&lt;<wbr><span class="type-parameter"><a href="classes_utils_complex/Complex-class.html">Complex</a></span>&gt;</span></span>
+          </span>
+                  </dt>
+        <dd>
+          Inverse FFT
+                  
+</dd>
+        <dt id="initHistory" class="callable">
+          <span class="name"><a href="classes_music_music_processor/MusicProcessor/initHistory.html">initHistory</a></span><span class="signature">(<wbr><span class="parameter" id="initHistory-param-bufferSize"><span class="type-annotation">int</span> <span class="parameter-name">bufferSize</span>, </span> <span class="parameter" id="initHistory-param-numberOfBands"><span class="type-annotation">int</span> <span class="parameter-name">numberOfBands</span></span>)
+            <span class="returntype parameter">&#8594; List<span class="signature">&lt;<wbr><span class="type-parameter">List<span class="signature">&lt;<wbr><span class="type-parameter">double</span>&gt;</span></span>&gt;</span></span>
+          </span>
+                  </dt>
+        <dd>
+          Initialize the history: Buffersize = # samples (43/s) to store for each band
+                  
+</dd>
+        <dt id="matlabSimulinkDetection" class="callable">
+          <span class="name"><a href="classes_music_music_processor/MusicProcessor/matlabSimulinkDetection.html">matlabSimulinkDetection</a></span><span class="signature">(<wbr><span class="parameter" id="matlabSimulinkDetection-param-bufferSize"><span class="type-annotation">int</span> <span class="parameter-name">bufferSize</span>, </span> <span class="parameter" id="matlabSimulinkDetection-param-x"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">int</span>&gt;</span></span> <span class="parameter-name">x</span>, </span> <span class="parameter" id="matlabSimulinkDetection-param-frequency"><span class="type-annotation">int</span> <span class="parameter-name">frequency</span>, </span> <span class="parameter" id="matlabSimulinkDetection-param-beatOffset"><span class="type-annotation">Duration</span> <span class="parameter-name">beatOffset</span></span>)
+            <span class="returntype parameter">&#8594; List</span>
+          </span>
+                  </dt>
+        <dd>
+           <a href="classes_music_music_processor/MusicProcessor/matlabSimulinkDetection.html">[...]</a>
+                  
+</dd>
+        <dt id="mean" class="callable">
+          <span class="name"><a href="classes_music_music_processor/MusicProcessor/mean.html">mean</a></span><span class="signature">(<wbr><span class="parameter" id="mean-param-l"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">double</span>&gt;</span></span> <span class="parameter-name">l</span></span>)
+            <span class="returntype parameter">&#8594; double</span>
+          </span>
+                  </dt>
+        <dd>
+          Get mean of a list
+                  
+</dd>
+        <dt id="normalize" class="callable">
+          <span class="name"><a href="classes_music_music_processor/MusicProcessor/normalize.html">normalize</a></span><span class="signature">(<wbr><span class="parameter" id="normalize-param-amplitudes"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">double</span>&gt;</span></span> <span class="parameter-name">amplitudes</span></span>)
+            <span class="returntype parameter">&#8594; List<span class="signature">&lt;<wbr><span class="type-parameter">double</span>&gt;</span></span>
+          </span>
+                  </dt>
+        <dd>
+          Normalize a list
+                  
+</dd>
+        <dt id="process" class="callable">
+          <span class="name"><a href="classes_music_music_processor/MusicProcessor/process.html">process</a></span><span class="signature">(<wbr><span class="parameter" id="process-param-sendPort"><span class="type-annotation">SendPort</span> <span class="parameter-name">sendPort</span></span>)
+            <span class="returntype parameter">&#8594; Future<span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span>
+          </span>
+                  </dt>
+        <dd>
+          Process a song
+                  
+</dd>
+        <dt id="rightShift" class="callable">
+          <span class="name"><a href="classes_music_music_processor/MusicProcessor/rightShift.html">rightShift</a></span><span class="signature">(<wbr><span class="parameter" id="rightShift-param-lst"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">double</span>&gt;</span></span> <span class="parameter-name">lst</span></span>)
+            <span class="returntype parameter">&#8594; List<span class="signature">&lt;<wbr><span class="type-parameter">double</span>&gt;</span></span>
+          </span>
+                  </dt>
+        <dd>
+          Right shift a list and add a 0 at the start
+                  
+</dd>
+        <dt id="rightShiftHistory" class="callable">
+          <span class="name"><a href="classes_music_music_processor/MusicProcessor/rightShiftHistory.html">rightShiftHistory</a></span><span class="signature">(<wbr><span class="parameter" id="rightShiftHistory-param-history"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">List<span class="signature">&lt;<wbr><span class="type-parameter">double</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">history</span></span>)
+            <span class="returntype parameter">&#8594; List<span class="signature">&lt;<wbr><span class="type-parameter">List<span class="signature">&lt;<wbr><span class="type-parameter">double</span>&gt;</span></span>&gt;</span></span>
+          </span>
+                  </dt>
+        <dd>
+          Right shift every list of a List&lt;List&lt;&gt;&gt;
+                  
+</dd>
+        <dt id="stdDev" class="callable">
+          <span class="name"><a href="classes_music_music_processor/MusicProcessor/stdDev.html">stdDev</a></span><span class="signature">(<wbr><span class="parameter" id="stdDev-param-l"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">double</span>&gt;</span></span> <span class="parameter-name">l</span>, </span> <span class="parameter" id="stdDev-param-mean"><span class="type-annotation">double</span> <span class="parameter-name">mean</span></span>)
+            <span class="returntype parameter">&#8594; double</span>
+          </span>
+                  </dt>
+        <dd>
+          Get Standard Deviation of a list
+                  
+</dd>
+        <dt id="updateHistory" class="callable">
+          <span class="name"><a href="classes_music_music_processor/MusicProcessor/updateHistory.html">updateHistory</a></span><span class="signature">(<wbr><span class="parameter" id="updateHistory-param-history"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">List<span class="signature">&lt;<wbr><span class="type-parameter">double</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">history</span>, </span> <span class="parameter" id="updateHistory-param-newEnergy"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">double</span>&gt;</span></span> <span class="parameter-name">newEnergy</span></span>)
+            <span class="returntype parameter">&#8594; List<span class="signature">&lt;<wbr><span class="type-parameter">List<span class="signature">&lt;<wbr><span class="type-parameter">double</span>&gt;</span></span>&gt;</span></span>
+          </span>
+                  </dt>
+        <dd>
+          Update a rightshifted history with a new list
+                  
+</dd>
+      </dl>
+    </section>
 
 
   </div> <!-- /.main-content -->
@@ -451,50 +439,49 @@
       <li class="section-title">
         <a href="classes_music_music_processor/MusicProcessor-class.html#instance-properties">Properties</a>
       </li>
-      <li><a href="classes_music_music_processor/MusicProcessor/logarithmic.html">logarithmic</a></li>
-      <li><a href="classes_music_music_processor/MusicProcessor/musicController.html">musicController</a></li>
+      <li><a href="classes_music_music_processor/MusicProcessor/curBPM.html">curBPM</a></li>
+      <li><a href="classes_music_music_processor/MusicProcessor/metadataDatabaseController.html">metadataDatabaseController</a></li>
       <li class="inherited"><a href="classes_music_music_processor/MusicProcessor/hashCode.html">hashCode</a></li>
       <li class="inherited"><a href="classes_music_music_processor/MusicProcessor/runtimeType.html">runtimeType</a></li>
     
-      <li class="section-title"><a href="classes_music_music_processor/MusicProcessor-class.html#instance-methods">Methods</a></li>
-      <li><a href="classes_music_music_processor/MusicProcessor/analyze.html">analyze</a></li>
-      <li><a href="classes_music_music_processor/MusicProcessor/derive.html">derive</a></li>
-      <li><a href="classes_music_music_processor/MusicProcessor/dft.html">dft</a></li>
-      <li><a href="classes_music_music_processor/MusicProcessor/fft.html">fft</a></li>
-      <li><a href="classes_music_music_processor/MusicProcessor/filteringRhythmDetection.html">filteringRhythmDetection</a></li>
-      <li><a href="classes_music_music_processor/MusicProcessor/frequencySelectedSoundAlgorithm.html">frequencySelectedSoundAlgorithm</a></li>
-      <li><a href="classes_music_music_processor/MusicProcessor/frequencySelectedSoundAlgorithmLowestBand.html">frequencySelectedSoundAlgorithmLowestBand</a></li>
-      <li><a href="classes_music_music_processor/MusicProcessor/getAmplitudesFromFFT.html">getAmplitudesFromFFT</a></li>
-      <li><a href="classes_music_music_processor/MusicProcessor/getAvgEnergySubbands.html">getAvgEnergySubbands</a></li>
-      <li><a href="classes_music_music_processor/MusicProcessor/getBeats.html">getBeats</a></li>
-      <li><a href="classes_music_music_processor/MusicProcessor/getBeatTimeStamps.html">getBeatTimeStamps</a></li>
-      <li><a href="classes_music_music_processor/MusicProcessor/getBPM.html">getBPM</a></li>
-      <li><a href="classes_music_music_processor/MusicProcessor/getChannel.html">getChannel</a></li>
-      <li><a href="classes_music_music_processor/MusicProcessor/getCorrelationEnergy.html">getCorrelationEnergy</a></li>
-      <li><a href="classes_music_music_processor/MusicProcessor/getEnergyBands.html">getEnergyBands</a></li>
-      <li><a href="classes_music_music_processor/MusicProcessor/getLinearBands.html">getLinearBands</a></li>
-      <li><a href="classes_music_music_processor/MusicProcessor/getLogarithmicBands.html">getLogarithmicBands</a></li>
-      <li><a href="classes_music_music_processor/MusicProcessor/getMax.html">getMax</a></li>
-      <li><a href="classes_music_music_processor/MusicProcessor/getMaxBPM.html">getMaxBPM</a></li>
-      <li><a href="classes_music_music_processor/MusicProcessor/getNewEnergy.html">getNewEnergy</a></li>
-      <li><a href="classes_music_music_processor/MusicProcessor/getSubbands.html">getSubbands</a></li>
-      <li><a href="classes_music_music_processor/MusicProcessor/getTaTb.html">getTaTb</a></li>
-      <li><a href="classes_music_music_processor/MusicProcessor/getTrainOfImpulses.html">getTrainOfImpulses</a></li>
-      <li><a href="classes_music_music_processor/MusicProcessor/getVariance.html">getVariance</a></li>
-      <li><a href="classes_music_music_processor/MusicProcessor/initHistory.html">initHistory</a></li>
-      <li><a href="classes_music_music_processor/MusicProcessor/process.html">process</a></li>
-      <li><a href="classes_music_music_processor/MusicProcessor/rightShift.html">rightShift</a></li>
-      <li><a href="classes_music_music_processor/MusicProcessor/rightShiftHistory.html">rightShiftHistory</a></li>
-      <li><a href="classes_music_music_processor/MusicProcessor/updateHistory.html">updateHistory</a></li>
-      <li><a href="classes_music_music_processor/MusicProcessor/writeBeats.html">writeBeats</a></li>
-      <li><a href="classes_music_music_processor/MusicProcessor/writeHistory.html">writeHistory</a></li>
+      <li class="section-title inherited"><a href="classes_music_music_processor/MusicProcessor-class.html#instance-methods">Methods</a></li>
       <li class="inherited"><a href="classes_music_music_processor/MusicProcessor/noSuchMethod.html">noSuchMethod</a></li>
       <li class="inherited"><a href="classes_music_music_processor/MusicProcessor/toString.html">toString</a></li>
     
       <li class="section-title inherited"><a href="classes_music_music_processor/MusicProcessor-class.html#operators">Operators</a></li>
       <li class="inherited"><a href="classes_music_music_processor/MusicProcessor/operator_equals.html">operator ==</a></li>
     
+      <li class="section-title"><a href="classes_music_music_processor/MusicProcessor-class.html#static-properties">Static properties</a></li>
+      <li><a href="classes_music_music_processor/MusicProcessor/historySeconds.html">historySeconds</a></li>
+      <li><a href="classes_music_music_processor/MusicProcessor/window.html">window</a></li>
     
+      <li class="section-title"><a href="classes_music_music_processor/MusicProcessor-class.html#static-methods">Static methods</a></li>
+      <li><a href="classes_music_music_processor/MusicProcessor/analyze.html">analyze</a></li>
+      <li><a href="classes_music_music_processor/MusicProcessor/applyComb.html">applyComb</a></li>
+      <li><a href="classes_music_music_processor/MusicProcessor/conjugateList.html">conjugateList</a></li>
+      <li><a href="classes_music_music_processor/MusicProcessor/dot.html">dot</a></li>
+      <li><a href="classes_music_music_processor/MusicProcessor/fft.html">fft</a></li>
+      <li><a href="classes_music_music_processor/MusicProcessor/fftDouble.html">fftDouble</a></li>
+      <li><a href="classes_music_music_processor/MusicProcessor/fftInt.html">fftInt</a></li>
+      <li><a href="classes_music_music_processor/MusicProcessor/findPeaks.html">findPeaks</a></li>
+      <li><a href="classes_music_music_processor/MusicProcessor/findTempo.html">findTempo</a></li>
+      <li><a href="classes_music_music_processor/MusicProcessor/getAmplitudesFromFFT.html">getAmplitudesFromFFT</a></li>
+      <li><a href="classes_music_music_processor/MusicProcessor/getBeatsInDatabase.html">getBeatsInDatabase</a></li>
+      <li><a href="classes_music_music_processor/MusicProcessor/getBeatsNotInDatabase.html">getBeatsNotInDatabase</a></li>
+      <li><a href="classes_music_music_processor/MusicProcessor/getChannel.html">getChannel</a></li>
+      <li><a href="classes_music_music_processor/MusicProcessor/getNextBeatOffset.html">getNextBeatOffset</a></li>
+      <li><a href="classes_music_music_processor/MusicProcessor/getNormalizedAmplitudes.html">getNormalizedAmplitudes</a></li>
+      <li><a href="classes_music_music_processor/MusicProcessor/getReels.html">getReels</a></li>
+      <li><a href="classes_music_music_processor/MusicProcessor/ifft.html">ifft</a></li>
+      <li><a href="classes_music_music_processor/MusicProcessor/initHistory.html">initHistory</a></li>
+      <li><a href="classes_music_music_processor/MusicProcessor/matlabSimulinkDetection.html">matlabSimulinkDetection</a></li>
+      <li><a href="classes_music_music_processor/MusicProcessor/mean.html">mean</a></li>
+      <li><a href="classes_music_music_processor/MusicProcessor/normalize.html">normalize</a></li>
+      <li><a href="classes_music_music_processor/MusicProcessor/process.html">process</a></li>
+      <li><a href="classes_music_music_processor/MusicProcessor/rightShift.html">rightShift</a></li>
+      <li><a href="classes_music_music_processor/MusicProcessor/rightShiftHistory.html">rightShiftHistory</a></li>
+      <li><a href="classes_music_music_processor/MusicProcessor/stdDev.html">stdDev</a></li>
+      <li><a href="classes_music_music_processor/MusicProcessor/updateHistory.html">updateHistory</a></li>
     
     </ol>
   </div><!--/.sidebar-offcanvas-->
@@ -503,7 +490,7 @@
 
 <footer>
   <span class="no-break">
-    pace_your_pulse 0.6+13
+    pace_your_pulse 0.7+17
   </span>
 
   

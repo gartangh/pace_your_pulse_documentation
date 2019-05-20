@@ -60,6 +60,12 @@
         <a href="classes_events_action_event/ActionEvent-class.html#instance-properties">Properties</a>
       </li>
       <li><a href="classes_events_action_event/ActionEvent/action.html">action</a></li>
+      <li><a href="classes_events_action_event/ActionEvent/cachedSongPath.html">cachedSongPath</a></li>
+      <li><a href="classes_events_action_event/ActionEvent/callback.html">callback</a></li>
+      <li><a href="classes_events_action_event/ActionEvent/length.html">length</a></li>
+      <li><a href="classes_events_action_event/ActionEvent/resID.html">resID</a></li>
+      <li><a href="classes_events_action_event/ActionEvent/songName.html">songName</a></li>
+      <li><a href="classes_events_action_event/ActionEvent/songPath.html">songPath</a></li>
       <li class="inherited"><a href="classes_events_event/Event/hashCode.html">hashCode</a></li>
       <li class="inherited"><a href="classes_events_event/Event/runtimeType.html">runtimeType</a></li>
     
@@ -80,7 +86,7 @@
 
     <section class="multi-line-signature">
       
-      <span class="name ">ActionEvent</span>(<wbr><span class="parameter" id="-param-_action"><span class="type-annotation"><a href="enums_event_action/EventAction-class.html">EventAction</a></span> <span class="parameter-name">_action</span></span>)
+      <span class="name ">ActionEvent</span>(<wbr><span class="parameter" id="-param-_action"><span class="type-annotation"><a href="enums_event_action/EventAction-class.html">EventAction</a></span> <span class="parameter-name">_action</span>, {</span> <span class="parameter" id="-param-callback"><span class="type-annotation">dynamic</span> <span class="parameter-name">callback</span>, </span> <span class="parameter" id="-param-songName"><span class="type-annotation">String</span> <span class="parameter-name">songName</span>, </span> <span class="parameter" id="-param-songPath"><span class="type-annotation">String</span> <span class="parameter-name">songPath</span>, </span> <span class="parameter" id="-param-resID"><span class="type-annotation">int</span> <span class="parameter-name">resID</span>, </span> <span class="parameter" id="-param-length"><span class="type-annotation">Duration</span> <span class="parameter-name">length</span>, </span> <span class="parameter" id="-param-cachedSongPath"><span class="type-annotation">String</span> <span class="parameter-name">cachedSongPath</span></span> })
     </section>
 
     <section class="desc markdown">
@@ -89,7 +95,13 @@
     
     <section class="summary source-code" id="source">
       <h2><span>Implementation</span></h2>
-      <pre class="language-dart"><code class="language-dart">ActionEvent(this._action);</code></pre>
+      <pre class="language-dart"><code class="language-dart">ActionEvent(this._action, {
+  this.callback,
+  this.songName,
+  this.songPath,
+  this.resID,
+  this.length,
+  this.cachedSongPath});</code></pre>
     </section>
 
   </div> <!-- /.main-content -->
@@ -101,7 +113,7 @@
 
 <footer>
   <span class="no-break">
-    pace_your_pulse 0.6+13
+    pace_your_pulse 0.7+17
   </span>
 
   

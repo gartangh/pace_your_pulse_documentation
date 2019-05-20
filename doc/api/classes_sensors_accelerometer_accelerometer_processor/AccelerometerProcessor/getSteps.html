@@ -59,9 +59,7 @@
       </li>
       <li><a href="classes_sensors_accelerometer_accelerometer_processor/AccelerometerProcessor/average.html">average</a></li>
       <li><a href="classes_sensors_accelerometer_accelerometer_processor/AccelerometerProcessor/eventSent.html">eventSent</a></li>
-      <li><a href="classes_sensors_accelerometer_accelerometer_processor/AccelerometerProcessor/keepGoing.html">keepGoing</a></li>
       <li><a href="classes_sensors_accelerometer_accelerometer_processor/AccelerometerProcessor/nextStep.html">nextStep</a></li>
-      <li><a href="classes_sensors_accelerometer_accelerometer_processor/AccelerometerProcessor/predicted.html">predicted</a></li>
       <li><a href="classes_sensors_accelerometer_accelerometer_processor/AccelerometerProcessor/previousSteps.html">previousSteps</a></li>
       <li><a href="classes_sensors_accelerometer_accelerometer_processor/AccelerometerProcessor/removedData.html">removedData</a></li>
       <li><a href="classes_sensors_accelerometer_accelerometer_processor/AccelerometerProcessor/updated.html">updated</a></li>
@@ -99,7 +97,8 @@
       
     </section>
     <section class="desc markdown">
-      <p>Get steps.</p>
+      <p>Get steps</p>
+<p>Calculate steps that occurred from pulled accelerometer data</p>
     </section>
     
     <section class="summary source-code" id="source">
@@ -113,24 +112,76 @@
         i--;
       }
     }
+    List&lt;num&gt; results = SignalSmoother.signalSmoother.smoothMA(vectorData);
+    &#47;&#47;print(results);
+    Map&lt;num, num&gt; maxPeaks = StepDetector.stepDetector.getMaxPeaks(results, Globals.peakDetectionWindowSize, Globals.maxPeakH);
+    Map&lt;num, num&gt; minPeaks = StepDetector.stepDetector.getMinPeaks(
+        results, Globals.peakDetectionWindowSize, Globals.minPeakH);
 
-    List&lt;num&gt; results = SignalSmoother().smoothValuesMA(vectorData);
-    &#47;&#47;Map&lt;num, num&gt; maxPeaks = StepDetector().getMaxPeaks(results, peakDetectionWindowSize, maxPeakH);
-    Map&lt;num, num&gt; minPeaks = StepDetector()
-        .getMinPeaks(results, peakDetectionWindowSize, minPeakH);
-
-    &#47;&#47;Iterable&lt;MapEntry&gt; tempMax = maxPeaks.entries;
+    &#47;&#47;print(maxPeaks);
+    &#47;&#47;print(minPeaks);
+    Iterable&lt;MapEntry&gt; tempMax = maxPeaks.entries;
     Iterable&lt;MapEntry&gt; tempMin = minPeaks.entries;
 
-    for (int i = 0; i &lt; tempMin.length; i++) {
-      MapEntry&lt;num, num&gt; el = tempMin.elementAt(i);
-      int index = el.key;
-      if (previousSteps.length == amountOfStepsForAverage)
-        previousSteps.removeAt(0);
-      previousSteps.add(times?.elementAt(index));
-      workout?.updateDistance();
+    List&lt;num&gt; peaks = List();
+    List&lt;String&gt; check = List();
+    int maxIter = 0;
+    int minIter = 0;
+    String last = &#39;first&#39;;
+    for (int i =0;i&lt;tempMin.length + tempMax.length;i++){
+      if (maxIter &lt; tempMax.length){
+        if (minIter &lt; tempMin.length){
+          if (tempMin.elementAt(minIter).key &lt; tempMax.elementAt(maxIter).key){
+            if (last == &#39;first&#39; || last == &#39;max&#39;) {
+              peaks.add(tempMin
+                  .elementAt(minIter)
+                  .key);
+              last = &#39;min&#39;;
+              check.add(last);
+            }
+            minIter++;
+          }
+          else{
+            if (last == &#39;first&#39; || last == &#39;min&#39;){
+              peaks.add(tempMax.elementAt(maxIter).key);
+              last = &#39;max&#39;;
+              check.add(last);
+            }
+            maxIter++;
+          }
+        }
+        else{
+          if (last == &#39;first&#39; || last == &#39;min&#39;){
+            peaks.add(tempMax.elementAt(maxIter).key);
+            last = &#39;max&#39;;
+            check.add(last);
+          }
+          maxIter++;
+        }
+      }
+      else{
+        if (minIter &lt; tempMin.length){
+          if (last == &#39;first&#39; || last == &#39;max&#39;){
+            peaks.add(tempMin.elementAt(minIter).key);
+            last = &#39;min&#39;;
+            check.add(last);
+          }
+          minIter++;
+        }
+      }
     }
-    updated = true;
+
+    &#47;&#47;print(peaks);
+    &#47;&#47;print(check);
+    &#47;&#47;print(peaks.length);
+    if (check.isNotEmpty) {
+      bool minFirst = (check?.elementAt(0) == &#39;min&#39;);
+      for (int i = minFirst ? 0 : 1; i &lt; peaks.length; i += 2) {
+        previousSteps.add(times?.elementAt(peaks[i]));
+      }
+
+      updated = true;
+    }
   }
 }</code></pre>
     </section>
@@ -144,7 +195,7 @@
 
 <footer>
   <span class="no-break">
-    pace_your_pulse 0.6+13
+    pace_your_pulse 0.7+17
   </span>
 
   

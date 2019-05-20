@@ -57,28 +57,24 @@
       <li class="section-title">
         <a href="classes_utils_logic/Logic-class.html#instance-properties">Properties</a>
       </li>
-      <li><a href="classes_utils_logic/Logic/awake.html">awake</a></li>
       <li><a href="classes_utils_logic/Logic/beats.html">beats</a></li>
-      <li><a href="classes_utils_logic/Logic/isListener.html">isListener</a></li>
+      <li><a href="classes_utils_logic/Logic/heartStepChanged.html">heartStepChanged</a></li>
       <li><a href="classes_utils_logic/Logic/lastBeat.html">lastBeat</a></li>
       <li><a href="classes_utils_logic/Logic/lastHeartRate.html">lastHeartRate</a></li>
       <li><a href="classes_utils_logic/Logic/lastTempoChange.html">lastTempoChange</a></li>
       <li><a href="classes_utils_logic/Logic/maxHeartRate.html">maxHeartRate</a></li>
       <li><a href="classes_utils_logic/Logic/minHeartRate.html">minHeartRate</a></li>
+      <li><a href="classes_utils_logic/Logic/model.html">model</a></li>
+      <li><a href="classes_utils_logic/Logic/periodicCalculateSpeed.html">periodicCalculateSpeed</a></li>
       <li><a href="classes_utils_logic/Logic/startMusic.html">startMusic</a></li>
       <li><a href="classes_utils_logic/Logic/steps.html">steps</a></li>
-      <li><a href="classes_utils_logic/Logic/targetHeartRate.html">targetHeartRate</a></li>
-      <li><a href="classes_utils_logic/Logic/test.html">test</a></li>
-      <li><a href="classes_utils_logic/Logic/testBeat.html">testBeat</a></li>
       <li><a href="classes_utils_logic/Logic/totalMusicSpeedFactorChange.html">totalMusicSpeedFactorChange</a></li>
       <li class="inherited"><a href="classes_utils_logic/Logic/hashCode.html">hashCode</a></li>
       <li class="inherited"><a href="classes_utils_logic/Logic/runtimeType.html">runtimeType</a></li>
     
       <li class="section-title"><a href="classes_utils_logic/Logic-class.html#instance-methods">Methods</a></li>
       <li><a href="classes_utils_logic/Logic/changeMusicTempo.html">changeMusicTempo</a></li>
-      <li><a href="classes_utils_logic/Logic/processBeats.html">processBeats</a></li>
-      <li><a href="classes_utils_logic/Logic/reset.html">reset</a></li>
-      <li><a href="classes_utils_logic/Logic/wakeUp.html">wakeUp</a></li>
+      <li><a href="classes_utils_logic/Logic/init.html">init</a></li>
       <li class="inherited"><a href="classes_utils_logic/Logic/noSuchMethod.html">noSuchMethod</a></li>
       <li class="inherited"><a href="classes_utils_logic/Logic/toString.html">toString</a></li>
     
@@ -102,8 +98,8 @@
       
     </section>
     <section class="desc markdown">
-      <p>Change music tempo.
-Will adapt all future beats to the new speed factor.</p>
+      <p>Change music tempo.</p>
+<p>Will adapt all future beats to the new speed factor.</p>
     </section>
     
     <section class="summary source-code" id="source">
@@ -111,20 +107,21 @@ Will adapt all future beats to the new speed factor.</p>
       <pre class="language-dart"><code class="language-dart">void changeMusicTempo(num newFactor) {
   DateTime now = DateTime.now();
   lastTempoChange = now;
-  beats.removeWhere((beat) =&gt; beat.isBefore(now)); &#47;&#47;remove outdated beats
   lastBeat = now;
   DateTime lastBeatUnModified = now;
-  List&lt;DateTime&gt; newBeats = List&lt;DateTime&gt;();
-  for (int i = 0; i &lt; beats.length; i++) {
-    DateTime beat = beats[i];
-    Duration timeBetweenBeats = beat.difference(lastBeatUnModified);
+  _beats.removeWhere((beat) =&gt; beat.isBefore(now)); &#47;&#47;remove outdated beats
+
+  List&lt;DateTime&gt; newBeats = List();
+  for (DateTime beat in _beats) {
+    num timeBetweenBeats = beat.difference(lastBeatUnModified).inMilliseconds;
     lastBeatUnModified = beat;
-    timeBetweenBeats = Duration(
-        milliseconds: (timeBetweenBeats.inMilliseconds &#47; newFactor).round());
-    lastBeat = lastBeat.add(timeBetweenBeats);
+
+    num milliseconds = (timeBetweenBeats &#47; newFactor).round();
+
+    lastBeat = lastBeat.add(Duration(milliseconds: milliseconds));
     newBeats.add(lastBeat);
   }
-  beats = newBeats;
+  _beats = newBeats;
 
   totalMusicSpeedFactorChange *= newFactor;
 }</code></pre>
@@ -139,7 +136,7 @@ Will adapt all future beats to the new speed factor.</p>
 
 <footer>
   <span class="no-break">
-    pace_your_pulse 0.6+13
+    pace_your_pulse 0.7+17
   </span>
 
   

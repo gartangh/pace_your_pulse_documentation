@@ -143,12 +143,20 @@
           The hash code for this object. <a href="classes_sensors_sensor_communication/SensorCommunication/hashCode.html">[...]</a>
                   <div class="features">read-only, inherited</div>
 </dd>
+        <dt id="isConnected" class="property inherited">
+          <span class="name"><a href="classes_sensors_sensor_communication/SensorCommunication/isConnected.html">isConnected</a></span>
+          <span class="signature">&#8596; bool</span>         
+        </dt>
+        <dd class="inherited">
+          Connection status
+                  <div class="features">read / write, inherited</div>
+</dd>
         <dt id="methodChannel" class="property inherited">
-          <span class="name"><a href="classes_sensors_heart_rate_sensor_heart_rate_sensor_communication/HeartRateSensorCommunication/methodChannel.html">methodChannel</a></span>
+          <span class="name"><a href="classes_sensors_sensor_communication/SensorCommunication/methodChannel.html">methodChannel</a></span>
           <span class="signature">&#8596; MethodChannel</span>         
         </dt>
         <dd class="inherited">
-          The method channel. <a href="classes_sensors_heart_rate_sensor_heart_rate_sensor_communication/HeartRateSensorCommunication/methodChannel.html">[...]</a>
+          The method channel. <a href="classes_sensors_sensor_communication/SensorCommunication/methodChannel.html">[...]</a>
                   <div class="features">read / write, inherited</div>
 </dd>
         <dt id="runtimeType" class="property inherited">
@@ -201,11 +209,20 @@
 </dd>
         <dt id="disconnect" class="callable">
           <span class="name"><a href="classes_sensors_heart_rate_sensor_garmin_heart_rate_sensor_communication/GarminHeartRateSensorCommunication/disconnect.html">disconnect</a></span><span class="signature">(<wbr>)
-            <span class="returntype parameter">&#8594; bool</span>
+            <span class="returntype parameter">&#8594; void</span>
           </span>
                   </dt>
         <dd>
           Disconnect.
+                  <div class="features">override</div>
+</dd>
+        <dt id="init" class="callable">
+          <span class="name"><a href="classes_sensors_heart_rate_sensor_garmin_heart_rate_sensor_communication/GarminHeartRateSensorCommunication/init.html">init</a></span><span class="signature">(<wbr><span class="parameter" id="init-param-sensor"><span class="type-annotation"><a href="classes_sensors_sensor/Sensor-class.html">Sensor</a></span> <span class="parameter-name">sensor</span></span>)
+            <span class="returntype parameter">&#8594; void</span>
+          </span>
+                  </dt>
+        <dd>
+          Initialize. <a href="classes_sensors_heart_rate_sensor_garmin_heart_rate_sensor_communication/GarminHeartRateSensorCommunication/init.html">[...]</a>
                   <div class="features">override</div>
 </dd>
         <dt id="pause" class="callable">
@@ -219,7 +236,7 @@
 </dd>
         <dt id="pullData" class="callable">
           <span class="name"><a href="classes_sensors_heart_rate_sensor_garmin_heart_rate_sensor_communication/GarminHeartRateSensorCommunication/pullData.html">pullData</a></span><span class="signature">(<wbr>)
-            <span class="returntype parameter">&#8594; List<span class="signature">&lt;<wbr><span class="type-parameter">double</span>&gt;</span></span>
+            <span class="returntype parameter">&#8594; List<span class="signature">&lt;<wbr><span class="type-parameter">num</span>&gt;</span></span>
           </span>
                   </dt>
         <dd>
@@ -244,15 +261,6 @@
           Start.
                   <div class="features">override</div>
 </dd>
-        <dt id="startPublishing" class="callable">
-          <span class="name"><a href="classes_sensors_heart_rate_sensor_garmin_heart_rate_sensor_communication/GarminHeartRateSensorCommunication/startPublishing.html">startPublishing</a></span><span class="signature">(<wbr>)
-            <span class="returntype parameter">&#8594; void</span>
-          </span>
-                  </dt>
-        <dd>
-          Start publishing.
-                  
-</dd>
         <dt id="stop" class="callable">
           <span class="name"><a href="classes_sensors_heart_rate_sensor_garmin_heart_rate_sensor_communication/GarminHeartRateSensorCommunication/stop.html">stop</a></span><span class="signature">(<wbr>)
             <span class="returntype parameter">&#8594; void</span>
@@ -262,23 +270,14 @@
           Stop.
                   <div class="features">override</div>
 </dd>
-        <dt id="stopPublishing" class="callable">
-          <span class="name"><a href="classes_sensors_heart_rate_sensor_garmin_heart_rate_sensor_communication/GarminHeartRateSensorCommunication/stopPublishing.html">stopPublishing</a></span><span class="signature">(<wbr>)
+        <dt id="updateGui" class="callable">
+          <span class="name"><a href="classes_sensors_heart_rate_sensor_garmin_heart_rate_sensor_communication/GarminHeartRateSensorCommunication/updateGui.html">updateGui</a></span><span class="signature">(<wbr><span class="parameter" id="updateGui-param-event"><span class="type-annotation"><a href="classes_events_data_gui_event/DataGuiEvent-class.html">DataGuiEvent</a></span> <span class="parameter-name">event</span></span>)
             <span class="returntype parameter">&#8594; void</span>
           </span>
                   </dt>
         <dd>
-          Stop publishing.
-                  
-</dd>
-        <dt id="init" class="callable inherited">
-          <span class="name"><a href="classes_sensors_sensor_communication/SensorCommunication/init.html">init</a></span><span class="signature">(<wbr><span class="parameter" id="init-param-sensor"><span class="type-annotation"><a href="classes_sensors_sensor/Sensor-class.html">Sensor</a></span> <span class="parameter-name">sensor</span></span>)
-            <span class="returntype parameter">&#8594; void</span>
-          </span>
-                  </dt>
-        <dd class="inherited">
-          Initialize. <a href="classes_sensors_sensor_communication/SensorCommunication/init.html">[...]</a>
-                  <div class="features">inherited</div>
+          UpdateGUI <a href="classes_sensors_heart_rate_sensor_garmin_heart_rate_sensor_communication/GarminHeartRateSensorCommunication/updateGui.html">[...]</a>
+                  <div class="features">override</div>
 </dd>
         <dt id="noSuchMethod" class="callable inherited">
           <span class="name"><a href="classes_sensors_sensor_communication/SensorCommunication/noSuchMethod.html">noSuchMethod</a></span><span class="signature">(<wbr><span class="parameter" id="noSuchMethod-param-invocation"><span class="type-annotation">Invocation</span> <span class="parameter-name">invocation</span></span>)
@@ -334,7 +333,8 @@
       <li class="inherited"><a href="classes_sensors_sensor_communication/SensorCommunication/buffer.html">buffer</a></li>
       <li class="inherited"><a href="classes_sensors_sensor_communication/SensorCommunication/bufferCopy.html">bufferCopy</a></li>
       <li class="inherited"><a href="classes_sensors_sensor_communication/SensorCommunication/hashCode.html">hashCode</a></li>
-      <li class="inherited"><a href="classes_sensors_heart_rate_sensor_heart_rate_sensor_communication/HeartRateSensorCommunication/methodChannel.html">methodChannel</a></li>
+      <li class="inherited"><a href="classes_sensors_sensor_communication/SensorCommunication/isConnected.html">isConnected</a></li>
+      <li class="inherited"><a href="classes_sensors_sensor_communication/SensorCommunication/methodChannel.html">methodChannel</a></li>
       <li class="inherited"><a href="classes_sensors_sensor_communication/SensorCommunication/runtimeType.html">runtimeType</a></li>
       <li class="inherited"><a href="classes_sensors_sensor_communication/SensorCommunication/sensor.html">sensor</a></li>
       <li class="inherited"><a href="classes_sensors_sensor_communication/SensorCommunication/timeStamps.html">timeStamps</a></li>
@@ -343,14 +343,13 @@
       <li><a href="classes_sensors_heart_rate_sensor_garmin_heart_rate_sensor_communication/GarminHeartRateSensorCommunication/bufferInput.html">bufferInput</a></li>
       <li><a href="classes_sensors_heart_rate_sensor_garmin_heart_rate_sensor_communication/GarminHeartRateSensorCommunication/connect.html">connect</a></li>
       <li><a href="classes_sensors_heart_rate_sensor_garmin_heart_rate_sensor_communication/GarminHeartRateSensorCommunication/disconnect.html">disconnect</a></li>
+      <li><a href="classes_sensors_heart_rate_sensor_garmin_heart_rate_sensor_communication/GarminHeartRateSensorCommunication/init.html">init</a></li>
       <li><a href="classes_sensors_heart_rate_sensor_garmin_heart_rate_sensor_communication/GarminHeartRateSensorCommunication/pause.html">pause</a></li>
       <li><a href="classes_sensors_heart_rate_sensor_garmin_heart_rate_sensor_communication/GarminHeartRateSensorCommunication/pullData.html">pullData</a></li>
       <li><a href="classes_sensors_heart_rate_sensor_garmin_heart_rate_sensor_communication/GarminHeartRateSensorCommunication/resume.html">resume</a></li>
       <li><a href="classes_sensors_heart_rate_sensor_garmin_heart_rate_sensor_communication/GarminHeartRateSensorCommunication/start.html">start</a></li>
-      <li><a href="classes_sensors_heart_rate_sensor_garmin_heart_rate_sensor_communication/GarminHeartRateSensorCommunication/startPublishing.html">startPublishing</a></li>
       <li><a href="classes_sensors_heart_rate_sensor_garmin_heart_rate_sensor_communication/GarminHeartRateSensorCommunication/stop.html">stop</a></li>
-      <li><a href="classes_sensors_heart_rate_sensor_garmin_heart_rate_sensor_communication/GarminHeartRateSensorCommunication/stopPublishing.html">stopPublishing</a></li>
-      <li class="inherited"><a href="classes_sensors_sensor_communication/SensorCommunication/init.html">init</a></li>
+      <li><a href="classes_sensors_heart_rate_sensor_garmin_heart_rate_sensor_communication/GarminHeartRateSensorCommunication/updateGui.html">updateGui</a></li>
       <li class="inherited"><a href="classes_sensors_sensor_communication/SensorCommunication/noSuchMethod.html">noSuchMethod</a></li>
       <li class="inherited"><a href="classes_sensors_sensor_communication/SensorCommunication/toString.html">toString</a></li>
     
@@ -366,7 +365,7 @@
 
 <footer>
   <span class="no-break">
-    pace_your_pulse 0.6+13
+    pace_your_pulse 0.7+17
   </span>
 
   

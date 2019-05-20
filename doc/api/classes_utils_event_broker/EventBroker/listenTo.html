@@ -63,6 +63,7 @@
       <li class="section-title"><a href="classes_utils_event_broker/EventBroker-class.html#instance-methods">Methods</a></li>
       <li><a href="classes_utils_event_broker/EventBroker/listenTo.html">listenTo</a></li>
       <li><a href="classes_utils_event_broker/EventBroker/publish.html">publish</a></li>
+      <li><a href="classes_utils_event_broker/EventBroker/stopListening.html">stopListening</a></li>
       <li class="inherited"><a href="classes_utils_event_broker/EventBroker/noSuchMethod.html">noSuchMethod</a></li>
       <li class="inherited"><a href="classes_utils_event_broker/EventBroker/toString.html">toString</a></li>
     
@@ -80,7 +81,7 @@
       <div><h1>listenTo&lt;<wbr><span class="type-parameter">T</span>&gt; method</h1></div>
 
     <section class="multi-line-signature">
-      <span class="returntype">void</span>
+      <span class="returntype">StreamSubscription<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>
             <span class="name ">listenTo</span>
 &lt;<wbr><span class="type-parameter">T</span>&gt;(<wbr><span class="parameter" id="listenTo-param-callback"><span class="type-annotation">dynamic</span> <span class="parameter-name">callback</span></span>)
       
@@ -91,8 +92,8 @@
     
     <section class="summary source-code" id="source">
       <h2><span>Implementation</span></h2>
-      <pre class="language-dart"><code class="language-dart">void listenTo&lt;T&gt;(callback) {
-  _eventBus.on&lt;T&gt;().listen((event) =&gt; callback(event));
+      <pre class="language-dart"><code class="language-dart">StreamSubscription&lt;T&gt; listenTo&lt;T&gt;(callback) {
+  return _eventBus.on&lt;T&gt;().listen((event) =&gt; callback(event));
 }</code></pre>
     </section>
 
@@ -105,7 +106,7 @@
 
 <footer>
   <span class="no-break">
-    pace_your_pulse 0.6+13
+    pace_your_pulse 0.7+17
   </span>
 
   

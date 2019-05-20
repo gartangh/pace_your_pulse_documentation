@@ -59,9 +59,7 @@
       </li>
       <li><a href="classes_sensors_accelerometer_accelerometer_processor/AccelerometerProcessor/average.html">average</a></li>
       <li><a href="classes_sensors_accelerometer_accelerometer_processor/AccelerometerProcessor/eventSent.html">eventSent</a></li>
-      <li><a href="classes_sensors_accelerometer_accelerometer_processor/AccelerometerProcessor/keepGoing.html">keepGoing</a></li>
       <li><a href="classes_sensors_accelerometer_accelerometer_processor/AccelerometerProcessor/nextStep.html">nextStep</a></li>
-      <li><a href="classes_sensors_accelerometer_accelerometer_processor/AccelerometerProcessor/predicted.html">predicted</a></li>
       <li><a href="classes_sensors_accelerometer_accelerometer_processor/AccelerometerProcessor/previousSteps.html">previousSteps</a></li>
       <li><a href="classes_sensors_accelerometer_accelerometer_processor/AccelerometerProcessor/removedData.html">removedData</a></li>
       <li><a href="classes_sensors_accelerometer_accelerometer_processor/AccelerometerProcessor/updated.html">updated</a></li>
@@ -111,38 +109,27 @@
     <section class="summary source-code" id="source">
       <h2><span>Implementation</span></h2>
       <pre class="language-dart"><code class="language-dart">@override
-init(Sensor sensor) {
+void init(Sensor sensor) {
   super.init(sensor);
-
+  print(&quot;Starting accelerometer&quot;);
   &#47;&#47; Reset fields.
   vectorData = List();
-  _keepGoing = false;
-  _lock = null;
   nextStep = null;
   previousSteps = List();
-  if (_calculatingThread != null) _calculatingThread.abort();
+
+  _calculatingThread?.cancel();
   _calculatingThread = null;
-  if (_publishingThread != null) _publishingThread.abort();
+
+  _publishingThread?.cancel();
   _publishingThread = null;
-  predicted = null;
+
   eventSent = false;
-  average = Duration(milliseconds: 1000);
+  average = Duration(milliseconds: 500);
   updated = false;
   removedData = 0;
 
   &#47;&#47; Listen to events from the event broker.
-  eventBroker
-      .listenTo&lt;AccelerometerActionEvent&gt;(_processAccelerometerActionEvent);
-
-  &#47;&#47; Finalize initialization.
-  _lock = Lock();
-  _publishingThread = Thread(publishSteps);
-  _publishingThread.start();
-
-  if (Platform.isAndroid || Platform.isIOS) {
-    _calculatingThread = Thread(calculateNextStep);
-    _calculatingThread.start();
-  }
+  _listen();
 }</code></pre>
     </section>
 
@@ -155,7 +142,7 @@ init(Sensor sensor) {
 
 <footer>
   <span class="no-break">
-    pace_your_pulse 0.6+13
+    pace_your_pulse 0.7+17
   </span>
 
   

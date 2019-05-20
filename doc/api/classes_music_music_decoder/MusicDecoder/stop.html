@@ -59,6 +59,7 @@
       <li class="section-title">
         <a href="classes_music_music_decoder/MusicDecoder-class.html#instance-properties">Properties</a>
       </li>
+      <li><a href="classes_music_music_decoder/MusicDecoder/a.html">a</a></li>
       <li><a href="classes_music_music_decoder/MusicDecoder/musicProcessor.html">musicProcessor</a></li>
       <li class="inherited"><a href="classes_music_music_decoder/MusicDecoder/hashCode.html">hashCode</a></li>
       <li class="inherited"><a href="classes_music_music_decoder/MusicDecoder/runtimeType.html">runtimeType</a></li>
@@ -81,19 +82,19 @@
       <div><h1>stop method</h1></div>
 
     <section class="multi-line-signature">
-      <span class="returntype">void</span>
+      <span class="returntype">dynamic</span>
             <span class="name ">stop</span>
 (<wbr>)
       
     </section>
-    <section class="desc markdown">
-      <p>Stop.</p>
-    </section>
     
     <section class="summary source-code" id="source">
       <h2><span>Implementation</span></h2>
-      <pre class="language-dart"><code class="language-dart">void stop() {
-  _isProcessing = false;
+      <pre class="language-dart"><code class="language-dart">stop(){
+  if(_isolate != null) {
+    &#47;&#47;print(&quot;Killing the isolate!&quot;);
+    _isolate.kill(priority: Isolate.immediate);
+  }
 }</code></pre>
     </section>
 
@@ -106,7 +107,7 @@
 
 <footer>
   <span class="no-break">
-    pace_your_pulse 0.6+13
+    pace_your_pulse 0.7+17
   </span>
 
   

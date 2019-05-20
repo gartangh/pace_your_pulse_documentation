@@ -53,8 +53,6 @@
     
     <h5>StepDetector class</h5>
     <ol>
-      <li class="section-title"><a href="classes_utils_step_detector/StepDetector-class.html#constructors">Constructors</a></li>
-      <li><a href="classes_utils_step_detector/StepDetector/StepDetector.html">StepDetector</a></li>
     
       <li class="section-title inherited">
         <a href="classes_utils_step_detector/StepDetector-class.html#instance-properties">Properties</a>
@@ -65,16 +63,17 @@
       <li class="section-title"><a href="classes_utils_step_detector/StepDetector-class.html#instance-methods">Methods</a></li>
       <li><a href="classes_utils_step_detector/StepDetector/getMaxPeaks.html">getMaxPeaks</a></li>
       <li><a href="classes_utils_step_detector/StepDetector/getMinPeaks.html">getMinPeaks</a></li>
-      <li><a href="classes_utils_step_detector/StepDetector/getSteps.html">getSteps</a></li>
       <li><a href="classes_utils_step_detector/StepDetector/mean.html">mean</a></li>
       <li><a href="classes_utils_step_detector/StepDetector/peakS1.html">peakS1</a></li>
-      <li><a href="classes_utils_step_detector/StepDetector/stdv.html">stdv</a></li>
+      <li><a href="classes_utils_step_detector/StepDetector/standardDeviation.html">standardDeviation</a></li>
       <li class="inherited"><a href="classes_utils_step_detector/StepDetector/noSuchMethod.html">noSuchMethod</a></li>
       <li class="inherited"><a href="classes_utils_step_detector/StepDetector/toString.html">toString</a></li>
     
       <li class="section-title inherited"><a href="classes_utils_step_detector/StepDetector-class.html#operators">Operators</a></li>
       <li class="inherited"><a href="classes_utils_step_detector/StepDetector/operator_equals.html">operator ==</a></li>
     
+      <li class="section-title"><a href="classes_utils_step_detector/StepDetector-class.html#static-properties">Static properties</a></li>
+      <li><a href="classes_utils_step_detector/StepDetector/stepDetector.html">stepDetector</a></li>
     
     
     </ol>
@@ -88,6 +87,9 @@
             <span class="name ">getMinPeaks</span>
 (<wbr><span class="parameter" id="getMinPeaks-param-data"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">num</span>&gt;</span></span> <span class="parameter-name">data</span>, </span> <span class="parameter" id="getMinPeaks-param-windowSize"><span class="type-annotation">num</span> <span class="parameter-name">windowSize</span>, </span> <span class="parameter" id="getMinPeaks-param-h"><span class="type-annotation">num</span> <span class="parameter-name">h</span></span>)
       
+    </section>
+    <section class="desc markdown">
+      <p>Gets the minimum peaks.</p>
     </section>
     
     <section class="summary source-code" id="source">
@@ -106,11 +108,8 @@
     List&lt;num&gt; right = data.sublist(i + 1, stop);
     peaksS1[i] = peakS1(element, left, right);
   }
-  &#47;&#47;print(&#39;values: &#39;+peaksS1.toString());
   num m = mean(peaksS1);
-  &#47;&#47;print(&#39;mean: &#39;+m.toString());
-  num s = stdv(peaksS1, m);
-  &#47;&#47;print(&#39;stdv: &#39;+s.toString());
+  num s = standardDeviation(peaksS1, m);
   for (int i = 0; i &lt; length; i++) {
     if (peaksS1[i] &lt; 0 &amp;&amp; (m - peaksS1[i]) &gt; h * s) {
       indexedPeaks.putIfAbsent(i, () =&gt; data.elementAt(i));
@@ -150,7 +149,7 @@
 
 <footer>
   <span class="no-break">
-    pace_your_pulse 0.6+13
+    pace_your_pulse 0.7+17
   </span>
 
   

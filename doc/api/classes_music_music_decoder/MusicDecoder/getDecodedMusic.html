@@ -59,6 +59,7 @@
       <li class="section-title">
         <a href="classes_music_music_decoder/MusicDecoder-class.html#instance-properties">Properties</a>
       </li>
+      <li><a href="classes_music_music_decoder/MusicDecoder/a.html">a</a></li>
       <li><a href="classes_music_music_decoder/MusicDecoder/musicProcessor.html">musicProcessor</a></li>
       <li class="inherited"><a href="classes_music_music_decoder/MusicDecoder/hashCode.html">hashCode</a></li>
       <li class="inherited"><a href="classes_music_music_decoder/MusicDecoder/runtimeType.html">runtimeType</a></li>
@@ -83,7 +84,7 @@
     <section class="multi-line-signature">
       <span class="returntype">Future</span>
             <span class="name ">getDecodedMusic</span>
-(<wbr><span class="parameter" id="getDecodedMusic-param-cachedSongPath"><span class="type-annotation">String</span> <span class="parameter-name">cachedSongPath</span>, </span> <span class="parameter" id="getDecodedMusic-param-inDatabase"><span class="type-annotation">bool</span> <span class="parameter-name">inDatabase</span>, </span> <span class="parameter" id="getDecodedMusic-param-start"><span class="type-annotation">Duration</span> <span class="parameter-name">start</span>, </span> <span class="parameter" id="getDecodedMusic-param-originalSongPath"><span class="type-annotation">String</span> <span class="parameter-name">originalSongPath</span>, </span> <span class="parameter" id="getDecodedMusic-param-length"><span class="type-annotation">Duration</span> <span class="parameter-name">length</span></span>)
+(<wbr><span class="parameter" id="getDecodedMusic-param-cachedSongPath"><span class="type-annotation">String</span> <span class="parameter-name">cachedSongPath</span>, </span> <span class="parameter" id="getDecodedMusic-param-resId"><span class="type-annotation">int</span> <span class="parameter-name">resId</span>, </span> <span class="parameter" id="getDecodedMusic-param-length"><span class="type-annotation">Duration</span> <span class="parameter-name">length</span></span>)
       
     </section>
     <section class="desc markdown">
@@ -92,44 +93,107 @@
     
     <section class="summary source-code" id="source">
       <h2><span>Implementation</span></h2>
-      <pre class="language-dart"><code class="language-dart">getDecodedMusic(String cachedSongPath, bool inDatabase, Duration start,
-    String originalSongPath, Duration length) async {
-  _isProcessing = true;
-  AudioFile aF = AudioFile();
-  _currentStart = start;
-  if (inDatabase) {
-    &#47;&#47; TODO: No decoding needed, just act as a pass-through buffer and give the tuple to the MusicProcessor
-  } else {
-    &#47;&#47; Start Kuramoto loop
-    num counter = 0;
+      <pre class="language-dart"><code class="language-dart">getDecodedMusic(String cachedSongPath,
+    int resId, Duration length) async {
+  a++;
+  if (Platform.isAndroid || Platform.isIOS) {
+    Globals.tempFileMutex.acquire();
+    &#47;&#47;print(&quot;LOCK DECODER &quot; + a.toString() + &quot; ACQUIRED!&quot;);
+    &#47;&#47; Get new File to buffer .wav version of song
+    AudioFile aF = AudioFile();
+
     File tempFile;
-    while (_isProcessing) {
-      if (Platform.isIOS) {
-        Directory tempDir = await getTemporaryDirectory();
-        tempFile = File(&#39;&#47;private&#39; +
-            &#39;${tempDir.path}&#47;temp&#39; +
-            counter.toString() +
-            &#39;.wav&#39;);
-      } else {
-        Directory tempDir = await getApplicationDocumentsDirectory();
-        tempFile = File(&#39;${tempDir.path}&#47;temp$counter.wav&#39;);
+    try {
+      if (Platform.isAndroid) {
+        &#47;&#47;Directory tempDir = await getApplicationDocumentsDirectory();
+        tempFile = File(&#39;${Globals.tempDir.path}&#47;temp_converted.wav&#39;);
+      } else if (Platform.isIOS) {
+        &#47;&#47;Directory tempDir = await getTemporaryDirectory();
+        tempFile = File(&#39;&#47;private${Globals.tempDir.path}&#47;temp_converted.wav&#39;);
       }
 
+      if (await tempFile.exists()) {
+        tempFile.delete();
+        &#47;&#47;print(&quot;Tempfile_converted deleted!&quot;);
+      }
+
+      &#47;&#47; Process the .wav
+      &#47;&#47; Get .wav version of song and put in newly created file
+      &#47;&#47;print(&quot;STARTING CONVERT&quot;);
       await _ffmpeg.convert(
           cachedSongPath,
-          _currentStart.inSeconds.toDouble(),
-          _bufferDuration.inSeconds.toDouble(),
-          1.0,
+          0,
+          -1,
+          1,
           tempFile.path);
+      &#47;&#47;print(&quot;Tempfile_converted converted!&quot;);
       aF.readInBytes(tempFile);
+      &#47;&#47;print(&quot;Tempfile_converted written back!&quot;);
 
-      _musicProcessor.process(
-          aF, _currentStart.inMilliseconds == 0, cachedSongPath);
-      _currentStart += _bufferDuration;
-      counter++;
+      &#47;&#47;print(&quot;DECODER SETS PROCEED TRUE&quot;);
+      Globals.tempFileMutexProceed = true;
+      if(Globals.musicLibrary.sendPrt != null)
+        Globals.musicLibrary.sendPrt.send(true);
 
-      if (counter != 0) tempFile.deleteSync();
-      if (_currentStart.inMilliseconds &gt; length.inMilliseconds) break;
+      print(&quot;Killing the isolate!&quot;);
+      if(_isolate != null) _isolate.kill(priority: Isolate.immediate);
+
+      if(Globals.workout.isStarted) {
+        SendPort sendPort;
+        ReceivePort receivePort = new ReceivePort();
+        receivePort.listen((msg) async {
+          if (sendPort == null) {
+            &#47;&#47;print(&quot;Decoder received sendPort!&quot;);
+            sendPort = msg;
+            &#47;&#47; 0 is init
+            sendPort.send([0, aF, resId, length]);
+          } else {
+            switch(msg[0]){
+              case 1:
+                int curResId = msg[1];
+                Map&lt;String, dynamic&gt; res = await MetadataDatabaseController.read(curResId);
+                int bpm = res[&#39;bpm&#39;];
+                List&lt;dynamic&gt; temp = List&lt;dynamic&gt;.from(res[&#39;beats&#39;]);
+                List&lt;List&lt;dynamic&gt;&gt; temp2 = List&lt;List&lt;dynamic&gt;&gt;.from(temp);
+                List&lt;List&lt;Duration&gt;&gt; databaseBeats = List&lt;List&lt;Duration&gt;&gt;.from(temp2);
+                sendPort.send([1, databaseBeats, bpm]);
+                break;
+              case 2:
+                &#47;&#47;print(&quot;Starting proces from decoder!&quot;);
+                sendPort.send([2]);
+                break;
+              case 3:
+
+                bool inDatabase = msg[1];
+                int resId = msg[2];
+                List&lt;Duration&gt; beats = msg[3];
+                bool wasFirst = msg[4];
+                int bpm = msg[5];
+                if(!inDatabase) {
+                  print(&quot;Writing back beats!&quot;);
+                  await MetadataDatabaseController.write(resId, beats, bpm);
+                } else{
+                  print(&quot;Not writing back because already in database!&quot;);
+                }
+
+                print(&quot;Sending beats!&quot;);
+                _musicController.processNewBeats(beats, wasFirst);
+
+                &#47;&#47;print(&quot;Starting next iteration of process from decoder!&quot;);
+                sendPort.send([2]);
+            }
+          }
+        });
+        _isolate = await Isolate.spawn(MusicProcessor.process, receivePort.sendPort);
+      }else{
+        print(&quot;Did not start new process as workout is stopped!&quot;);
+      }
+    }
+    catch (err) {
+      print(&quot;Could not open the file in Music Decoder!&quot;);
+    } finally {
+      &#47;&#47;print(&quot;LOCK DECODER &quot; + a.toString() + &quot; RELEASED!&quot;);
+      Globals.tempFileMutex.release();
     }
   }
 }</code></pre>
@@ -144,7 +208,7 @@
 
 <footer>
   <span class="no-break">
-    pace_your_pulse 0.6+13
+    pace_your_pulse 0.7+17
   </span>
 
   

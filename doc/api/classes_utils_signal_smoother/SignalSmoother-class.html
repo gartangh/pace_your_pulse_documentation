@@ -66,20 +66,11 @@
   <div id="dartdoc-main-content" class="col-xs-12 col-sm-9 col-md-8 main-content">
       <div><h1>SignalSmoother class </h1></div>
 
+    <section class="desc markdown">
+      <p>A signal smoother.</p>
+    </section>
     
 
-    <section class="summary offset-anchor" id="constructors">
-      <h2>Constructors</h2>
-
-      <dl class="constructor-summary-list">
-        <dt id="SignalSmoother" class="callable">
-          <span class="name"><a href="classes_utils_signal_smoother/SignalSmoother/SignalSmoother.html">SignalSmoother</a></span><span class="signature">()</span>
-        </dt>
-        <dd>
-          
-        </dd>
-      </dl>
-    </section>
 
     <section class="summary offset-anchor inherited" id="instance-properties">
       <h2>Properties</h2>
@@ -107,22 +98,22 @@
     <section class="summary offset-anchor" id="instance-methods">
       <h2>Methods</h2>
       <dl class="callables">
-        <dt id="smoothValuesFFT" class="callable">
-          <span class="name"><a href="classes_utils_signal_smoother/SignalSmoother/smoothValuesFFT.html">smoothValuesFFT</a></span><span class="signature">(<wbr><span class="parameter" id="smoothValuesFFT-param-input"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">num</span>&gt;</span></span> <span class="parameter-name">input</span></span>)
+        <dt id="smoothFFT" class="callable">
+          <span class="name"><a href="classes_utils_signal_smoother/SignalSmoother/smoothFFT.html">smoothFFT</a></span><span class="signature">(<wbr><span class="parameter" id="smoothFFT-param-input"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">num</span>&gt;</span></span> <span class="parameter-name">input</span></span>)
             <span class="returntype parameter">&#8594; List<span class="signature">&lt;<wbr><span class="type-parameter">num</span>&gt;</span></span>
           </span>
                   </dt>
         <dd>
-          
+          Smooths input <code>input</code> using Fast Fourier Transform (FFT).
                   
 </dd>
-        <dt id="smoothValuesMA" class="callable">
-          <span class="name"><a href="classes_utils_signal_smoother/SignalSmoother/smoothValuesMA.html">smoothValuesMA</a></span><span class="signature">(<wbr><span class="parameter" id="smoothValuesMA-param-input"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">num</span>&gt;</span></span> <span class="parameter-name">input</span></span>)
+        <dt id="smoothMA" class="callable">
+          <span class="name"><a href="classes_utils_signal_smoother/SignalSmoother/smoothMA.html">smoothMA</a></span><span class="signature">(<wbr><span class="parameter" id="smoothMA-param-input"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">num</span>&gt;</span></span> <span class="parameter-name">input</span></span>)
             <span class="returntype parameter">&#8594; List<span class="signature">&lt;<wbr><span class="type-parameter">num</span>&gt;</span></span>
           </span>
                   </dt>
         <dd>
-          
+          Smooths input <code>input</code> using Moving Average (MA).
                   
 </dd>
         <dt id="noSuchMethod" class="callable inherited">
@@ -161,6 +152,20 @@
       </dl>
     </section>
 
+    <section class="summary offset-anchor" id="static-properties">
+      <h2>Static Properties</h2>
+
+      <dl class="properties">
+        <dt id="signalSmoother" class="property">
+          <span class="name"><a href="classes_utils_signal_smoother/SignalSmoother/signalSmoother.html">signalSmoother</a></span>
+          <span class="signature">&#8594; <a href="classes_utils_signal_smoother/SignalSmoother-class.html">SignalSmoother</a></span>         
+        </dt>
+        <dd>
+          The singleton signal smoother.
+                  <div class="features">read-only</div>
+</dd>
+      </dl>
+    </section>
 
 
 
@@ -168,8 +173,6 @@
 
   <div id="dartdoc-sidebar-right" class="col-xs-6 col-sm-6 col-md-2 sidebar sidebar-offcanvas-right">
     <ol>
-      <li class="section-title"><a href="classes_utils_signal_smoother/SignalSmoother-class.html#constructors">Constructors</a></li>
-      <li><a href="classes_utils_signal_smoother/SignalSmoother/SignalSmoother.html">SignalSmoother</a></li>
     
       <li class="section-title inherited">
         <a href="classes_utils_signal_smoother/SignalSmoother-class.html#instance-properties">Properties</a>
@@ -178,14 +181,16 @@
       <li class="inherited"><a href="classes_utils_signal_smoother/SignalSmoother/runtimeType.html">runtimeType</a></li>
     
       <li class="section-title"><a href="classes_utils_signal_smoother/SignalSmoother-class.html#instance-methods">Methods</a></li>
-      <li><a href="classes_utils_signal_smoother/SignalSmoother/smoothValuesFFT.html">smoothValuesFFT</a></li>
-      <li><a href="classes_utils_signal_smoother/SignalSmoother/smoothValuesMA.html">smoothValuesMA</a></li>
+      <li><a href="classes_utils_signal_smoother/SignalSmoother/smoothFFT.html">smoothFFT</a></li>
+      <li><a href="classes_utils_signal_smoother/SignalSmoother/smoothMA.html">smoothMA</a></li>
       <li class="inherited"><a href="classes_utils_signal_smoother/SignalSmoother/noSuchMethod.html">noSuchMethod</a></li>
       <li class="inherited"><a href="classes_utils_signal_smoother/SignalSmoother/toString.html">toString</a></li>
     
       <li class="section-title inherited"><a href="classes_utils_signal_smoother/SignalSmoother-class.html#operators">Operators</a></li>
       <li class="inherited"><a href="classes_utils_signal_smoother/SignalSmoother/operator_equals.html">operator ==</a></li>
     
+      <li class="section-title"><a href="classes_utils_signal_smoother/SignalSmoother-class.html#static-properties">Static properties</a></li>
+      <li><a href="classes_utils_signal_smoother/SignalSmoother/signalSmoother.html">signalSmoother</a></li>
     
     
     </ol>
@@ -195,7 +200,7 @@
 
 <footer>
   <span class="no-break">
-    pace_your_pulse 0.6+13
+    pace_your_pulse 0.7+17
   </span>
 
   

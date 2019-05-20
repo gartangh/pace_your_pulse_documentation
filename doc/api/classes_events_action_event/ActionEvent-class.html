@@ -26,7 +26,7 @@
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="index.html">pace_your_pulse</a></li>
     <li><a href="classes_events_action_event/classes_events_action_event-library.html">action_event</a></li>
-    <li class="self-crumb">ActionEvent abstract class</li>
+    <li class="self-crumb">ActionEvent class</li>
   </ol>
   <div class="self-name">ActionEvent</div>
   <form class="search navbar-right" role="search">
@@ -46,7 +46,7 @@
     <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
       <li><a href="index.html">pace_your_pulse</a></li>
       <li><a href="classes_events_action_event/classes_events_action_event-library.html">action_event</a></li>
-      <li class="self-crumb">ActionEvent abstract class</li>
+      <li class="self-crumb">ActionEvent class</li>
     </ol>
     
     <h5>action_event library</h5>
@@ -81,13 +81,6 @@
 
 
 
-        <dt>Implementers</dt>
-        <dd><ul class="comma-separated clazz-relationships">
-          <li><a href="classes_events_accelerometer_action_event/AccelerometerActionEvent-class.html">AccelerometerActionEvent</a></li>
-          <li><a href="classes_events_heart_rate_sensor_action_event/HeartRateSensorActionEvent-class.html">HeartRateSensorActionEvent</a></li>
-          <li><a href="classes_events_music_player_action_event/MusicPlayerActionEvent-class.html">MusicPlayerActionEvent</a></li>
-          <li><a href="classes_events_workout_action_event/WorkoutActionEvent-class.html">WorkoutActionEvent</a></li>
-        </ul></dd>
 
       </dl>
     </section>
@@ -97,7 +90,7 @@
 
       <dl class="constructor-summary-list">
         <dt id="ActionEvent" class="callable">
-          <span class="name"><a href="classes_events_action_event/ActionEvent/ActionEvent.html">ActionEvent</a></span><span class="signature">(<span class="parameter" id="-param-_action"><span class="type-annotation"><a href="enums_event_action/EventAction-class.html">EventAction</a></span> <span class="parameter-name">_action</span></span>)</span>
+          <span class="name"><a href="classes_events_action_event/ActionEvent/ActionEvent.html">ActionEvent</a></span><span class="signature">(<span class="parameter" id="-param-_action"><span class="type-annotation"><a href="enums_event_action/EventAction-class.html">EventAction</a></span> <span class="parameter-name">_action</span>, {</span> <span class="parameter" id="-param-callback"><span class="type-annotation">dynamic</span> <span class="parameter-name">callback</span>, </span> <span class="parameter" id="-param-songName"><span class="type-annotation">String</span> <span class="parameter-name">songName</span>, </span> <span class="parameter" id="-param-songPath"><span class="type-annotation">String</span> <span class="parameter-name">songPath</span>, </span> <span class="parameter" id="-param-resID"><span class="type-annotation">int</span> <span class="parameter-name">resID</span>, </span> <span class="parameter" id="-param-length"><span class="type-annotation">Duration</span> <span class="parameter-name">length</span>, </span> <span class="parameter" id="-param-cachedSongPath"><span class="type-annotation">String</span> <span class="parameter-name">cachedSongPath</span></span> })</span>
         </dt>
         <dd>
           The constructor.
@@ -116,6 +109,54 @@
         <dd>
           The action.
                   <div class="features">read-only</div>
+</dd>
+        <dt id="cachedSongPath" class="property">
+          <span class="name"><a href="classes_events_action_event/ActionEvent/cachedSongPath.html">cachedSongPath</a></span>
+          <span class="signature">&#8594; String</span>         
+        </dt>
+        <dd>
+          The path of the song to where it is cached on the phone.
+                  <div class="features">final</div>
+</dd>
+        <dt id="callback" class="property">
+          <span class="name"><a href="classes_events_action_event/ActionEvent/callback.html">callback</a></span>
+          <span class="signature">&#8594; dynamic</span>         
+        </dt>
+        <dd>
+          The callback.
+                  <div class="features">final</div>
+</dd>
+        <dt id="length" class="property">
+          <span class="name"><a href="classes_events_action_event/ActionEvent/length.html">length</a></span>
+          <span class="signature">&#8594; Duration</span>         
+        </dt>
+        <dd>
+          The length of the song.
+                  <div class="features">final</div>
+</dd>
+        <dt id="resID" class="property">
+          <span class="name"><a href="classes_events_action_event/ActionEvent/resID.html">resID</a></span>
+          <span class="signature">&#8594; int</span>         
+        </dt>
+        <dd>
+          The ID of the song in the code-specific.
+                  <div class="features">final</div>
+</dd>
+        <dt id="songName" class="property">
+          <span class="name"><a href="classes_events_action_event/ActionEvent/songName.html">songName</a></span>
+          <span class="signature">&#8594; String</span>         
+        </dt>
+        <dd>
+          The name of the song.
+                  <div class="features">final</div>
+</dd>
+        <dt id="songPath" class="property">
+          <span class="name"><a href="classes_events_action_event/ActionEvent/songPath.html">songPath</a></span>
+          <span class="signature">&#8594; String</span>         
+        </dt>
+        <dd>
+          The path of the song.
+                  <div class="features">final</div>
 </dd>
         <dt id="hashCode" class="property inherited">
           <span class="name"><a href="classes_events_event/Event/hashCode.html">hashCode</a></span>
@@ -189,6 +230,12 @@
         <a href="classes_events_action_event/ActionEvent-class.html#instance-properties">Properties</a>
       </li>
       <li><a href="classes_events_action_event/ActionEvent/action.html">action</a></li>
+      <li><a href="classes_events_action_event/ActionEvent/cachedSongPath.html">cachedSongPath</a></li>
+      <li><a href="classes_events_action_event/ActionEvent/callback.html">callback</a></li>
+      <li><a href="classes_events_action_event/ActionEvent/length.html">length</a></li>
+      <li><a href="classes_events_action_event/ActionEvent/resID.html">resID</a></li>
+      <li><a href="classes_events_action_event/ActionEvent/songName.html">songName</a></li>
+      <li><a href="classes_events_action_event/ActionEvent/songPath.html">songPath</a></li>
       <li class="inherited"><a href="classes_events_event/Event/hashCode.html">hashCode</a></li>
       <li class="inherited"><a href="classes_events_event/Event/runtimeType.html">runtimeType</a></li>
     
@@ -208,7 +255,7 @@
 
 <footer>
   <span class="no-break">
-    pace_your_pulse 0.6+13
+    pace_your_pulse 0.7+17
   </span>
 
   

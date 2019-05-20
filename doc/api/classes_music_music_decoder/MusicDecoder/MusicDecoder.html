@@ -59,6 +59,7 @@
       <li class="section-title">
         <a href="classes_music_music_decoder/MusicDecoder-class.html#instance-properties">Properties</a>
       </li>
+      <li><a href="classes_music_music_decoder/MusicDecoder/a.html">a</a></li>
       <li><a href="classes_music_music_decoder/MusicDecoder/musicProcessor.html">musicProcessor</a></li>
       <li class="inherited"><a href="classes_music_music_decoder/MusicDecoder/hashCode.html">hashCode</a></li>
       <li class="inherited"><a href="classes_music_music_decoder/MusicDecoder/runtimeType.html">runtimeType</a></li>
@@ -92,7 +93,8 @@
     <section class="summary source-code" id="source">
       <h2><span>Implementation</span></h2>
       <pre class="language-dart"><code class="language-dart">MusicDecoder(MusicController musicController) {
-  _musicProcessor = MusicProcessor(musicController);
+  this._musicController = musicController;
+  _musicProcessor = MusicProcessor();
 }</code></pre>
     </section>
 
@@ -105,7 +107,7 @@
 
 <footer>
   <span class="no-break">
-    pace_your_pulse 0.6+13
+    pace_your_pulse 0.7+17
   </span>
 
   
