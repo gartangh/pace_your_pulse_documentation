@@ -115,8 +115,7 @@
   if (cadences[Globals.fitnessModel.selectedZone+offset] == null || cadences[Globals.fitnessModel.selectedZone+offset].isNaN || cadences[Globals.fitnessModel.selectedZone+offset].isInfinite){
     cadences[Globals.fitnessModel.selectedZone+offset] = cadence;
   }
-  cadences[Globals.fitnessModel.selectedZone+offset] = cadences[Globals.fitnessModel.selectedZone+offset] + (cadence - cadences[Globals.fitnessModel.selectedZone+offset]
-  )&#47;2;
+  cadences[Globals.fitnessModel.selectedZone+offset] = (cadences[Globals.fitnessModel.selectedZone+offset] + cadence)&#47;2;
   writeToDatabase();
   print(&#39;Cadences updated: $cadences&#39;);
 }</code></pre>
@@ -131,7 +130,7 @@
 
 <footer>
   <span class="no-break">
-    pace_your_pulse 0.7+17
+    pace_your_pulse 1.0+17
   </span>
 
   

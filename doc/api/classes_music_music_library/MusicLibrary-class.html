@@ -67,7 +67,23 @@
       <div><h1>MusicLibrary class </h1></div>
 
     <section class="desc markdown">
-      <p>The music library.</p>
+      <p>The music library.
+Class that accesses the device-local music library and fetches the songs stored in it.</p>
+<p>EXAMPLE USE:</p>
+<p>MusicLibrary library = MusicLibrary();
+AudioPlayer audioPlayer = AudioPlayer();</p>
+<p>var music = library.getMusic();
+if (music != null) {
+   print("Music library was read successfully...");</p>
+<p>   // Select path of first song in the library
+   String path = music<code>"url"</code>;</p>
+<p>   // Cache the selected song and play with AudioPlayer instance
+   Future<string> cachedPath = library.cacheSong(path);
+     cachedPath.then((loadedPath) =&gt; audioPlayer.play(loadedPath));
+  }
+  else {
+     print("Music library NOT read successfully");
+   }</string></p>
     </section>
     
 
@@ -81,7 +97,7 @@
           <span class="signature">&#8596; int</span>         
         </dt>
         <dd>
-          Variable for acquiring mutual exclusive access
+          Variable for acquiring mutual exclusive access.
                   <div class="features">read / write</div>
 </dd>
         <dt id="isolate" class="property">
@@ -89,7 +105,7 @@
           <span class="signature">&#8596; Isolate</span>         
         </dt>
         <dd>
-          The Isolator
+          The Isolator.
                   <div class="features">read / write</div>
 </dd>
         <dt id="sendPrt" class="property">
@@ -97,7 +113,7 @@
           <span class="signature">&#8596; SendPort</span>         
         </dt>
         <dd>
-          The sendPort
+          The sendPort.
                   <div class="features">read / write</div>
 </dd>
         <dt id="hashCode" class="property inherited">
@@ -137,7 +153,7 @@
           </span>
                   </dt>
         <dd>
-          Caches a song when an event is received
+          Caches a song when an event is received.
                   
 </dd>
         <dt id="getMusic" class="callable">
@@ -155,7 +171,7 @@
           </span>
                   </dt>
         <dd>
-          Returns a list containing the names of the playlists on the device
+          Returns a list containing the names of the play lists on the device.
                   
 </dd>
         <dt id="getSongBytes" class="callable">
@@ -173,7 +189,7 @@
           </span>
                   </dt>
         <dd>
-          Init
+          Init.
                   
 </dd>
         <dt id="setPlaylist" class="callable">
@@ -182,7 +198,7 @@
           </span>
                   </dt>
         <dd>
-          Sets the current playlist
+          Sets the current playlist.
                   
 </dd>
         <dt id="noSuchMethod" class="callable inherited">
@@ -245,7 +261,7 @@
           </span>
                   </dt>
         <dd>
-          Proceeds the check
+          Proceeds the check.
                   
 </dd>
       </dl>
@@ -293,7 +309,7 @@
 
 <footer>
   <span class="no-break">
-    pace_your_pulse 0.7+17
+    pace_your_pulse 1.0+17
   </span>
 
   

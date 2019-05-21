@@ -106,7 +106,7 @@
       <h2><span>Implementation</span></h2>
       <pre class="language-dart"><code class="language-dart">void next(String songName, String songPath, num resId, Duration length,
     String cachedPath) async {
-  fetcher.fetchLocalMusic(
+  await fetcher.fetchLocalMusic(
       songName, songPath, resId, length, cachedPath);
   if (Platform.isAndroid) {
     try {
@@ -135,7 +135,7 @@
 
 <footer>
   <span class="no-break">
-    pace_your_pulse 0.7+17
+    pace_your_pulse 1.0+17
   </span>
 
   

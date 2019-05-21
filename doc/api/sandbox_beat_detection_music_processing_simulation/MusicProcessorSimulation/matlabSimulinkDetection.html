@@ -202,12 +202,12 @@ List matlabSimulinkDetection(int bufferSize, List&lt;int&gt; x, int frequency, D
   List&lt;int&gt; peaks = findPeaks(autoCor[0]);
   if(peaks != null) {
     int tempo = findTempo(peaks);
-    &#47;&#47;print(&quot;Best guess tempo: &quot; + tempo.toString());
+    print(&quot;Best guess tempo: &quot; + tempo.toString());
 
     &#47;&#47;&#47; With best guess tempo, use comb filter to find phase
     &#47;&#47; Watch video to understand this
     int offset = applyComb(autoCor[0], tempo, frequency);
-    &#47;&#47;print(&quot;offset is: &quot; + offset.toString());
+    print(&quot;offset is: &quot; + offset.toString());
 
     &#47;&#47;&#47; With phase and best guess tempo, find durations
     List&lt;Duration&gt; beats = List();
@@ -231,7 +231,7 @@ List matlabSimulinkDetection(int bufferSize, List&lt;int&gt; x, int frequency, D
 
 <footer>
   <span class="no-break">
-    pace_your_pulse 0.7+17
+    pace_your_pulse 1.0+17
   </span>
 
   

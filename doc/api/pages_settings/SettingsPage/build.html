@@ -128,175 +128,178 @@ and</li><li>any ambient state obtained from the <code>context</code> using
       <h2><span>Implementation</span></h2>
       <pre class="language-dart"><code class="language-dart">@override
 Widget build(BuildContext context) {
-  return Padding(
-    padding: EdgeInsets.all(20.0),
-    child: Card(
-      elevation: 8,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(20.0),
-      ),
+  return WillPopScope(
+      onWillPop: () =&gt;  Globals.pageController.animateToPage(1, duration: Duration(milliseconds: 300), curve: Curves.linear),
       child: Padding(
-        padding: EdgeInsets.all(10.0),
-        child: Column(
-          children: &lt;Widget&gt;[
-            Text(
-              &#39;Settings&#39;,
-              style: Theme.of(context).textTheme.display1,
-              textAlign: TextAlign.center,
-            ),
-            Expanded(
-              child: ListView(
-                children: &lt;Widget&gt;[
-                  Hero(
-                    tag: &quot;user_settings&quot;,
-                    child: GestureDetector(
-                      onTap: () =&gt; Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) =&gt; UserSettingsPage())),
-                      child: Card(
-                        child: Container(
-                          padding: EdgeInsets.all(10.0),
-                          child: Column(
-                            children: &lt;Widget&gt;[
-                              ListTile(
-                                leading: Icon(Icons.accessibility_new),
-                                title: Text(&#39;User settings&#39;),
-                              ),
-                              &#47;&#47; The user should not be null, this is an extra check.
-                              KeyValueWidget(
-                                  &#39;Username&#39;,
-                                  Globals.user == null
-                                      ? &#39;Unknown&#39;
-                                      : Globals.user.username),
-                              KeyValueWidget(
-                                  &#39;Email&#39;,
-                                  Globals.user == null
-                                      ? &#39;Unknown&#39;
-                                      : Globals.user.email),
-                              KeyValueWidget(
-                                  &#39;Age&#39;,
-                                  Globals.user == null
-                                      ? &#39;Unknown&#39;
-                                      : Globals.user.ageString),
-                              KeyValueWidget(
-                                  &#39;Sex&#39;,
-                                  Globals.user == null
-                                      ? &#39;Unknown&#39;
-                                      : Globals.user.sexString),
-                              KeyValueWidget(
-                                  &#39;Min heart rate&#39;,
-                                  Globals.user == null
-                                      ? &#39;Unknown&#39;
-                                      : Globals.user.minHeartRateString),
-                              KeyValueWidget(
-                                  &#39;Max heart rate&#39;,
-                                  Globals.user == null
-                                      ? &#39;Unknown&#39;
-                                      : Globals.user.maxHeartRateString),
-                              RaisedButton(
-                                onPressed: () =&gt; Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) =&gt; UserSettingsPage())),
-                                color: Theme.of(context).primaryColor,
-                                elevation: 4.0,
-                                splashColor: Color.fromARGB(255, 212, 175, 55),
-                                child: Text(&#39;CHANGE SETTINGS&#39;),
-                              ),
-                            ],
+      padding: EdgeInsets.all(20.0),
+      child: Card(
+        elevation: 8,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(20.0),
+        ),
+        child: Padding(
+          padding: EdgeInsets.all(10.0),
+          child: Column(
+            children: &lt;Widget&gt;[
+              Text(
+                &#39;Settings&#39;,
+                style: Theme.of(context).textTheme.display1,
+                textAlign: TextAlign.center,
+              ),
+              Expanded(
+                child: ListView(
+                  children: &lt;Widget&gt;[
+                    Hero(
+                      tag: &quot;user_settings&quot;,
+                      child: GestureDetector(
+                        onTap: () =&gt; Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =&gt; UserSettingsPage())),
+                        child: Card(
+                          child: Container(
+                            padding: EdgeInsets.all(10.0),
+                            child: Column(
+                              children: &lt;Widget&gt;[
+                                ListTile(
+                                  leading: Icon(Icons.accessibility_new),
+                                  title: Text(&#39;User settings&#39;),
+                                ),
+                                &#47;&#47; The user should not be null, this is an extra check.
+                                KeyValueWidget(
+                                    &#39;Username&#39;,
+                                    Globals.user == null
+                                        ? &#39;Unknown&#39;
+                                        : Globals.user.username),
+                                KeyValueWidget(
+                                    &#39;Email&#39;,
+                                    Globals.user == null
+                                        ? &#39;Unknown&#39;
+                                        : Globals.user.email),
+                                KeyValueWidget(
+                                    &#39;Age&#39;,
+                                    Globals.user == null
+                                        ? &#39;Unknown&#39;
+                                        : Globals.user.ageString),
+                                KeyValueWidget(
+                                    &#39;Sex&#39;,
+                                    Globals.user == null
+                                        ? &#39;Unknown&#39;
+                                        : Globals.user.sexString),
+                                KeyValueWidget(
+                                    &#39;Min heart rate&#39;,
+                                    Globals.user == null
+                                        ? &#39;Unknown&#39;
+                                        : Globals.user.minHeartRateString),
+                                KeyValueWidget(
+                                    &#39;Max heart rate&#39;,
+                                    Globals.user == null
+                                        ? &#39;Unknown&#39;
+                                        : Globals.user.maxHeartRateString),
+                                RaisedButton(
+                                  onPressed: () =&gt; Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =&gt; UserSettingsPage())),
+                                  color: Theme.of(context).primaryColor,
+                                  elevation: 4.0,
+                                  splashColor: Color.fromARGB(255, 212, 175, 55),
+                                  child: Text(&#39;CHANGE SETTINGS&#39;),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
                     ),
-                  ),
-                  Card(
-                    child: Container(
-                      padding: EdgeInsets.all(10.0),
-                      child: Column(
-                        children: &lt;Widget&gt;[
-                          ListTile(
-                            leading: Icon(Icons.lock),
-                            title: Text(&quot;Read the privacy policy or access&#47;delete your data&quot;),
-                          ),
-                          RaisedButton(
-                            onPressed: () =&gt; _launchURL(),
-                            color: Theme.of(context).primaryColor,
-                            elevation: 4.0,
-                            splashColor: Color.fromARGB(255, 212, 175, 55),
-                            child: Text(&#39;PRIVACY SETTINGS&#39;),
-                          ),
-                        ],
+                    Card(
+                      child: Container(
+                        padding: EdgeInsets.all(10.0),
+                        child: Column(
+                          children: &lt;Widget&gt;[
+                            ListTile(
+                              leading: Icon(Icons.lock),
+                              title: Text(&quot;Read the privacy policy or access&#47;delete your data&quot;),
+                            ),
+                            RaisedButton(
+                              onPressed: () =&gt; _launchURL(),
+                              color: Theme.of(context).primaryColor,
+                              elevation: 4.0,
+                              splashColor: Color.fromARGB(255, 212, 175, 55),
+                              child: Text(&#39;PRIVACY SETTINGS&#39;),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
-                  ),
-                  Card(
-                    child: Container(
-                      padding: EdgeInsets.all(10.0),
-                      child: Column(
-                        children: &lt;Widget&gt;[
-                          ListTile(
-                            leading: Icon(Icons.info),
-                            title: Text(&#39;App info&#39;),
-                          ),
-                          &#47;&#47; The app should not be null, this is an extra check.
-                          KeyValueWidget(
-                              &#39;Name&#39;,
-                              Globals.app == null
-                                  ? &#39;Unknown&#39;
-                                  : Globals.app.name),
-                          KeyValueWidget(
-                              &#39;Version&#39;,
-                              Globals.app == null
-                                  ? &#39;Unknown&#39;
-                                  : Globals.app.version),
-                          KeyValueWidget(
-                              &#39;Build number&#39;,
-                              Globals.app == null
-                                  ? &#39;Unknown&#39;
-                                  : Globals.app.buildNumber),
-                          KeyValueWidget(
-                              &#39;Platform&#39;,
-                              Globals.app == null
-                                  ? &#39;Unknown&#39;
-                                  &#47;&#47;: Globals.platformVersion)
-                                  : Globals.app.platformTypeString),
-                        ],
+                    Card(
+                      child: Container(
+                        padding: EdgeInsets.all(10.0),
+                        child: Column(
+                          children: &lt;Widget&gt;[
+                            ListTile(
+                              leading: Icon(Icons.info),
+                              title: Text(&#39;App info&#39;),
+                            ),
+                            &#47;&#47; The app should not be null, this is an extra check.
+                            KeyValueWidget(
+                                &#39;Name&#39;,
+                                Globals.app == null
+                                    ? &#39;Unknown&#39;
+                                    : Globals.app.name),
+                            KeyValueWidget(
+                                &#39;Version&#39;,
+                                Globals.app == null
+                                    ? &#39;Unknown&#39;
+                                    : Globals.app.version),
+                            KeyValueWidget(
+                                &#39;Build number&#39;,
+                                Globals.app == null
+                                    ? &#39;Unknown&#39;
+                                    : Globals.app.buildNumber),
+                            KeyValueWidget(
+                                &#39;Platform&#39;,
+                                Globals.app == null
+                                    ? &#39;Unknown&#39;
+                                    &#47;&#47;: Globals.platformVersion)
+                                    : Globals.app.platformTypeString),
+                          ],
+                        ),
                       ),
                     ),
-                  ),
-                  Card(
-                    child: Container(
-                      padding: EdgeInsets.all(10.0),
-                      child: Column(
-                        children: &lt;Widget&gt;[
-                          ListTile(
-                            leading: Icon(Icons.power_settings_new),
-                            title: Text(&quot;Sign out of your account&quot;),
-                          ),
-                          RaisedButton(
-                            onPressed: () {
-                              &#47;&#47; Sign the user out.
-                              FirebaseAuth.instance.signOut();
-                              &#47;&#47; Reset the local user.
-                              Globals.user = null;
-                              &#47;&#47; Navigate back to the landing page.
-                              Navigator.of(context)
-                                  .pushNamedAndRemoveUntil(&#39;&#47;landing&#39;,
-                                      (Route&lt;dynamic&gt; route) =&gt; false);
-                            },
-                            color: Color(0xFFDDDDDD),
-                            elevation: 4.0,
-                            child: Text(&#39;LOG OUT&#39;),
-                          ),
-                        ],
+                    Card(
+                      child: Container(
+                        padding: EdgeInsets.all(10.0),
+                        child: Column(
+                          children: &lt;Widget&gt;[
+                            ListTile(
+                              leading: Icon(Icons.power_settings_new),
+                              title: Text(&quot;Sign out of your account&quot;),
+                            ),
+                            RaisedButton(
+                              onPressed: () {
+                                &#47;&#47; Sign the user out.
+                                FirebaseAuth.instance.signOut();
+                                &#47;&#47; Reset the local user.
+                                Globals.user = null;
+                                &#47;&#47; Navigate back to the landing page.
+                                Navigator.of(context)
+                                    .pushNamedAndRemoveUntil(&#39;&#47;landing&#39;,
+                                        (Route&lt;dynamic&gt; route) =&gt; false);
+                              },
+                              color: Color(0xFFDDDDDD),
+                              elevation: 4.0,
+                              child: Text(&#39;LOG OUT&#39;),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     ),
@@ -313,7 +316,7 @@ Widget build(BuildContext context) {
 
 <footer>
   <span class="no-break">
-    pace_your_pulse 0.7+17
+    pace_your_pulse 1.0+17
   </span>
 
   

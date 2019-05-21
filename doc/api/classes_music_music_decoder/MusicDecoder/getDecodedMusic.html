@@ -119,23 +119,19 @@
 
       &#47;&#47; Process the .wav
       &#47;&#47; Get .wav version of song and put in newly created file
-      &#47;&#47;print(&quot;STARTING CONVERT&quot;);
       await _ffmpeg.convert(
           cachedSongPath,
           0,
           -1,
           1,
           tempFile.path);
-      &#47;&#47;print(&quot;Tempfile_converted converted!&quot;);
       aF.readInBytes(tempFile);
       &#47;&#47;print(&quot;Tempfile_converted written back!&quot;);
 
-      &#47;&#47;print(&quot;DECODER SETS PROCEED TRUE&quot;);
       Globals.tempFileMutexProceed = true;
       if(Globals.musicLibrary.sendPrt != null)
         Globals.musicLibrary.sendPrt.send(true);
 
-      print(&quot;Killing the isolate!&quot;);
       if(_isolate != null) _isolate.kill(priority: Isolate.immediate);
 
       if(Globals.workout.isStarted) {
@@ -159,40 +155,39 @@
                 sendPort.send([1, databaseBeats, bpm]);
                 break;
               case 2:
-                &#47;&#47;print(&quot;Starting proces from decoder!&quot;);
+                &#47;&#47;print(&quot;Starting process from decoder!&quot;);
                 sendPort.send([2]);
                 break;
               case 3:
-
                 bool inDatabase = msg[1];
                 int resId = msg[2];
                 List&lt;Duration&gt; beats = msg[3];
                 bool wasFirst = msg[4];
                 int bpm = msg[5];
                 if(!inDatabase) {
-                  print(&quot;Writing back beats!&quot;);
+                  &#47;&#47;print(&quot;Writing back beats!&quot;);
                   await MetadataDatabaseController.write(resId, beats, bpm);
                 } else{
-                  print(&quot;Not writing back because already in database!&quot;);
+                  &#47;&#47;print(&quot;Not writing back because already in database!&quot;);
                 }
 
-                print(&quot;Sending beats!&quot;);
+                &#47;&#47;print(&quot;Sending beats!&quot;);
                 _musicController.processNewBeats(beats, wasFirst);
 
                 &#47;&#47;print(&quot;Starting next iteration of process from decoder!&quot;);
                 sendPort.send([2]);
+                break;
             }
           }
         });
         _isolate = await Isolate.spawn(MusicProcessor.process, receivePort.sendPort);
-      }else{
+      } else{
         print(&quot;Did not start new process as workout is stopped!&quot;);
       }
     }
     catch (err) {
       print(&quot;Could not open the file in Music Decoder!&quot;);
     } finally {
-      &#47;&#47;print(&quot;LOCK DECODER &quot; + a.toString() + &quot; RELEASED!&quot;);
       Globals.tempFileMutex.release();
     }
   }
@@ -208,7 +203,7 @@
 
 <footer>
   <span class="no-break">
-    pace_your_pulse 0.7+17
+    pace_your_pulse 1.0+17
   </span>
 
   

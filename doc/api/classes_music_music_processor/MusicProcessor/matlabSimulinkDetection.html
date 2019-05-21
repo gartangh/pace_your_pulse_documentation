@@ -186,12 +186,12 @@ Nu weet je dat je aan 44100 Hz sampled. Maar je sample de samples om de 1024. Du
   List&lt;int&gt; peaks = findPeaks(autoCor[0]);
   if(peaks != null) {
     int tempo = findTempo(peaks);
-    print(&quot;Best guess tempo: &quot; + tempo.toString());
+    &#47;&#47;print(&quot;Best guess tempo: &quot; + tempo.toString());
 
     &#47;&#47;&#47; With best guess tempo, use comb filter to find phase
     &#47;&#47; Watch video to understand this
     int offset = applyComb(autoCor[0], tempo, frequency);
-    print(&quot;offset is: &quot; + offset.toString());
+    &#47;&#47;print(&quot;offset is: &quot; + offset.toString());
 
     &#47;&#47;&#47; With phase and best guess tempo, find durations
     List&lt;Duration&gt; beats = List();
@@ -218,7 +218,7 @@ Nu weet je dat je aan 44100 Hz sampled. Maar je sample de samples om de 1024. Du
 
 <footer>
   <span class="no-break">
-    pace_your_pulse 0.7+17
+    pace_your_pulse 1.0+17
   </span>
 
   

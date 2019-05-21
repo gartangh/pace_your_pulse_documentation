@@ -112,7 +112,7 @@
     <section class="multi-line-signature">
       <span class="returntype">List<span class="signature">&lt;<wbr><span class="type-parameter">int</span>&gt;</span></span>
             <span class="name ">getChannel</span>
-(<wbr><span class="parameter" id="getChannel-param-bytes"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">int</span>&gt;</span></span> <span class="parameter-name">bytes</span>, </span> <span class="parameter" id="getChannel-param-channel"><span class="type-annotation">int</span> <span class="parameter-name">channel</span></span>)
+(<wbr><span class="parameter" id="getChannel-param-bytes"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">int</span>&gt;</span></span> <span class="parameter-name">bytes</span>, </span> <span class="parameter" id="getChannel-param-channel"><span class="type-annotation">int</span> <span class="parameter-name">channel</span>, </span> <span class="parameter" id="getChannel-param-start"><span class="type-annotation">int</span> <span class="parameter-name">start</span>, </span> <span class="parameter" id="getChannel-param-stop"><span class="type-annotation">int</span> <span class="parameter-name">stop</span></span>)
       
     </section>
     <section class="desc markdown">
@@ -122,27 +122,15 @@ Mono 1. Stereo 2.</p>
     
     <section class="summary source-code" id="source">
       <h2><span>Implementation</span></h2>
-      <pre class="language-dart"><code class="language-dart">static List&lt;int&gt; getChannel(List&lt;int&gt; bytes, int channel) {
-  List&lt;int&gt; x = List((bytes.length &#47; 2 &#47; channel).round());
-
-  for (int i = 0; i &lt; x.length; i++){
+      <pre class="language-dart"><code class="language-dart">static List&lt;int&gt; getChannel(List&lt;int&gt; bytes, int channel, int start, int stop) {
+  List&lt;int&gt; x = List&lt;int&gt;();
+  for (int i = start; i &lt; stop; i++){
     &#47;&#47; get left channel
     ByteData bd = ByteData(2);
     bd.setInt8(0, bytes[2*channel * i]);
     bd.setInt8(1, bytes[2*channel * i + 1]);
-    x[i] = bd.getUint16(0);
+    x.add(bd.getUint16(0));
   }
-
-  &#47;*
-  List&lt;int&gt; x = List((bytes.length &#47; 4).round());
-  for (int i = 0; i &lt; x.length; i++) {
-    &#47;&#47; get left channel
-    ByteData bd = ByteData(2);
-    bd.setInt8(0, bytes[4 * i]);
-    bd.setInt8(1, bytes[4 * i + 1]);
-    x[i] = bd.getUint16(0);
-  }
-  *&#47;
   return x;
 }</code></pre>
     </section>
@@ -156,7 +144,7 @@ Mono 1. Stereo 2.</p>
 
 <footer>
   <span class="no-break">
-    pace_your_pulse 0.7+17
+    pace_your_pulse 1.0+17
   </span>
 
   

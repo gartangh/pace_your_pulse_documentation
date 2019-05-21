@@ -76,6 +76,17 @@
       <h2>Properties</h2>
 
       <dl class="properties">
+        <dt id="algorithm" class="property">
+          <span class="name"><a href="classes_utils_logic/Logic/algorithm.html">algorithm</a></span>
+          <span class="signature">&#8596; int</span>         
+        </dt>
+        <dd>
+          Algorithm
+1 = Heart alone
+2 = new of jaime
+3 = Kuramoto
+                  <div class="features">read / write</div>
+</dd>
         <dt id="beats" class="property">
           <span class="name"><a href="classes_utils_logic/Logic/beats.html">beats</a></span>
           <span class="signature">&#8594; List<span class="signature">&lt;<wbr><span class="type-parameter">DateTime</span>&gt;</span></span>         
@@ -106,6 +117,14 @@
         </dt>
         <dd>
           The buffer for the last heart rate.
+                  <div class="features">read / write</div>
+</dd>
+        <dt id="lastHeartRateChange" class="property">
+          <span class="name"><a href="classes_utils_logic/Logic/lastHeartRateChange.html">lastHeartRateChange</a></span>
+          <span class="signature">&#8596; num</span>         
+        </dt>
+        <dd>
+          HeartrateChange
                   <div class="features">read / write</div>
 </dd>
         <dt id="lastTempoChange" class="property">
@@ -212,6 +231,15 @@
           Initializes this.
                   
 </dd>
+        <dt id="processNextStepEvent" class="callable">
+          <span class="name"><a href="classes_utils_logic/Logic/processNextStepEvent.html">processNextStepEvent</a></span><span class="signature">(<wbr><span class="parameter" id="processNextStepEvent-param-event"><span class="type-annotation"><a href="classes_events_next_step_event/NextStepEvent-class.html">NextStepEvent</a></span> <span class="parameter-name">event</span></span>)
+            <span class="returntype parameter">&#8594; void</span>
+          </span>
+                  </dt>
+        <dd>
+          Process next step event.
+                  
+</dd>
         <dt id="noSuchMethod" class="callable inherited">
           <span class="name"><a href="classes_utils_logic/Logic/noSuchMethod.html">noSuchMethod</a></span><span class="signature">(<wbr><span class="parameter" id="noSuchMethod-param-invocation"><span class="type-annotation">Invocation</span> <span class="parameter-name">invocation</span></span>)
             <span class="returntype parameter">&#8594; dynamic</span>
@@ -273,10 +301,12 @@
       <li class="section-title">
         <a href="classes_utils_logic/Logic-class.html#instance-properties">Properties</a>
       </li>
+      <li><a href="classes_utils_logic/Logic/algorithm.html">algorithm</a></li>
       <li><a href="classes_utils_logic/Logic/beats.html">beats</a></li>
       <li><a href="classes_utils_logic/Logic/heartStepChanged.html">heartStepChanged</a></li>
       <li><a href="classes_utils_logic/Logic/lastBeat.html">lastBeat</a></li>
       <li><a href="classes_utils_logic/Logic/lastHeartRate.html">lastHeartRate</a></li>
+      <li><a href="classes_utils_logic/Logic/lastHeartRateChange.html">lastHeartRateChange</a></li>
       <li><a href="classes_utils_logic/Logic/lastTempoChange.html">lastTempoChange</a></li>
       <li><a href="classes_utils_logic/Logic/maxHeartRate.html">maxHeartRate</a></li>
       <li><a href="classes_utils_logic/Logic/minHeartRate.html">minHeartRate</a></li>
@@ -291,6 +321,7 @@
       <li class="section-title"><a href="classes_utils_logic/Logic-class.html#instance-methods">Methods</a></li>
       <li><a href="classes_utils_logic/Logic/changeMusicTempo.html">changeMusicTempo</a></li>
       <li><a href="classes_utils_logic/Logic/init.html">init</a></li>
+      <li><a href="classes_utils_logic/Logic/processNextStepEvent.html">processNextStepEvent</a></li>
       <li class="inherited"><a href="classes_utils_logic/Logic/noSuchMethod.html">noSuchMethod</a></li>
       <li class="inherited"><a href="classes_utils_logic/Logic/toString.html">toString</a></li>
     
@@ -308,7 +339,7 @@
 
 <footer>
   <span class="no-break">
-    pace_your_pulse 0.7+17
+    pace_your_pulse 1.0+17
   </span>
 
   

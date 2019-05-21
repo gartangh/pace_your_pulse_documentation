@@ -112,7 +112,7 @@
     <section class="multi-line-signature">
       <span class="returntype">List</span>
             <span class="name ">getBeatsNotInDatabase</span>
-(<wbr><span class="parameter" id="getBeatsNotInDatabase-param-allData"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">int</span>&gt;</span></span> <span class="parameter-name">allData</span>, </span> <span class="parameter" id="getBeatsNotInDatabase-param-i"><span class="type-annotation">int</span> <span class="parameter-name">i</span>, </span> <span class="parameter" id="getBeatsNotInDatabase-param-frequency"><span class="type-annotation">int</span> <span class="parameter-name">frequency</span>, </span> <span class="parameter" id="getBeatsNotInDatabase-param-bufferSize"><span class="type-annotation">int</span> <span class="parameter-name">bufferSize</span>, </span> <span class="parameter" id="getBeatsNotInDatabase-param-beatOffset"><span class="type-annotation">Duration</span> <span class="parameter-name">beatOffset</span></span>)
+(<wbr><span class="parameter" id="getBeatsNotInDatabase-param-allData"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">int</span>&gt;</span></span> <span class="parameter-name">allData</span>, </span> <span class="parameter" id="getBeatsNotInDatabase-param-frequency"><span class="type-annotation">int</span> <span class="parameter-name">frequency</span>, </span> <span class="parameter" id="getBeatsNotInDatabase-param-bufferSize"><span class="type-annotation">int</span> <span class="parameter-name">bufferSize</span>, </span> <span class="parameter" id="getBeatsNotInDatabase-param-beatOffset"><span class="type-annotation">Duration</span> <span class="parameter-name">beatOffset</span></span>)
       
     </section>
     <section class="desc markdown">
@@ -121,12 +121,12 @@
     
     <section class="summary source-code" id="source">
       <h2><span>Implementation</span></h2>
-      <pre class="language-dart"><code class="language-dart">static List getBeatsNotInDatabase(List&lt;int&gt; allData, int i, int frequency, int bufferSize, Duration beatOffset) {
+      <pre class="language-dart"><code class="language-dart">&#47;&#47;static List getBeatsNotInDatabase(List&lt;int&gt; allData, int i, int frequency, int bufferSize, Duration beatOffset) {
+static List getBeatsNotInDatabase(List&lt;int&gt; allData, int frequency, int bufferSize, Duration beatOffset) {
   &#47;&#47; Get next 30 seconds of song
-  List&lt;int&gt; x = allData.sublist(i * frequency, (i + historySeconds) * frequency);
 
   &#47;&#47; Analyze current 30 seconds, with history of 24 seconds
-  List res = analyze(x, frequency, bufferSize, beatOffset);
+  List res = analyze(allData, frequency, bufferSize, beatOffset);
 
   return res;
 }</code></pre>
@@ -141,7 +141,7 @@
 
 <footer>
   <span class="no-break">
-    pace_your_pulse 0.7+17
+    pace_your_pulse 1.0+17
   </span>
 
   

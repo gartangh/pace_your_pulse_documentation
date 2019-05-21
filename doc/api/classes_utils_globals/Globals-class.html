@@ -66,6 +66,9 @@
   <div id="dartdoc-main-content" class="col-xs-12 col-sm-9 col-md-8 main-content">
       <div><h1>Globals class </h1></div>
 
+    <section class="desc markdown">
+      <p>Class responsible for initializing and managing global variables.</p>
+    </section>
     
 
     <section class="summary offset-anchor" id="constructors">
@@ -395,6 +398,22 @@
           The user.
                   <div class="features">read / write</div>
 </dd>
+        <dt id="virtualHuman" class="property">
+          <span class="name"><a href="classes_utils_globals/Globals/virtualHuman.html">virtualHuman</a></span>
+          <span class="signature">&#8594; dynamic</span>         
+        </dt>
+        <dd>
+          
+                  <div class="features">read-only</div>
+</dd>
+        <dt id="virtualHumanSensors" class="property">
+          <span class="name"><a href="classes_utils_globals/Globals/virtualHumanSensors.html">virtualHumanSensors</a></span>
+          <span class="signature">&#8596; bool</span>         
+        </dt>
+        <dd>
+          Virtual human
+                  <div class="features">read / write</div>
+</dd>
         <dt id="workout" class="property">
           <span class="name"><a href="classes_utils_globals/Globals/workout.html">workout</a></span>
           <span class="signature">&#8596; <a href="classes_utils_workout/Workout-class.html">Workout</a></span>         
@@ -418,6 +437,15 @@
           Cancel scanning function for when device is connected
                   
 </dd>
+        <dt id="disconnectBluetooth" class="callable">
+          <span class="name"><a href="classes_utils_globals/Globals/disconnectBluetooth.html">disconnectBluetooth</a></span><span class="signature">(<wbr>)
+            <span class="returntype parameter">&#8594; void</span>
+          </span>
+                  </dt>
+        <dd>
+          
+                  
+</dd>
         <dt id="init" class="callable">
           <span class="name"><a href="classes_utils_globals/Globals/init.html">init</a></span><span class="signature">(<wbr>)
             <span class="returntype parameter">&#8594; void</span>
@@ -427,13 +455,22 @@
           Init
                   
 </dd>
+        <dt id="scanBluetooth" class="callable">
+          <span class="name"><a href="classes_utils_globals/Globals/scanBluetooth.html">scanBluetooth</a></span><span class="signature">(<wbr>)
+            <span class="returntype parameter">&#8594; void</span>
+          </span>
+                  </dt>
+        <dd>
+          
+                  
+</dd>
         <dt id="updateConnectedBLEDevices" class="callable">
           <span class="name"><a href="classes_utils_globals/Globals/updateConnectedBLEDevices.html">updateConnectedBLEDevices</a></span><span class="signature">(<wbr>)
             <span class="returntype parameter">&#8594; Future<span class="signature">&lt;<wbr><span class="type-parameter">String</span>&gt;</span></span>
           </span>
                   </dt>
         <dd>
-          Retrieves currently connected BLE devices
+          Method to retrieve currently connected BLE devices
                   
 </dd>
         <dt id="whenNotZero" class="callable">
@@ -501,11 +538,15 @@
       <li><a href="classes_utils_globals/Globals/tempFileMutex.html">tempFileMutex</a></li>
       <li><a href="classes_utils_globals/Globals/tempFileMutexProceed.html">tempFileMutexProceed</a></li>
       <li><a href="classes_utils_globals/Globals/user.html">user</a></li>
+      <li><a href="classes_utils_globals/Globals/virtualHuman.html">virtualHuman</a></li>
+      <li><a href="classes_utils_globals/Globals/virtualHumanSensors.html">virtualHumanSensors</a></li>
       <li><a href="classes_utils_globals/Globals/workout.html">workout</a></li>
     
       <li class="section-title"><a href="classes_utils_globals/Globals-class.html#static-methods">Static methods</a></li>
       <li><a href="classes_utils_globals/Globals/cancelScanning.html">cancelScanning</a></li>
+      <li><a href="classes_utils_globals/Globals/disconnectBluetooth.html">disconnectBluetooth</a></li>
       <li><a href="classes_utils_globals/Globals/init.html">init</a></li>
+      <li><a href="classes_utils_globals/Globals/scanBluetooth.html">scanBluetooth</a></li>
       <li><a href="classes_utils_globals/Globals/updateConnectedBLEDevices.html">updateConnectedBLEDevices</a></li>
       <li><a href="classes_utils_globals/Globals/whenNotZero.html">whenNotZero</a></li>
     
@@ -516,7 +557,7 @@
 
 <footer>
   <span class="no-break">
-    pace_your_pulse 0.7+17
+    pace_your_pulse 1.0+17
   </span>
 
   

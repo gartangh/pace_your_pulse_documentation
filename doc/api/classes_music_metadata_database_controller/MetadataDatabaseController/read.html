@@ -106,17 +106,17 @@
   await created;
   Completer completer = new Completer&lt;Map&lt;String,dynamic&gt;&gt;();
   String songID = id.toString();
-  if(cachedSong?.id == songID){
+  if (cachedSong?.id == songID) {
     Map&lt;String, dynamic&gt; map = Map&lt;String, dynamic&gt;();
     map[&#39;bpm&#39;] = cachedSong.bpm;
     map[&#39;beats&#39;] = cachedSong.beats;
     completer.complete(map);
-  }else{
+  } else {
     String filename = songID + &quot;.json&quot;;
     File file = new File(_workingDirectory.path + &quot;&#47;&quot; + filename);
     file.exists().then((exist){
       if(exist){
-        print(&quot;MMD READ SONG: Exists in database!&quot;);
+        &#47;&#47;print(&quot;MMD READ SONG: Exists in database!&quot;);
         file.readAsString().then((String jsonMetaData){
           print(&quot;json meta data&quot;);
           print(jsonMetaData);
@@ -128,7 +128,8 @@
           completer.complete(map);
         });
       }else{  &#47;&#47;if the file does not exist, just return empty list
-        print(&quot;MMD READ SONG: Doesn&#39;t exist in database!&quot;);
+        &#47;&#47;print(&quot;MMD READ SONG: Doesn&#39;t exist in database!&quot;);
+
         Map&lt;String, dynamic&gt; map = Map&lt;String, dynamic&gt;();
         map[&#39;beats&#39;] = List&lt;List&lt;Duration&gt;&gt;();
         map[&#39;bpm&#39;] = -1;
@@ -149,7 +150,7 @@
 
 <footer>
   <span class="no-break">
-    pace_your_pulse 0.7+17
+    pace_your_pulse 1.0+17
   </span>
 
   

@@ -106,13 +106,11 @@
   ReceivePort receivePort = ReceivePort();
   receivePort.listen((msg) async {
     if (sendPort == null) {
-      print(&quot;Receiving sendPort&quot;);
       sendPort = msg;
       sendPrt = msg;
     }
     if (Globals.tempFileMutexProceed) cacheSongAfterEvent(msg, path, f, title, resId, length, type);
     else{
-      print(&quot;LIBRARY SETS PROCEED FALSE&quot;);
       Globals.tempFileMutexProceed = false;
     }
     if(msg.runtimeType == bool) cacheSongAfterEvent(msg, path, f, title, resId, length, type);
@@ -135,7 +133,7 @@
 
 <footer>
   <span class="no-break">
-    pace_your_pulse 0.7+17
+    pace_your_pulse 1.0+17
   </span>
 
   
