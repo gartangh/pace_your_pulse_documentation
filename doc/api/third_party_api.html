@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Third Party API.</title>
+
+</head>
+              
+
+<body>
+<h1>Third Party API </h1>
+<p>
+    First there is the initialisation of the node file. Which are loaded with the following code.<br />
+    <code>
+        const functions = require('firebase-functions');<br />
+        const admin = require('firebase-admin');    //Needed to access the Firebase Realtime Database<br />
+        admin.initializeApp(functions.config().firebase);<br />
+        const db = admin.firestore();<br />
+    </code><br />
+    This will ensure all the functions are loaded correctly in order to communicate with firebase. First of all, the firebase-function pacakage will be loaded in.
+    Then the firebase-admin module is loaded to be able to communicate to the firestore. Then the communication to the firestore is initialised and then logged in.
+    <br />
+    <br />
+</p>
+
+<p>
+    The webhook on themself are coded as such: <br />
+    <code>
+            exports.getxxxx = functions.https.onRequest((request, response) => {<br />
+                console.log("start loading xxxx");<br />
+                return loadUsers().then((users) => {<br />
+                    return loadData(users, 'xxxx', 'xxxx');<br />
+                }).then((data) => {<br />
+                    response.send(data);<br />
+                    return null;<br />
+                }).catch(error => {<br />
+                    console.log(error);<br />
+                });<br />
+                <br />
+            });<br />
+    </code><br />
+    Where "xxxx", can be changed into workouts, workoutMusic, heartRates and cadence. Which will fetch their respective data in the firestore. 
+    This function will return a Promise, where, once loaded, the response of the fetch is send back to the users. This is done by calling
+    the loadUsers function to get a list of all users. Then their respective data could be loaded with loadDate. Once it is finished,
+    the data is send to the webhook caller. If a problem occurs the catch will print the error in the console of firebase.
+</p>
+
+<p>
+    The users have to be loaded first, in order to fetch their data afterwards. This can be done with the following block of code.<br />
+    <code>
+            function loadUsers(){
+                return db.collection('users').get().then((snapshot) => {
+                        var usersList = [];
+                        snapshot.forEach(doc => {
+                            usersList.push(doc.id);
+                        });
+                        console.log("users loaded ");
+                        console.log(usersList);
+                        return usersList;
+                    }).catch((error) => {
+                        console.log(error);
+                    });
+            }
+    </code>
+    Like the webhook calls, the function returns a Promise back, after having fetched the data in the firestore. Once everything has been loaded, it will return a list of the users' id.
+</p>
+
+<p>
+    The last bit of code, will load the expected data and send a list of the anonymised data back.<br />
+
+    <code>
+            function loadData(usersList, collectionName1, collectionName2){<br />
+                return new Promise(async (resolve) => {<br />
+                    var data = [];<br />
+                    var promises = [];<br />
+                    for(user of usersList){<br />
+                        promises.push(<br />
+                            db.collection(collectionName1).doc(user).collection(collectionName2).get().then((snapshot) => {<br />
+                                if(!snapshot.empty){<br />
+                                    var userData = [];<br />
+                                    snapshot.forEach(doc => {<br />
+                                        userData.push(doc.data());<br />
+                                    });<br />
+                                    data.push(userData);<br />
+                                }<br />
+                                return true;<br />
+                            }).catch(error => {<br />
+                                console.log(error);<br />
+                            })<br />
+                        );<br />
+                        <br />
+                    }<br />
+                    await Promise.all(promises);<br />
+                    <br />
+                    console.log(collectionName1 + "loaded");<br />
+                    console.log(data);<br />
+                    resolve(data);<br />
+                })<br />
+            }<br />
+    </code><br />
+    The functions expects 3 arguments, the list of the users of which the data has to be gathered, the string of the name the main collection. <br />
+    The last agrument, is the string of the subcollection of the user. This will iterate over all documents in all those collections. And then send back the list of it.<br />
+
+</p>
+
+<h2>The structure of the database</h2>
+<p>
+    The structured used in firestore, is the following. <br />
+    <ul>
+        <li>cadence
+            <ul>
+                <li>user id</li>
+                <li>document
+                    <ul>
+                        <li>cadence
+                            <ul>
+                                <li>workout id</li>
+                                <li>document
+                                    <ul>
+                                        <li>cadenceValues (list)</li>
+                                        <li>dateTimes (list)</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>heartRates
+            <ul>
+                <li>user id</li>
+                <li>document
+                    <ul>
+                        <li>heartRates
+                            <ul>
+                                <li>workout id</li>
+                                <li>document
+                                    <ul>
+                                        <li>dateTimes (list)</li>
+                                        <li>heartRateValues (list)</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>users
+            <ul>
+                <li>user id</li>
+                <li>document
+                        <ul>
+                                <li>birthday</li>
+                                <li>email</li>
+                                <li>maxHeartRate</li>
+                                <li>meanHeartRate</li>
+                                <li>sex</li>
+                                <li>username</li>
+                        </ul>
+                </li>
+            </ul>
+        </li>
+        <li>workoutMusic
+                <ul>
+                        <li>user id</li>
+                        <li>document
+                            <ul>
+                                <li>workoutMusic
+                                    <ul>
+                                        <li>workout id</li>
+                                        <li>document
+                                            <ul>
+                                                <li>songNames (list)</li>
+                                                <li>startTimes (list)</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+        </li>
+        <li>workouts
+                <ul>
+                        <li>user id</li>
+                        <li>document
+                            <ul>
+                                <li>workouts
+                                    <ul>
+                                        <li>workout id</li>
+                                        <li>document
+                                            <ul>
+                                                <li>calories</li>
+                                                <li>dateTime</li>
+                                                <li>distance</li>
+                                                <li>duration</li>
+                                                <li>maxHeartRate</li>
+                                                <li>meanHeartRate</li>
+                                                <li>minHeartRate</li>
+                                                <li>name</li>
+                                                <li>sport</li>
+                                                <li>steps</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+        </li>
+    </ul><br />
+
+    This contains 5 collections, which at their turn contains documents. For the case of the users, the user documents contains fields. But the other collections, their documents contains at their turn again some containers. Those containers will contain at their turn documents.
+    Those documents then contains the fields with actual data.
+</body>
+</html>
