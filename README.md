@@ -10,12 +10,14 @@ dartdoc --exclude="dart:core,dart:async,dart:collection,dart:convert,dart:develo
 :isolate,dart:math,dart:typed_data,dart:ui"
 ```
 
-## Authors
-- Wouter Baes
-- Arthur Crapé
-- Bram De Smet
-- Dean Parmentier
-- Jaime Roelandts
-- Garben Tanghe
-- Thomas Uyttenhove
-- Olivier Van den Nest
+## The team
+The Pace Your Pulse app is being developed by 8 students of Ghent University, studying the Master of Science in Computer Science Engineering. Below, each team member is presented accompanied by their role in the team.
+
+- Wouter Baes, _product owner_
+- Arthur Crapé, _test expert_
+- Bram De Smet, _developer_
+- Dean Parmentier, _quality assurance expert_
+- Jaime Roelandts, _sysadmin_
+- Garben Tanghe, _continuous integration and continuous deployment expert_
+- Thomas Uyttenhove, _project manager_
+- Olivier Van den Nest, _developer_
